@@ -1,0 +1,35 @@
+/**
+ * size.less -图标尺寸设置 mixinx 函数
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.8
+ */
+.size(@width:16px, @height:16px) {
+  width: @width;
+  height: @height;
+}
+
+/* ====== 图标尺寸设置函数 ====== */
+.size_mini() {
+  .size(16px, 16px);
+}
+
+.size_small() {
+  .size(24px, 24px);
+}
+
+.size_regular() {
+  .size(32px, 32px);
+}
+
+.size_medium() {
+  .size(40px, 40px);
+}
+
+.size_large() {
+  .size(48px, 48px);
+}
+
+.size_huge() {
+  .size(56px, 56px);
+}

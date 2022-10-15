@@ -1,0 +1,99 @@
+/**
+ * case.less - UsageCase 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.usage-case {
+  margin: 1em auto;
+  transition-duration: 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    .shadow_light_regular();
+
+    .usage-case__text {
+      color: @fourth_text_color;
+      width: 70px;
+    }
+  }
+}
+
+.usage-case__header,
+.usage-case__footer {
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid @primary_border_color;
+  border-bottom: none;
+  .radius(4px 4px 0 0);
+
+  overflow: hidden;
+}
+
+.usage-case__demo {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+
+  &--flex {
+    display: flex;
+    flex-direction: row;
+    align-self: auto;
+    align-items: flex-start;
+  }
+}
+
+.usage-case__main {
+  margin: 0 auto;
+  border: 1px solid @primary_border_color;
+  transition-duration: 0.5s;
+  overflow: hidden;
+
+  &--folded {
+    height: 0;
+    border-bottom: none;
+  }
+}
+
+.usage-case__tips {
+  margin: 0 auto;
+  padding: 10px 10px 0;
+  background: @fourth_bg_color;
+  overflow: hidden;
+}
+
+.usage-case__message {
+  margin: 0 auto;
+  border: 1px solid @primary_border_color;
+  padding: 16px;
+  .radius_regular();
+  .font_size_regular();
+
+  line-height: 1.5em;
+  color: @third_text_color;
+  background-color: @white;
+  overflow: hidden;
+}
+
+.usage-case__code {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.usage-case__copy {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  .height_regular();
+  .line_height_regular();
+  cursor: pointer;
+  color: @fourth_text_color;
+  overflow: hidden;
+
+  &:hover {
+    color: @primary_color;
+  }
+}

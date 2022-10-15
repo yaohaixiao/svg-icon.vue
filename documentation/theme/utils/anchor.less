@@ -1,0 +1,75 @@
+/**
+ * anchor.less - 链接颜色样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.9
+ */
+@import "../variable/color/system";
+@import "../variable/color/functionality";
+@import "../variable/color/tips";
+@import "../mixins/anchor";
+
+.util-anchor-primary {
+  .anchor(@primary_color, @primary_color);
+
+  &--disabled {
+    .anchor(@info_tip_disabled_text_color, @info_tip_disabled_text_color);
+  }
+}
+
+.util-anchor-warning {
+  .anchor(@warning_color, @warning_color);
+
+  &--disabled {
+    .anchor(@warning_tip_disabled_text_color, @warning_tip_disabled_text_color);
+  }
+}
+
+.util-anchor-success {
+  .anchor(@success_color, @success_color);
+
+  &--disabled {
+    .anchor(@success_tip_disabled_text_color, @success_tip_disabled_text_color);
+  }
+}
+
+.util-anchor-danger {
+  .anchor(@danger_color, @danger_color);
+
+  &--disabled {
+    .anchor(@danger_tip_disabled_text_color, @danger_tip_disabled_text_color);
+  }
+}
+
+.util-anchor-info {
+  .anchor(@fourth_text_color, @fourth_text_color);
+}
+
+.util-anchor-default {
+  .anchor(@secondary_text_color, @primary_color);
+}
+
+.util-anchor-info,
+.util-anchor-default {
+  &--disabled {
+    .anchor(@default_tip_disabled_text_color, @default_tip_disabled_text_color);
+  }
+}
+
+.util-anchor-primary,
+.util-anchor-warning,
+.util-anchor-success,
+.util-anchor-danger,
+.util-anchor-info,
+.util-anchor-default,
+.util-anchor-underline {
+  &--disabled {
+    cursor: not-allowed;
+  }
+}
+
+.util-anchor-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}

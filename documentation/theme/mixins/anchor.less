@@ -1,0 +1,25 @@
+/**
+ * anchor.less - 链接样式 mixinx 函数
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.8
+ */
+@import "../variable/color/system";
+
+/* ====== 链接样式函数 ====== */
+.anchor(@link_color: @primary_color, @hover_color: @primary_color) {
+  color: @link_color;
+  cursor: pointer;
+
+  &:link,
+  &:visited,
+  &:hover {
+    color: @link_color;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: @hover_color;
+  }
+}

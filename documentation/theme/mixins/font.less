@@ -1,0 +1,74 @@
+/**
+ * font.less - 字体设置 mixinx 函数
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.3.16
+ */
+@import "../variable/font";
+
+/* ====== 字体设置函数 ====== */
+.font_text_family() {
+  font-family: @font_text_family;
+}
+
+.font_number_family() {
+  font-family: @font_number_family;
+}
+
+.font_code_family() {
+  font-family: @font_code_family;
+}
+
+/* ====== 字号设置函数 ====== */
+.font_size(@size: @font_size_regular) {
+  font-size: @size;
+}
+
+.font_size_mini() {
+  .font_size(@font_size_mini);
+}
+
+.font_size_small() {
+  .font_size(@font_size_small);
+}
+
+.font_size_regular() {
+  .font_size(@font_size_regular);
+}
+
+.font_size_medium() {
+  .font_size(@font_size_medium);
+}
+
+.font_size_large() {
+  .font_size(@font_size_large);
+}
+
+.font_size_huge() {
+  .font_size(@font_size_huge);
+}
+
+/* ====== 字重设置函数 ====== */
+.font_weight(@weight:@font_weight_regular) {
+  font-weight: @weight;
+}
+
+.font_weight_small() {
+  .font_weight(@font_weight_small);
+}
+
+.font_weight_regular() {
+  .font_weight(@font_weight_regular);
+}
+
+.font_weight_medium() {
+  .font_weight(@font_weight_medium);
+}
+
+.font_weight_semi_bold() {
+  .font_weight(@font_weight_semi_bold);
+}
+
+.font_weight_bold() {
+  .font_weight(@font_weight_bold);
+}

@@ -1,0 +1,120 @@
+/**
+ * article.less - article  文章正文内容相关样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.10
+ */
+@import './variable/color/text';
+@import './variable/color/background';
+@import './variable/color/system';
+@import './mixins/font';
+@import './mixins/line-height';
+@import './mixins/ellipsis';
+
+.article {
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.article__pre {
+  .font_size_regular();
+  .line_height_small();
+  .font_code_family();
+
+  margin: 0;
+  padding: 20px;
+  background: @fourth_bg_color;
+  color: @code_text_color;
+  max-height: 600px;
+  overflow: auto;
+
+  &.with-border {
+    border: 1px solid @primary_border_color;
+  }
+}
+
+.article__code {
+  .font_code_family();
+
+  color: @code_text_color;
+}
+
+.article__h1 {
+  .line_height_huge();
+
+  text-align: center;
+  font-weight: @font_weight_regular;
+  font-family: Georgia, "Courier New", Consolas, Arial, sans-serif;
+  font-size: 26px;
+  margin-top: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid @primary_border_color;
+  color: @primary_text_color;
+}
+
+.article__h2 {
+  .font_size_huge();
+
+  font-weight: @font_weight_regular;
+  color: @primary_text_color;
+}
+
+.article__h3 {
+  .font_size_large();
+
+  font-weight: @font_weight_regular;
+  color: @primary_text_color;
+}
+
+.article__h4 {
+  .font_size_medium();
+
+  font-weight: @font_weight_regular;
+  color: @primary_text_color;
+}
+
+.article__h5 {
+  .font_size_regular();
+
+  font-weight: @font_weight_regular;
+  color: @primary_text_color;
+}
+
+.article__table {
+  margin: 1em auto;
+  width: 100%;
+  border-spacing: 0;
+  overflow: hidden;
+
+  tr {
+    &:hover {
+      background-color: @hover_bg_color;
+    }
+  }
+
+  th,
+  td {
+    .line_height_medium();
+
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid @primary_border_color;
+  }
+
+  th {
+    background: @secondary_bg_color;
+    font-size: @font_size_regular;
+    font-weight: @font_weight_regular;
+    color: @third_text_color;
+  }
+
+  td {
+    .font_size_small();
+  }
+
+  .cell {
+    .line_height_medium();
+    .ellipsis(1);
+  }
+}

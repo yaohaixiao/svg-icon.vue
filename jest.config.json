@@ -1,0 +1,32 @@
+{
+  "testEnvironment": "jsdom",
+  "moduleFileExtensions": [
+    "js",
+    "vue",
+    "less"
+  ],
+  "transform": {
+    "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+    ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+  },
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
+  "snapshotSerializers": [
+    "<rootDir>/node_modules/jest-serializer-vue"
+  ],
+  "collectCoverage": true,
+  "coverageDirectory": "report/coverage",
+  "reporters": [
+    "default",
+    [
+      "./node_modules/jest-html-reporter",
+      {
+        "logo": "https://yaohaixiao.github.io/svg-icon.vue/logo.png",
+        "pageTitle": "svg-icon.vue 单测报告",
+        "outputPath": "report/unit-test/index.html",
+        "includeFailureMsg": true
+      }
+    ]
+  ]
+}

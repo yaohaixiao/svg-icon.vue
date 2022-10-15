@@ -1,0 +1,28 @@
+/**
+ * code.less - UsageCaseCode 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.usage-case-code {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.usage-case-code__copy {
+  .height_regular();
+  .line_height_regular();
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  color: @fourth_text_color;
+  overflow: hidden;
+
+  &:hover {
+    color: @primary_color;
+  }
+}

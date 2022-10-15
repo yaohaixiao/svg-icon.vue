@@ -1,0 +1,54 @@
+/**
+ * footer.less - UsageCaseFooter 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.usage-case-footer {
+  .radius(0 0 4px 4px);
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid @primary_border_color;
+  border-top-style: none;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    background-color: @primary_bg_color;
+    color: @primary_color;
+
+    .usage-case-footer__icon,
+    .usage-case-footer__text {
+      color: @primary_color;
+    }
+
+    .usage-case-footer__text {
+      width: 70px;
+    }
+  }
+}
+
+.usage-case-footer__icon {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  color: @default_icon_color;
+  vertical-align: middle;
+}
+
+.usage-case-footer__text {
+  display: inline-block;
+  height: 16px;
+  width: 0;
+  line-height: 16px;
+  vertical-align: middle;
+  color: @third_text_color;
+  padding-left: 10px;
+  transition-duration: 0.3s;
+  white-space: nowrap;
+  text-align: left;
+  overflow: hidden;
+}

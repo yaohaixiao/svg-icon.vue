@@ -1,0 +1,31 @@
+/**
+ * IconCell.vue - Icon 示例栏组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.08
+ */
+.icon-cell {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 16px;
+  color: @third_text_color;
+  .radius_regular();
+  cursor: pointer;
+
+  &:hover {
+    background: @primary_bg_color;
+    color: @primary_color;
+
+    .icon-cell__svg {
+      color: @primary_color;
+      transform: scale(180%);
+    }
+  }
+}
+
+.icon-cell__svg {
+  color: @third_text_color;
+  transition-duration: 0.5s;
+  padding-top: 10px;
+}
