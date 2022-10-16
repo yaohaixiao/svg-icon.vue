@@ -10,6 +10,8 @@ svg-icon.vue 为开发者提供了一个用来在 VUE 项目中显示 SVG 图标
 
 ## Install
 
+svg-icon.vue 的安装十分简单，可以直接在命令行运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：
+
 ### Install from the command line
 
 ```shell
@@ -26,6 +28,7 @@ npm i @yaohaixiao/svg-icon.vue
 ## Import package
 
 ```js
+// 导入SvgIcon组件
 import SvgIcon from 'svg-icon.vue'
 
 export default {
@@ -153,7 +156,7 @@ export default icoMoonSet
 // 导入 icoMoonSet 图标集
 import iconSet from '$assets/ico-moon'
 // 导入 render 方法
-import { render } from '@/utils/utils'
+import { render } from 'svg-icon.vue/utils/utils'
 // 绘制自定义图标集
 render(iconSet)
 

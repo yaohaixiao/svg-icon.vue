@@ -9,6 +9,30 @@
   z-index: 1;
   margin: 0 auto;
   overflow: hidden;
+
+  .pre {
+    .font_size_regular();
+    .line_height_small();
+    .font_code_family();
+
+    margin: 0;
+    padding: 20px;
+    background: @fourth_bg_color;
+    color: @code_text_color;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.with-border {
+      border: 1px solid @primary_border_color;
+    }
+  }
+
+  .code {
+    .font_code_family();
+
+    color: @code_text_color;
+  }
 }
 
 .usage-case-code__copy {

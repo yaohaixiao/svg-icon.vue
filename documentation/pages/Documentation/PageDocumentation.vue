@@ -12,6 +12,12 @@
         <p>
           svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。
         </p>
+        <h2 class="article__h2">安装</h2>
+        <p>svg-icon.vue 的安装十分简单，可以直接在命令行运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：</p>
+        <h3 class="article__h3">在命令行中安装</h3>
+        <pre class="article__pre"><code class="article__code">npm i @yaohaixiao/svg-icon.vue</code></pre>
+        <h3 class="article__h3">在 package.js 文件中添加依赖</h3>
+        <pre class="article__pre"><code class="article__code">"@yaohaixiao/svg-icon.vue": "1.x.x"</code></pre>
         <h2 class="article__h2">调用语法</h2>
         <p>
           SvgIcon 组件使用起来十分简单，调用语法如下：
@@ -204,7 +210,7 @@
 // 导入 icoMoonSet 图标集（图标集可以导入，也可以直接使用图标数据对象）
 import icoMoonSet from '$assets/ico-moon'
 // 导入 render 方法
-import { render } from '@/utils/utils'
+import { render } from 'svg-icon.vue/utils/utils'
 
 // 绘制自定义图标集
 render(icoMoonSet)
