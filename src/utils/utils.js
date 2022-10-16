@@ -12,8 +12,9 @@ import icons from '../assets/default'
  * @param {Object} [iconSet] - 图标集对象数据
  * @param {String} iconSet.title - 图标集标题
  * @param {Array} iconSet.symbols - 图标集数组
+ * @param {Boolean} [append] - 是否追加到内置图标集，默认值：false
  */
-export const render = (iconSet) => {
+export const render = (iconSet, append = false) => {
   const $body = document.body
   const $firstChild = $body.firstChild
   const $icons = document.createElement('div')
@@ -22,7 +23,11 @@ export const render = (iconSet) => {
   let html = ''
 
   if (iconSet && iconSet.symbols) {
-    icons.push(iconSet)
+    if (append) {
+      icons.push(iconSet)
+    } else {
+      symbols.push(...iconSet.symbols)
+    }
   }
 
   icons.forEach((item) => {
