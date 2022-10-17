@@ -9,8 +9,11 @@ import App from './App.vue'
 import router from './router'
 
 import './plugins'
+import { render } from '@/utils/utils'
 
 Vue.config.productionTip = false
+
+render()
 
 new Vue({
   router,

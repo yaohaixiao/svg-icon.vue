@@ -8,9 +8,10 @@
 
 svg-icon.vue 为开发者提供了一个用来在 VUE 项目中显示 SVG 图标的工具。
 
+
 ## Install
 
-svg-icon.vue 的安装十分简单，可以直接在命令行运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：
+svg-icon.vue 的安装十分简单，可以直接在命令行中运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：
 
 ### Install from the command line
 
@@ -21,11 +22,85 @@ npm i @yaohaixiao/svg-icon.vue
 ### Install via package.json:
 
 ```shell
-"@yaohaixiao/svg-icon.vue": "1.x.x"
+"@yaohaixiao/svg-icon.vue": "2.x.x"
 ```
 
 
-## Import package
+## API Documentation
+
+### Online docs
+
+Online docs：[https://yaohaixiao.github.io/svg-icon.vue/#/docs](https://yaohaixiao.github.io/svg-icon.vue/#/docs)
+
+### Local docs
+
+```shell
+# serve with hot reload at localhost:48081
+npm run start
+```
+
+### render()
+
+SvgIcon 组件至 2.0.0 版本开始，不再直接绘制 default 图标集。需要手动导入 render() 方法。
+
+```js
+import { render } from 'svg-icon.vue/utils/utils'
+```
+
+#### Grammar
+
+```js
+render(iconSet)
+```
+
+#### Options
+
+| Name              | Type       | Default   | Description                  |
+|-------------------|------------|-----------|------------------------------|
+| `iconSet`         | `Object`   | --        | 可选，图标集数据对象。                  |
+| -----------       | ---------- | --------- | -----------------------      |
+| `iconSet.title`   | `String`   | --        | 必选，图标集名称。                    |
+| -----------       | ---------- | --------- | -----------------------      |
+| `iconSet.symbols` | `Array`    | --        | 必选，存储 svg 图标的 symbols 数组 图标集 |
+
+绘制 default 图标集：
+
+```js
+import { render } from 'svg-icon.vue/utils/utils'
+
+render()
+```
+
+绘制自定义的图标集：
+
+```js
+// svg-icon.vue 内置了多个免费且设计优美的图标集：
+// 01. svg-icon.vue/assets/brankic-1979
+// 02. svg-icon.vue/assets/broccolidry
+// 03. svg-icon.vue/assets/default
+// 04. svg-icon.vue/assets/eighty-shades
+// 05. svg-icon.vue/assets/entypo
+// 06. svg-icon.vue/assets/feather
+// 07. svg-icon.vue/assets/font-awesome
+// 08. svg-icon.vue/assets/hawcons
+// 09. svg-icon.vue/assets/iconic
+// 10. svg-icon.vue/assets/linecons
+// 11. svg-icon.vue/assets/material
+// 12. svg-icon.vue/assets/meteocons
+// 13. svg-icon.vue/assets/steadysets
+// 14. svg-icon.vue/assets/typicons
+// 15. svg-icon.vue/assets/vicons
+// 16. svg-icon.vue/assets/wpzoom
+// 17. svg-icon.vue/assets/zondicons
+import fontAwesomeSet from 'svg-icon.vue/assets/font-awesome'
+import { render } from 'svg-icon.vue/utils/utils'
+
+render(fontAwesomeSet)
+```
+
+使用 render() 方法绘制 svg 图标后，就可以调用 SvgIcon 组件显示图标了。
+
+### Import package
 
 ```js
 // 导入SvgIcon组件
@@ -38,24 +113,25 @@ export default {
 }
 ```
 
+### SvgIcon.vue
 
-## Grammar
+SvgIcon.vue 是 svg-icon.vue 的核心组件，用来显示 render() 方法绘制的 svg 图标集中的图标。
+
+#### Grammar
 
 SvgIcon 组件使用起来十分简单，调用语法如下：
 
 ```vue
-<svg-icon :name="iconName" :size="iconSize" :color="iconColor" />
+<svg-icon name="help" size="16" color="#999999" />
 ```
 
+#### Options
 
-## Options
-
-| Name    | Type     | Default |  Description |
-|---------|----------|---------|---|
-| `name`  | `String` | --      |  必选，图标名称：图标库中所有图标的名称。 |
-| `size`  | `Number` | 16      | 可选，用来指定 icon 图标大小。  |
-| `color` | `String` | --      |  可选，用来指定 icon 图标颜色。 |
-
+| Name    | Type     | Default | Description          |
+|---------|----------|---------|----------------------|
+| `name`  | `String` | --      | 必选，图标名称：图标库中所有图标的名称。 |
+| `size`  | `Number` | 16      | 可选，用来指定 icon 图标大小。   |
+| `color` | `String` | --      | 可选，用来指定 icon 图标颜色。   |
 
 
 ## Usage
@@ -67,9 +143,24 @@ SvgIcon 组件的使用方法如下：
 size 和 color 参数是可选的，只用设置 name 属性（ icon 的名称）即可，默认 size 值为 16px 大小。当然，也可以自定义设置 size 大小。
 
 ```vue
-<svg-icon name="plugins" />
-<svg-icon name="database-read" :size="24" />
-<svg-icon name="database-lock" :size="32" />
+<template>
+  <svg-icon name="plugins" />
+  <svg-icon name="database-read" :size="24" />
+  <svg-icon name="database-lock" :size="32" />
+</template>
+
+<script>
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
+
+render()
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+</script>
 ```
 
 ### Set color
@@ -78,21 +169,82 @@ SvgIcon 组件即可以使用包含 icon 的父节点设置 CSS 样式控制图�
 
 #### Set color with CSS
 
-通过 CSS 设置颜色，图标的颜色与 case-icon 元素的 color 值一致。
+通过设置 SvgIcon 父组件的 CSS 颜色，SvgIcon 组件的图标颜色将其父元素 case-icon 的 color 值一致。
 
 ```vue
-<span class="case-icon">
-  <svg-icon name="database-read" :size="24" />
-</span>
-<span class="case-icon">
-  <svg-icon name="database-lock" :size="24" />
-</span>
-<span class="case-icon">
-  <svg-icon name="plugins" :size="24" />
-</span>
+<template>
+  <span class="case-icon">
+    <svg-icon name="database-read" :size="24" />
+  </span>
+  <span class="case-icon">
+    <svg-icon name="database-lock" :size="24" />
+  </span>
+  <span class="case-icon">
+    <svg-icon name="plugins" :size="24" />
+  </span>
+</template>
+
+<script>
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
+
+render()
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+</script>
+
+<style scoped lang="less">
+  .case-icon {
+    display: inline-block;
+    margin: 0 8px;
+    color: @third_text_color;
+    vertical-align: middle;
+    cursor:pointer;
+    overflow: hidden;
+
+    &:hover {
+      color: @primary_color;
+    }
+  }
+</style>
 ```
 
-```less
+#### Set color with 'color' attribute
+
+设置 color 属性后，SvgIcon 的父组件通过 CSS 设置的 color 样式将不再起作用。
+
+```vue
+<template>
+  <span class="case-icon">
+    <svg-icon name="aside-environment" :size="24" color="#07B759"/>
+  </span>
+  <span class="case-icon">
+    <svg-icon name="aside-branch" :size="24" color="#507AFE"/>
+  </span>
+  <span class="case-icon">
+    <svg-icon name="aside-pc" :size="24" color="#FF9901"/>
+  </span>
+</template>
+
+
+<script>
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
+
+render()
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+</script>
+
+<style scoped lang="less">
 .case-icon {
   display: inline-block;
   margin: 0 8px;
@@ -105,34 +257,38 @@ SvgIcon 组件即可以使用包含 icon 的父节点设置 CSS 样式控制图�
     color: @primary_color;
   }
 }
-```
-
-#### Set color with 'color' attribute
-
-```vue
-<span class="case-icon">
-  <svg-icon name="aside-environment" :size="24" color="#07B759"/>
-</span>
-<span class="case-icon">
-  <svg-icon name="aside-branch" :size="24" color="#507AFE"/>
-</span>
-<span class="case-icon">
-  <svg-icon name="aside-pc" :size="24" color="#FF9901"/>
-</span>
+</style>
 ```
 
 ### Use Customized Icon Set
 
 ```vue
-<span class="case-icon">
-  <svg-icon name="moon-home" :size="24" />
-</span>
-<span class="case-icon">
-  <svg-icon name="moon-home2" :size="24" />
-</span>
-<span class="case-icon">
-  <svg-icon name="moon-home3" :size="24" />
-</span>
+
+<template>
+  <span class="case-icon">
+    <svg-icon name="moon-home" :size="24"/>
+  </span>
+  <span class="case-icon">
+    <svg-icon name="moon-home2" :size="24"/>
+  </span>
+  <span class="case-icon">
+    <svg-icon name="moon-home3" :size="24"/>
+  </span>
+</template>
+
+<script>
+import { render } from 'svg-icon.vue/utils/utils'
+import icoMoonSet from 'assets/ico-moon'
+import SvgIcon from 'svg-icon.vue'
+
+render(icoMoonSet)
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+</script>
 ```
 
 ```js
@@ -152,33 +308,9 @@ const icoMoonSet = {
 }
 
 export default icoMoonSet
-
-// 导入 icoMoonSet 图标集
-import iconSet from '$assets/ico-moon'
-// 导入 render 方法
-import { render } from 'svg-icon.vue/utils/utils'
-// 绘制自定义图标集
-render(iconSet)
-
-// 在调用 SvgIcon 组件的 VUE 组件初始化前使用 render() 方法
-export default {
-  // 其他逻辑
-}
 ```
 
-## API Documentation
-
-Online docs：[https://yaohaixiao.github.io/svg-icon.vue/#/docs](https://yaohaixiao.github.io/svg-icon.vue/#/docs)
-
-### Local docs
-
-```shell
-# serve with hot reload at localhost:48081
-npm run start
-```
-
-
-## Icon Samples
+## Samples
 
 SvgIcon 组件已经内置了一些常用图标：[https://yaohaixiao.github.io/svg-icon.vue/#/samples](https://yaohaixiao.github.io/svg-icon.vue/#/samples)
 

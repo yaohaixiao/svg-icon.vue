@@ -70,7 +70,7 @@ module.exports = {
       .tap(args => {
         const description = `${pkg.description}`
 
-        args[0].title = `svg-icon.vue - v${pkg.version}`
+        args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
         args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
         args[0].description = description
 
