@@ -9,6 +9,9 @@ export default {
   path: 'docs',
   icon: 'aside-pc',
   component: () => import(/* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'),
+  meta: {
+    hide: true
+  },
   children: [
     {
       text: 'API Documentation',

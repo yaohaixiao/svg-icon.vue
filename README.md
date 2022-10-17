@@ -311,9 +311,9 @@ export default {
 ```
 
 
-## Samples
+## Icons
 
-SvgIcon 组件已经内置了一些常用图标：[https://yaohaixiao.github.io/svg-icon.vue/#/samples](https://yaohaixiao.github.io/svg-icon.vue/#/samples)
+SvgIcon 组件已经内置了一些常用图标：[https://yaohaixiao.github.io/svg-icon.vue/#/icons](https://yaohaixiao.github.io/svg-icon.vue/#/icons)
 
 
 ## License

@@ -2,10 +2,17 @@
   <nav class="app-menu">
     <ul class="app-menu__list">
       <li v-for="(route, i) in routes" :key="`menu-${i}`" class="app-menu__item">
-        <router-link :to="route.path" class="app-menu__link">
+        <router-link :to="`/${route.path}`" class="app-menu__link">
           <svg-icon :name="route.icon" :size="16" />
           <span class="app-menu__text">{{ route.text }}</span>
         </router-link>
+        <ul v-if="route.children && !route.meta.hide" class="app-submenu__list">
+          <li v-for="(child, i) in route.children" :key="`child-${i}`" class="app-submenu__item">
+            <router-link :to="child.path" class="app-menu__link">
+              <span class="app-submenu__text">{{ child.text }}</span>
+            </router-link>
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>
@@ -21,7 +28,8 @@
 import SvgIcon from '@/SvgIcon'
 
 import Documentation from '../router/documentation'
-import Samples from '../router/samples'
+import Usage from '../router/usage'
+import Icons from 'router/icons'
 
 export default {
   name: 'AppMenu',
@@ -33,7 +41,8 @@ export default {
     return {
       routes: [
         Documentation,
-        Samples
+        Usage,
+        Icons
       ]
     }
   }
@@ -48,15 +57,17 @@ export default {
 }
 
 .app-menu__list,
-.app-menu__item{
-  margin:0;
-  padding:0;
+.app-menu__item,
+.app-submenu__list,
+.app-submenu__item {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .app-menu__item {
-  height: 40px;
+  min-height: 40px;
   line-height: 40px;
 
   + .app-menu__item{
@@ -83,8 +94,18 @@ export default {
     background-color: @menu_bg_color;
   }
 
+  &.checked{
+    .anchor(@primary_color);
+  }
+
   .svg-icon {
     padding-right: 10px;
+  }
+}
+
+.app-submenu__item {
+  .app-menu__link {
+    padding-left: 42px;
   }
 }
 
@@ -101,6 +122,10 @@ export default {
     .app-menu__text {
       display: none;
     }
+  }
+
+  .app-submenu {
+    display: none;
   }
 }
 </style>

@@ -4,14 +4,14 @@
 
 <script>
 /**
- * ModuleSamples.vue - Samples 模块
+ * ModuleUsage.vue - API Documentation 模块
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.08
+ * Update: 2022.10.18
  */
 export default {
-  name: 'ModuleSamples',
-  componentName: 'ModuleSamples'
+  name: 'ModuleDocumentation',
+  componentName: 'ModuleDocumentation'
 }
 </script>
 
