@@ -12,7 +12,7 @@ export const render = (iconSet) => {
   const $body = document.body
   const $firstChild = $body.firstChild
   const $icons = document.createElement('div')
-  const $svg = document.querySelector('#svg-icons')
+  let $svg = document.querySelector('#svg-icons')
   let html = ''
 
   // 绘制 default 图标集
@@ -22,9 +22,7 @@ export const render = (iconSet) => {
     })
   } else {
     // 绘制自定义的图标集
-    if (iconSet.symbols) {
-      symbols.push(...iconSet.symbols)
-    }
+    symbols.push(...iconSet.symbols)
   }
 
   html = symbols.join('')

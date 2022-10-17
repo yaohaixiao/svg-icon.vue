@@ -98,9 +98,10 @@ import { render } from 'svg-icon.vue/utils/utils'
 render(fontAwesomeSet)
 ```
 
-使用 render() 方法绘制 svg 图标后，就可以调用 SvgIcon 组件显示图标了。
 
 ### Import package
+
+使用 render() 方法绘制 svg 图标后，就可以调用 SvgIcon 组件显示图标了。
 
 ```js
 // 导入SvgIcon组件
@@ -113,7 +114,7 @@ export default {
 }
 ```
 
-### SvgIcon.vue
+### SvgIcon 组件
 
 SvgIcon.vue 是 svg-icon.vue 的核心组件，用来显示 render() 方法绘制的 svg 图标集中的图标。
 
@@ -165,7 +166,7 @@ export default {
 
 ### Set color
 
-SvgIcon 组件即可以使用包含 icon 的父节点设置 CSS 样式控制图标颜色，也可以直接设置 color属性设置颜色。
+SvgIcon 组件即可以使用包含 icon 的父节点设置 CSS 样式控制图标颜色，也可以直接设置 color 属性设置颜色。
 
 #### Set color with CSS
 
@@ -262,8 +263,26 @@ export default {
 
 ### Use Customized Icon Set
 
-```vue
+```js
+/**
+ * ico-moon.js - icoMoon 图标集（图标集实例）
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.16
+ */
+const icoMoonSet = {
+  title: 'icoMoon 图标集',
+  symbols: [
+    '<symbol id="icon-moon-home" viewBox="0 0 16 16"><path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path></symbol>',
+    '<symbol id="icon-moon-home2" viewBox="0 0 16 16"><path d="M8 0.5l-8 8 1.5 1.5 1.5-1.5v6.5h4v-3h2v3h4v-6.5l1.5 1.5 1.5-1.5-8-8zM8 7c-0.552 0-1-0.448-1-1s0.448-1 1-1c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path></symbol>',
+    '<symbol id="icon-moon-home3" viewBox="0 0 16 16"><path d="M16 9.5l-3-3v-4.5h-2v2.5l-3-3-8 8v0.5h2v5h5v-3h2v3h5v-5h2z"></path></symbol>'
+  ]
+}
 
+export default icoMoonSet
+```
+
+```vue
 <template>
   <span class="case-icon">
     <svg-icon name="moon-home" :size="24"/>
@@ -291,24 +310,6 @@ export default {
 </script>
 ```
 
-```js
-/**
- * ico-moon.js - icoMoon 图标集
- * =============================================================
- * Created By: Yaohaixiao
- * Update: 2022.10.16
- */
-const icoMoonSet = {
-  title: 'icoMoon 图标集',
-  symbols: [
-    '<symbol id="icon-moon-home" viewBox="0 0 16 16"><path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path></symbol>',
-    '<symbol id="icon-moon-home2" viewBox="0 0 16 16"><path d="M8 0.5l-8 8 1.5 1.5 1.5-1.5v6.5h4v-3h2v3h4v-6.5l1.5 1.5 1.5-1.5-8-8zM8 7c-0.552 0-1-0.448-1-1s0.448-1 1-1c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path></symbol>',
-    '<symbol id="icon-moon-home3" viewBox="0 0 16 16"><path d="M16 9.5l-3-3v-4.5h-2v2.5l-3-3-8 8v0.5h2v5h5v-3h2v3h5v-5h2z"></path></symbol>'
-  ]
-}
-
-export default icoMoonSet
-```
 
 ## Samples
 

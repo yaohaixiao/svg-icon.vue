@@ -13,18 +13,99 @@
           svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。
         </p>
         <h2 class="article__h2">安装</h2>
-        <p>svg-icon.vue 的安装十分简单，可以直接在命令行运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：</p>
+        <p>svg-icon.vue 的安装十分简单，可以直接在命令行中运行 npm install 命令安装，也可以直接在项目的 package.js 中配置依赖：</p>
         <h3 class="article__h3">在命令行中安装</h3>
         <pre class="article__pre"><code class="article__code">npm i @yaohaixiao/svg-icon.vue</code></pre>
         <h3 class="article__h3">在 package.js 文件中添加依赖</h3>
         <pre class="article__pre"><code class="article__code">"@yaohaixiao/svg-icon.vue": "1.x.x"</code></pre>
-        <h2 class="article__h2">调用语法</h2>
+        <h2 class="article__h2">render() 方法</h2>
+        <p>SvgIcon 组件至 2.0.0 版本开始，不再直接绘制 default 图标集。需要手动导入 render() 方法。</p>
+        <pre class="article__pre"><code class="article__code">import { render } from 'svg-icon.vue/utils/utils'</code></pre>
+        <h3 class="article__h3">调用语法</h3>
+        <pre class="article__pre"><code class="article__code">render(iconSet)</code></pre>
+        <h3 class="article__h3">参数说明</h3>
+        <table class="article__table">
+          <thead>
+          <tr>
+            <th>参数</th>
+            <th>类型</th>
+            <th>可选值</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>iconSet</td>
+            <td>Object</td>
+            <td>--</td>
+            <td>--</td>
+            <td>可选，图标集数据对象。</td>
+          </tr>
+          <tr>
+            <td>iconSet.title</td>
+            <td>String</td>
+            <td>--</td>
+            <td>--</td>
+            <td>必选，图标集名称。</td>
+          </tr>
+          <tr>
+            <td>iconSet.symbols</td>
+            <td>Array</td>
+            <td>--</td>
+            <td>--</td>
+            <td>必选，存储 svg 图标的 symbols 数组 图标集。</td>
+          </tr>
+          </tbody>
+        </table>
+        <p>绘制 default 图标集：</p>
+        <pre class="article__pre"><code class="article__code">import { render } from 'svg-icon.vue/utils/utils'
+// 不传递 iconSet 参数则绘制 default 图标集
+render()</code></pre>
+        <p>绘制自定义的图标集：</p>
+        <pre class="article__pre"><code class="article__code">import fontAwesomeSet from 'svg-icon.vue/assets/font-awesome'
+import { render } from 'svg-icon.vue/utils/utils'
+
+// 绘制 Font Awesome 免费版图标集
+render(fontAwesomeSet)</code></pre>
+        <p>以下是 svg-icon.vue 内置的所有图标集：</p>
+        <ol>
+          <li><a href="http://brankic1979.com/icons/">Brankic 1979</a>：svg-icon.vue/assets/brankic-1979</li>
+          <li><a href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons">Broccolidry</a>：svg-icon.vue/assets/broccolidry</li>
+          <li><a href="https://github.com/yaohaixiao/svg-icon.vue">Default</a>：svg-icon.vue/assets/default</li>
+          <li><a href="http://dribbble.com/shots/928458-80-Shades-of-White-Icons">Eighty Shades</a>：svg-icon.vue/assets/eighty-shades</li>
+          <li><a href="http://www.entypo.com/">Entypo+</a>：svg-icon.vue/assets/entypo</li>
+          <li><a href="https://feathericons.com/">Feather</a>：svg-icon.vue/assets/feather</li>
+          <li><a href="https://github.com/FortAwesome/Font-Awesome">Font Awesome</a>：svg-icon.vue/assets/font-awesome</li>
+          <li><a href="http://hawcons.com/">Hawcons</a>：svg-icon.vue/assets/hawcons</li>
+          <li><a href="https://github.com/somerandomdude/Iconic">Iconic</a>：svg-icon.vue/assets/iconic</li>
+          <li><a href="https://designmodo.com/linecons-free/">Linecons</a>：svg-icon.vue/assets/linecons</li>
+          <li><a href="https://material.io/resources/icons">Material</a>：svg-icon.vue/assets/material</li>
+          <li><a href="http://www.alessioatzeni.com/meteocons/">Meteocons</a>：svg-icon.vue/assets/meteocons</li>
+          <li><a href="http://dribbble.com/shots/929153-Steady-set-of-icons">Steadysets</a>：svg-icon.vue/assets/steadysets</li>
+          <li><a href="http://typicons.com/">Typicons</a>：svg-icon.vue/assets/typicons</li>
+          <li><a href="https://designmodo.com/linecons-free/">Vicons</a>：svg-icon.vue/assets/vicons</li>
+          <li><a href="http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/">wpzoom</a>：svg-icon.vue/assets/wpzoom</li>
+          <li><a href="http://www.zondicons.com/">Zondicons</a>：svg-icon.vue/assets/zondicons</li>
+        </ol>
+        <p>以上图标集除 Google 的 Material 图标集采用 Apache License 2.0 协议，其余的图标库基本都可以直接用于商业用途。使用时请根据需要选择使用。</p>
+        <h2 class="article__h2">导入 SvgIcon 组件</h2>
+        <p>使用 render() 方法绘制 svg 图标集后，就可以调用 SvgIcon 组件显示图标了。</p>
+        <pre class="article__pre"><code class="article__code">import SvgIcon from 'svg-icon.vue'
+
+export default {
+  components: {
+    SvgIcon
+  }
+}</code></pre>
+        <h2 class="article__h2">SvgIcon 组件</h2>
+        <p>SvgIcon.vue 是 svg-icon.vue 的核心组件，用来显示 render() 方法绘制的 svg 图标集中的图标。</p>
+        <h3 class="article__h3">调用语法</h3>
         <p>
           SvgIcon 组件使用起来十分简单，调用语法如下：
         </p>
         <pre class="article__pre"><code class="article__code">&lt;svg-icon :name="iconName" :size="iconSize" :color="iconColor" /&gt;</code></pre>
-
-        <h2 class="article__h2">参数说明</h2>
+        <h3 class="article__h3">参数说明</h3>
         <table class="article__table">
           <thead>
           <tr>
@@ -59,7 +140,9 @@
           </tr>
           </tbody>
         </table>
-        <h2 class="article__h2">基础用法</h2>
+        <h2 class="article__h2">调用用法</h2>
+        <p>SvgIcon 组件的使用方法如下：</p>
+        <h2 class="article__h3">基础用法</h2>
         <usage-case>
           <template v-slot:case>
             <usage-case-item>
@@ -76,12 +159,25 @@
   &lt;svg-icon name="plugins" /&gt;
   &lt;svg-icon name="database-read" :size="24" /&gt;
   &lt;svg-icon name="database-lock" :size="32" /&gt;
-&lt;/template&gt;</code></pre>
+&lt;/template&gt;
+
+&lt;script&gt;
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
+
+render()
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+&lt;/script&gt;</code></pre>
           </template>
         </usage-case>
-        <h2 class="article__h2">设置颜色</h2>
-        <p>SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS 样式控制图标颜色，也可以直接设置 color属性设置颜色。</p>
-        <h3 class="article__h3">通过 CSS 设置颜色</h3>
+        <h3 class="article__h3">设置颜色</h3>
+        <p>SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS 样式控制图标颜色，也可以直接设置 color 属性设置颜色。</p>
+        <h4 class="article__h4">通过 CSS 设置颜色</h4>
         <usage-case>
           <template v-slot:case>
             <usage-case-item>
@@ -97,7 +193,7 @@
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            通过 CSS 设置颜色，图标的颜色与 case-icon 元素的 color 值一致。
+            通过设置 SvgIcon 父组件的 CSS 颜色，SvgIcon 组件的图标颜色将其父元素 case-icon 的 color 值一致。
           </template>
           <template v-slot:code>
             <pre class="article__pre"><code class="article__code">&lt;template&gt;
@@ -112,23 +208,36 @@
   &lt;/span&gt;
 &lt;/template&gt;
 
-&lt;style lang="less"&gt;
-.case-icon {
-  display: inline-block;
-  margin: 0 8px;
-  color: @third_text_color;
-  vertical-align: middle;
-  cursor:pointer;
-  overflow: hidden;
+&lt;script&gt;
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
 
-  &amp;:hover {
-    color: @primary_color;
+render()
+
+export default {
+  components: {
+    SvgIcon
   }
 }
+&lt;/script&gt;
+
+&lt;style scoped lang="less"&gt;
+  .case-icon {
+    display: inline-block;
+    margin: 0 8px;
+    color: @third_text_color;
+    vertical-align: middle;
+    cursor:pointer;
+    overflow: hidden;
+
+    &amp;:hover {
+      color: @primary_color;
+    }
+  }
 &lt;/style&gt;</code></pre>
           </template>
         </usage-case>
-        <h3 class="article__h3">通过 color 属性设置颜色</h3>
+        <h4 class="article__h4">通过 color 属性设置颜色</h4>
         <usage-case>
           <template v-slot:case>
             <usage-case-item>
@@ -144,7 +253,7 @@
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            通过 color 属性设置颜色，此时父节点使用 CSS 设置了样式对 icon 的颜色控制失效。在图标颜色固定不变时，可直接使用 color 参数设置颜色。
+            设置 color 属性后，SvgIcon 的父组件通过 CSS 设置的 color 样式将不再起作用。
           </template>
           <template v-slot:code>
             <pre class="article__pre"><code class="article__code">&lt;template&gt;
@@ -157,7 +266,35 @@
   &lt;span class="case-icon"&gt;
     &lt;svg-icon name="aside-pc" :size="24" color="#FF9901"/&gt;
   &lt;/span&gt;
-&lt;/template&gt;</code></pre>
+&lt;/template&gt;
+
+&lt;script&gt;
+import { render } from 'svg-icon.vue/utils/utils'
+import SvgIcon from 'svg-icon.vue'
+
+render()
+
+export default {
+  components: {
+    SvgIcon
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped lang="less"&gt;
+  .case-icon {
+    display: inline-block;
+    margin: 0 8px;
+    color: @third_text_color;
+    vertical-align: middle;
+    cursor:pointer;
+    overflow: hidden;
+
+    &amp;:hover {
+      color: @primary_color;
+    }
+  }
+&lt;/style&gt;</code></pre>
           </template>
         </usage-case>
         <h2 class="article__h2">高级用法</h2>
@@ -193,7 +330,7 @@
 &lt;/template&gt;
 
 &lt;script&gt;
-// ico-moon.js
+// ico-moon.js - 图标集实例
 // =============================================================
 // icoMoonSet(自定义图标集)的格式如下：
 // const icoMoonSet = {
@@ -215,7 +352,6 @@ import { render } from 'svg-icon.vue/utils/utils'
 // 绘制自定义图标集
 render(icoMoonSet)
 
-// 在调用 SvgIcon 组件的 VUE 组件初始化前使用 render() 方法
 export default {
   // 其他逻辑
 }

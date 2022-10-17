@@ -5,10 +5,10 @@ import {
 import icoMoonSet from '../documentation/assets/ico-moon'
 import SvgIcon from '../src/SvgIcon'
 
-import icons from '@/assets/default'
 import { render } from '@/utils/utils'
 
 const ICON_HOME = 'moon-home'
+const PATH = '<path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path>'
 
 describe('SvgIcon.vue', () => {
   let wrapper
@@ -102,27 +102,29 @@ describe('SvgIcon.vue', () => {
     expect(wrapper.vm.binds).toEqual(binds)
   })
 
-  it('render() 加载自定义图标集：不追加至内置图标库', async () => {
-    render(icoMoonSet)
+  it('render()：加载 default 图标库', async () => {
+    render()
 
-    const icon = icons.find((iconSet) => {
-      return iconSet.symbols.find((symbol) => {
-        return symbol.indexOf(`icon-${ICON_HOME}`) > -1
-      })
-    })
+    const $svg = document.querySelector('#svg-icons')
+    const $first = $svg.firstChild
+    const $last = $svg.lastChild
 
-    expect(icon).toBe(undefined)
+    expect($first.id).toEqual('icon-nav-app-store')
+    expect($last.id).toEqual('icon-close')
   })
 
-  it('render() 加载自定义图标集：追加至内置图标库', async () => {
-    render(icoMoonSet, true)
+  it('render() ：加载自定义图标集', async () => {
+    render(icoMoonSet)
 
-    const icon = icons.find((iconSet) => {
-      return iconSet.symbols.find((symbol) => {
-        return symbol.indexOf(`icon-${ICON_HOME}`) > -1
-      })
-    })
+    const $svg = document.querySelector('#svg-icons')
+    const $symbols = document.querySelector(`#icon-${ICON_HOME}`)
+    const $last = $svg.lastChild
 
-    expect(icon.title).toEqual('icoMoon 图标集')
+    expect($symbols.innerHTML).toEqual(PATH)
+    expect($last.id).toEqual('icon-moon-home3')
+  })
+
+  it('生成组件渲染快照', () => {
+    expect(wrapper.element).toMatchSnapshot()
   })
 })
