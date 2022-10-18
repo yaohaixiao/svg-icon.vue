@@ -21,13 +21,19 @@ import pairedSet from './paired'
 // 通用类图标
 import genericSet from './generic'
 
-export default [
-  boldSet,
-  solidSet,
-  stateSet,
-  fileSet,
-  languageSet,
-  arrowSet,
-  pairedSet,
-  genericSet
-]
+const symbols = []
+
+symbols.push(...boldSet.symbols)
+symbols.push(...solidSet.symbols)
+symbols.push(...stateSet.symbols)
+symbols.push(...fileSet.symbols)
+symbols.push(...languageSet.symbols)
+symbols.push(...arrowSet.symbols)
+symbols.push(...pairedSet.symbols)
+symbols.push(...genericSet.symbols)
+
+export default {
+  title: 'Default',
+  code: 'default',
+  symbols: symbols
+}

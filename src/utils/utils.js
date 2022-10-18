@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.13
  */
-import icons from '../assets/default'
+import defaultSet from '../assets/default'
 
 const symbols = []
 
@@ -17,9 +17,7 @@ export const render = (iconSet) => {
 
   // 绘制 default 图标集
   if (!iconSet) {
-    icons.forEach((item) => {
-      symbols.push(...item.symbols)
-    })
+    symbols.push(...defaultSet.symbols)
   } else {
     // 绘制自定义的图标集
     symbols.push(...iconSet.symbols)

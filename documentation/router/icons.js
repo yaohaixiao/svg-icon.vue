@@ -125,6 +125,66 @@ export default {
       },
       component: () =>
         import(/* webpackChunkName: "PageMaterialIcons" */ '../pages/Icons/PageMaterialIcons')
+    },
+    {
+      text: 'Meteocons',
+      name: 'PageMeteoconsIcons',
+      path: 'meteocons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageMeteoconsIcons" */ '../pages/Icons/PageMeteoconsIcons')
+    },
+    {
+      text: 'Steadysets',
+      name: 'PageSteadysetsIcons',
+      path: 'steadysets',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageSteadysetsIcons" */ '../pages/Icons/PageSteadysetsIcons')
+    },
+    {
+      text: 'Typicons',
+      name: 'PageTypiconsIcons',
+      path: 'typicons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageTypiconsIcons" */ '../pages/Icons/PageTypiconsIcons')
+    },
+    {
+      text: 'Vicons',
+      name: 'PageViconsIcons',
+      path: 'Vicons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageViconsIcons" */ '../pages/Icons/PageViconsIcons')
+    },
+    {
+      text: 'Wpzoom',
+      name: 'PageWpzoomIcons',
+      path: 'wpzoom',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageWpzoomIcons" */ '../pages/Icons/PageWpzoomIcons')
+    },
+    {
+      text: 'Zondicons',
+      name: 'PageZondiconsIcons',
+      path: 'zondicons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageZondiconsIcons" */ '../pages/Icons/PageZondiconsIcons')
     }
   ]
 }

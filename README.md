@@ -296,9 +296,12 @@ export default icoMoonSet
 </template>
 
 <script>
-import { render } from 'svg-icon.vue/utils/utils'
-import icoMoonSet from 'assets/ico-moon'
 import SvgIcon from 'svg-icon.vue'
+
+import { render } from 'svg-icon.vue/utils/utils'
+// 自定义图标集可以是从外部 .js 文件导入的模块
+// 也可以是类似 icoMoonSet 格式的 JavaScript 对象数据
+import icoMoonSet from 'assets/ico-moon'
 
 render(icoMoonSet)
 

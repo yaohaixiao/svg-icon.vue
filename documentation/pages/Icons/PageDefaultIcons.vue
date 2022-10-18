@@ -10,20 +10,94 @@
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Default 图标库</h1>
-        <template v-for="(svg, i) in icons">
-          <h2 :key="`title-${i}`" class="article__h2">{{ svg.title }}</h2>
-          <base-grid
-            :key="`grid-${i}`"
-            :columns="6"
-            :gap="10"
-            class="icons-grid">
-            <icon-cell
-              v-for="(symbol, j) in svg.symbols"
-              :key="`cell-${j}`"
-              :symbol="symbol"
-            />
-          </base-grid>
-        </template>
+        <h2 class="article__h2">{{ boldSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in boldSet.symbols"
+            :key="`bold-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ solidSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in solidSet.symbols"
+            :key="`solid-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ stateSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in stateSet.symbols"
+            :key="`state-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ fileSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in fileSet.symbols"
+            :key="`file-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ languageSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in languageSet.symbols"
+            :key="`language-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ arrowSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in arrowSet.symbols"
+            :key="`arrow-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ pairedSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in pairedSet.symbols"
+            :key="`paired-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
+        <h2 class="article__h2">{{ genericSet.title }}</h2>
+        <base-grid
+          :columns="6"
+          :gap="10"
+          class="icons-grid">
+          <icon-cell
+            v-for="(symbol, j) in genericSet.symbols"
+            :key="`generic-${j}`"
+            :symbol="symbol"
+          />
+        </base-grid>
       </article>
     </base-main>
   </base-container>
@@ -45,7 +119,22 @@ import BaseGrid from 'components/BaseGrid'
 
 import IconCell from './components/IconCell'
 
-import icons from '@/assets/default'
+// 粗线条图标
+import boldSet from '@/assets/default/bold'
+// 实心图标
+import solidSet from '@/assets/default/solid'
+// 功能性图标
+import stateSet from '@/assets/default/state'
+// 文件类图标
+import fileSet from '@/assets/default/file'
+// 开发语言类图标
+import languageSet from '@/assets/default/language'
+// 箭头类图标
+import arrowSet from '@/assets/default/arrow'
+// 成对的图标
+import pairedSet from '@/assets/default/paired'
+// 通用类图标
+import genericSet from '@/assets/default/generic'
 
 export default {
   name: 'PageDefaultIcons',
@@ -61,7 +150,14 @@ export default {
   },
   data() {
     return {
-      icons
+      boldSet,
+      solidSet,
+      stateSet,
+      fileSet,
+      languageSet,
+      arrowSet,
+      pairedSet,
+      genericSet
     }
   }
 }
