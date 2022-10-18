@@ -4,19 +4,19 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Broccolidry</breadcrumb-nav-item>
+        <breadcrumb-nav-item current>Entypo+</breadcrumb-nav-item>
       </breadcrumb-nav>
     </base-header>
     <base-main padding="outer">
       <article class="article">
-        <h1 class="article__h1">Broccolidry</h1>
-        <h2 class="article__h2">{{ broccolidrySet.title }}</h2>
+        <h1 class="article__h1">Entypo+</h1>
+        <h2 class="article__h2">{{ entypoSet.title }}</h2>
         <base-grid
           :columns="6"
           :gap="10"
           class="icons-grid">
           <icon-cell
-            v-for="(symbol, j) in broccolidrySet.symbols"
+            v-for="(symbol, j) in entypoSet.symbols"
             :key="`cell-${j}`"
             :symbol="symbol"
           />
@@ -28,7 +28,7 @@
 
 <script>
 /**
- * PageBroccolidryIcons.vue - Broccolidry Icons 示例页面
+ * PageEntypoPlusIcons.vue - Entypo+ Icons 示例页面
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.18
@@ -43,13 +43,13 @@ import BaseGrid from 'components/BaseGrid'
 import IconCell from './components/IconCell'
 
 import { render } from '@/utils/utils'
-import broccolidrySet from '@/assets/broccolidry'
+import entypoSet from '@/assets/entypo'
 
-render(broccolidrySet)
+render(entypoSet)
 
 export default {
-  name: 'PageBroccolidryIcons',
-  componentName: 'PageBroccolidryIcons',
+  name: 'PageEntypoPlusIcons',
+  componentName: 'PageEntypoPlusIcons',
   components: {
     BaseContainer,
     BaseHeader,
@@ -61,7 +61,7 @@ export default {
   },
   data() {
     return {
-      broccolidrySet
+      entypoSet
     }
   }
 }

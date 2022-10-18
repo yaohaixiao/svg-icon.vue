@@ -13,7 +13,7 @@
  * SvgIcon.vue - SVG 图标显示组件
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.8
+ * Update: 2022.10.18
  */
 export default {
   name: 'SvgIcon',
@@ -55,6 +55,13 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import './svg-icon';
+<style>
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
+  overflow: hidden;
+}
 </style>

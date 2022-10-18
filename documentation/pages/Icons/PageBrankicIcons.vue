@@ -4,7 +4,7 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Brankic 1979 Icons</breadcrumb-nav-item>
+        <breadcrumb-nav-item current>Brankic 1979</breadcrumb-nav-item>
       </breadcrumb-nav>
     </base-header>
     <base-main padding="outer">

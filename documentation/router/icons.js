@@ -45,6 +45,86 @@ export default {
       },
       component: () =>
         import(/* webpackChunkName: "PageBroccolidryIcons" */ '../pages/Icons/PageBroccolidryIcons')
+    },
+    {
+      text: 'Eighty Shades',
+      name: 'PageEightyShadesIcons',
+      path: 'eighty-shades',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageEightyShadesIcons" */ '../pages/Icons/PageEightyShadesIcons')
+    },
+    {
+      text: 'Entypo+',
+      name: 'PageEntypoPlusIcons',
+      path: 'entypo-plus',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageEntypoPlusIcons" */ '../pages/Icons/PageEntypoPlusIcons')
+    },
+    {
+      text: 'Feather',
+      name: 'PageFeatherIcons',
+      path: 'feather',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageFeatherIcons" */ '../pages/Icons/PageFeatherIcons')
+    },
+    {
+      text: 'Font Awesome',
+      name: 'PageFontAwesomeIcons',
+      path: 'font-awesome',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageFontAwesomeIcons" */ '../pages/Icons/PageFontAwesomeIcons')
+    },
+    {
+      text: 'Hawcons',
+      name: 'PageHawconsIcons',
+      path: 'hawcons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageHawconsIcons" */ '../pages/Icons/PageHawconsIcons')
+    },
+    {
+      text: 'Iconic',
+      name: 'PageIconicIcons',
+      path: 'iconic',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageIconicIcons" */ '../pages/Icons/PageIconicIcons')
+    },
+    {
+      text: 'Linecons',
+      name: 'PageLineconsIcons',
+      path: 'linecons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageLineconsIcons" */ '../pages/Icons/PageLineconsIcons')
+    },
+    {
+      text: 'Material',
+      name: 'PageMaterialIcons',
+      path: 'material',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(/* webpackChunkName: "PageMaterialIcons" */ '../pages/Icons/PageMaterialIcons')
     }
   ]
 }

@@ -4,19 +4,19 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Broccolidry</breadcrumb-nav-item>
+        <breadcrumb-nav-item current>Iconic</breadcrumb-nav-item>
       </breadcrumb-nav>
     </base-header>
     <base-main padding="outer">
       <article class="article">
-        <h1 class="article__h1">Broccolidry</h1>
-        <h2 class="article__h2">{{ broccolidrySet.title }}</h2>
+        <h1 class="article__h1">Iconic</h1>
+        <h2 class="article__h2">{{ iconicSet.title }}</h2>
         <base-grid
           :columns="6"
           :gap="10"
           class="icons-grid">
           <icon-cell
-            v-for="(symbol, j) in broccolidrySet.symbols"
+            v-for="(symbol, j) in iconicSet.symbols"
             :key="`cell-${j}`"
             :symbol="symbol"
           />
@@ -28,7 +28,7 @@
 
 <script>
 /**
- * PageBroccolidryIcons.vue - Broccolidry Icons 示例页面
+ * PageIconicIcons.vue - Iconic Icons 示例页面
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.18
@@ -43,13 +43,13 @@ import BaseGrid from 'components/BaseGrid'
 import IconCell from './components/IconCell'
 
 import { render } from '@/utils/utils'
-import broccolidrySet from '@/assets/broccolidry'
+import iconicSet from '@/assets/iconic'
 
-render(broccolidrySet)
+render(iconicSet)
 
 export default {
-  name: 'PageBroccolidryIcons',
-  componentName: 'PageBroccolidryIcons',
+  name: 'PageIconicIcons',
+  componentName: 'PageIconicIcons',
   components: {
     BaseContainer,
     BaseHeader,
@@ -61,7 +61,7 @@ export default {
   },
   data() {
     return {
-      broccolidrySet
+      iconicSet
     }
   }
 }

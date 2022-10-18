@@ -8,7 +8,7 @@
         </router-link>
         <ul v-if="route.children && !route.meta.hide" class="app-submenu__list">
           <li v-for="(child, i) in route.children" :key="`child-${i}`" class="app-submenu__item">
-            <router-link :to="child.path" class="app-menu__link">
+            <router-link :to="{name: child.name}" class="app-menu__link">
               <span class="app-submenu__text">{{ child.text }}</span>
             </router-link>
           </li>

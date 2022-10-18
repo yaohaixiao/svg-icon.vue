@@ -4,17 +4,17 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Default Icons</breadcrumb-nav-item>
+        <breadcrumb-nav-item current>Default</breadcrumb-nav-item>
       </breadcrumb-nav>
     </base-header>
     <base-main padding="outer">
       <article class="article">
-        <h1 class="article__h1">Default</h1>
+        <h1 class="article__h1">Default 图标库</h1>
         <template v-for="(svg, i) in icons">
           <h2 :key="`title-${i}`" class="article__h2">{{ svg.title }}</h2>
           <base-grid
             :key="`grid-${i}`"
-            :columns="8"
+            :columns="6"
             :gap="10"
             class="icons-grid">
             <icon-cell
