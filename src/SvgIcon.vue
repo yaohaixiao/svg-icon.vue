@@ -24,10 +24,7 @@ export default {
       default: ''
     },
     size: {
-      type: [
-        String,
-        Number
-      ],
+      type: [String, Number],
       default: 16
     },
     color: {
@@ -48,7 +45,7 @@ export default {
       return {
         width: `${size}px`,
         height: `${size}px`,
-        color: color
+        color
       }
     }
   }

@@ -6,12 +6,13 @@
  */
 const path = require('path')
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 
 const pkg = require('./package.json')
 
-const resolve = dir => {
+const resolve = (dir) => {
   return path.join(__dirname, dir)
 }
 
@@ -30,10 +31,8 @@ module.exports = {
   },
   pluginOptions: {
     'style-resources-loader': {
-      'preProcessor': 'less',
-      'patterns': [
-        path.resolve(__dirname, './documentation/theme/index.less')
-      ]
+      preProcessor: 'less',
+      patterns: [path.resolve(__dirname, './documentation/theme/index.less')]
     }
   },
   configureWebpack: {
@@ -58,16 +57,12 @@ module.exports = {
   },
   chainWebpack(config) {
     // when process.env.npm_config_report is true , build analyzer
-    config.when(process.env.npm_config_report, config => {
-      config
-        .plugin('bundle-analyzer')
-        .use(BundleAnalyzerPlugin)
-        .end()
+    config.when(process.env.npm_config_report, (config) => {
+      config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()
     })
 
-    config
-      .plugin('html')
-      .tap(args => {
+    config.when(process.env.BUILD_FOR === 'docs', (config) => {
+      config.plugin('html').tap((args) => {
         const description = `${pkg.description}`
 
         args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
@@ -77,19 +72,21 @@ module.exports = {
         return args
       })
 
-    // it can improve the speed of the first screen, it is recommended to turn on preload
-    config.plugin('preload').use(PreloadWebpackPlugin).tap(() => [
-      {
-        rel: 'preload',
-        // to ignore runtime.js
-        // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
-        fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
-        // initial, asyncChunks, all, allAssets
-        include: 'initial'
-      }
-    ])
+      // it can improve the speed of the first screen, it is recommended to turn on preload
+      config
+        .plugin('preload')
+        .use(PreloadWebpackPlugin)
+        .tap(() => [
+          {
+            rel: 'preload',
+            // to ignore runtime.js
+            // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+            fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
+            // initial, asyncChunks, all, allAssets
+            include: 'initial'
+          }
+        ])
 
-    config.when(process.env.BUILD_FOR === 'docs', config => {
       config.optimization.splitChunks({
         chunks: 'all',
         cacheGroups: {

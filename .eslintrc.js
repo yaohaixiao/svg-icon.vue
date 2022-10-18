@@ -14,6 +14,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:prettier/recommended',
     'plugin:vue/essential'
   ],
   globals: {
@@ -31,15 +32,10 @@ module.exports = {
       jsx: false
     }
   },
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/**/*.spec.{j,t}s?(x)'
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true
       }

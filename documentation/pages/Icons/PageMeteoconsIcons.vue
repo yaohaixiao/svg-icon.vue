@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left"
+          >Home</breadcrumb-nav-item
+        >
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Meteocons</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,9 +25,19 @@
           <icon-cell
             v-for="(symbol, j) in meteoconsSet.symbols"
             :key="`cell-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
+        <h2 class="article__h2">Copyright</h2>
+        <ul>
+          <li>Designer：Alessio Atzeni</li>
+          <li>
+            Homepage:
+            <a href="http://www.alessioatzeni.com/meteocons/"
+              >http://www.alessioatzeni.com/meteocons/</a
+            >
+          </li>
+          <li>License：Custom (both commercial and personal)</li>
+        </ul>
       </article>
     </base-main>
   </base-container>

@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left"
+          >Home</breadcrumb-nav-item
+        >
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Brankic 1979</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,9 +25,20 @@
           <icon-cell
             v-for="(symbol, j) in brankic1979Set.symbols"
             :key="`cell-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
+        <h2 class="article__h2">Copyright</h2>
+        <ul>
+          <li>Designer：Brankic1979</li>
+          <li>
+            Homepage:
+            <a
+              href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons"
+              >http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons</a
+            >
+          </li>
+          <li>License：Custom (free to use)</li>
+        </ul>
       </article>
     </base-main>
   </base-container>

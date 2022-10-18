@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left"
+          >Home</breadcrumb-nav-item
+        >
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>wpzoom</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,9 +25,20 @@
           <icon-cell
             v-for="(symbol, j) in wpzoomSet.symbols"
             :key="`cell-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
+        <h2 class="article__h2">Copyright</h2>
+        <ul>
+          <li>Designer：David Ferreira</li>
+          <li>
+            Homepage:
+            <a
+              href="http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/"
+              >http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/</a
+            >
+          </li>
+          <li>License：CC BY-SA 3.0</li>
+        </ul>
       </article>
     </base-main>
   </base-container>

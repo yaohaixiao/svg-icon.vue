@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left"
+          >Home</breadcrumb-nav-item
+        >
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Steadysets</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,9 +25,19 @@
           <icon-cell
             v-for="(symbol, j) in steadysetsSet.symbols"
             :key="`cell-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
+        <h2 class="article__h2">Copyright</h2>
+        <ul>
+          <li>Designer：Tommy Sähl</li>
+          <li>
+            Homepage:
+            <a href="http://dribbble.com/shots/929153-Steady-set-of-icons"
+              >http://dribbble.com/shots/929153-Steady-set-of-icons</a
+            >
+          </li>
+          <li>License：Custom (Free to use)</li>
+        </ul>
       </article>
     </base-main>
   </base-container>

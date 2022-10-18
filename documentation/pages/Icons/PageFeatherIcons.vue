@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left"
+          >Home</breadcrumb-nav-item
+        >
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Feather</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,9 +25,17 @@
           <icon-cell
             v-for="(symbol, j) in featherSet.symbols"
             :key="`cell-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
+        <h2 class="article__h2">Copyright</h2>
+        <ul>
+          <li>Designer：Cole Bemis</li>
+          <li>
+            Homepage:
+            <a href="https://feathericons.com/">https://feathericons.com/</a>
+          </li>
+          <li>License：MIT</li>
+        </ul>
       </article>
     </base-main>
   </base-container>

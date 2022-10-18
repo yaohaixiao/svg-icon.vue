@@ -1,14 +1,28 @@
 <template>
   <nav class="app-menu">
     <ul class="app-menu__list">
-      <li v-for="(route, i) in routes" :key="`menu-${i}`" class="app-menu__item">
-        <router-link :to="`/${route.path}`" class="app-menu__link">
-          <svg-icon :name="route.icon" :size="16" />
+      <li
+        v-for="(route, i) in routes"
+        :key="`menu-${i}`"
+        class="app-menu__item">
+        <router-link
+          :to="`/${route.path}`"
+          class="app-menu__link">
+          <svg-icon
+            :name="route.icon"
+            :size="16" />
           <span class="app-menu__text">{{ route.text }}</span>
         </router-link>
-        <ul v-if="route.children && !route.meta.hide" class="app-submenu__list">
-          <li v-for="(child, i) in route.children" :key="`child-${i}`" class="app-submenu__item">
-            <router-link :to="{name: child.name}" class="app-menu__link">
+        <ul
+          v-if="route.children && !route.meta.hide"
+          class="app-submenu__list">
+          <li
+            v-for="(child, i) in route.children"
+            :key="`child-${i}`"
+            class="app-submenu__item">
+            <router-link
+              :to="{ name: child.name }"
+              class="app-menu__link">
               <span class="app-submenu__text">{{ child.text }}</span>
             </router-link>
           </li>
@@ -39,11 +53,7 @@ export default {
   },
   data() {
     return {
-      routes: [
-        Documentation,
-        Usage,
-        Icons
-      ]
+      routes: [Documentation, Usage, Icons]
     }
   }
 }
@@ -70,8 +80,8 @@ export default {
   min-height: 40px;
   line-height: 40px;
 
-  + .app-menu__item{
-    margin-top:5px;
+  + .app-menu__item {
+    margin-top: 5px;
   }
 }
 
@@ -89,12 +99,12 @@ export default {
   .ellipsis(1);
   .anchor(@third_text_color);
 
-  &.active{
+  &.active {
     .anchor(@primary_color);
     background-color: @menu_bg_color;
   }
 
-  &.checked{
+  &.checked {
     .anchor(@primary_color);
   }
 
@@ -110,6 +120,10 @@ export default {
 }
 
 .base-aside--collapsed {
+  .app-menu {
+    width: 47px;
+  }
+
   .app-menu__link {
     padding: 0;
     width: 100%;
@@ -124,7 +138,7 @@ export default {
     }
   }
 
-  .app-submenu {
+  .app-submenu__list {
     display: none;
   }
 }

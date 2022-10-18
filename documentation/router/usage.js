@@ -7,8 +7,9 @@
 export default {
   text: 'Usage',
   path: 'usage',
-  icon: 'card-logs',
-  component: () => import(/* webpackChunkName: "ModuleUsage" */ '../pages/Usage/ModuleUsage'),
+  icon: 'aside-modeling',
+  component: () =>
+    import(/* webpackChunkName: "ModuleUsage" */ '../pages/Usage/ModuleUsage'),
   meta: {
     hide: true
   },
