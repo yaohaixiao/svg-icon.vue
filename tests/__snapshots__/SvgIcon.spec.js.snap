@@ -11,3 +11,15 @@ exports[`SvgIcon.vue 生成组件渲染快照 1`] = `
   />
 </svg>
 `;
+
+exports[`SvgIcon.vue 生成组件渲染快照 2`] = `
+<svg
+  aria-hidden="true"
+  class="svg-icon"
+  style="width: 28px; height: 28px; color: rgb(255, 0, 0);"
+>
+  <use
+    xlink:href="#icon-cancel"
+  />
+</svg>
+`;

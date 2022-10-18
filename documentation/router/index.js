@@ -8,7 +8,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Documentation from './documentation'
-import Samples from './samples'
+import Usage from './usage'
+import Samples from './icons'
 
 Vue.use(Router)
 
@@ -21,6 +22,7 @@ const routes = [
     redirect: '/docs',
     children: [
       Documentation,
+      Usage,
       Samples
     ]
   }

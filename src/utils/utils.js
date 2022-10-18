@@ -6,33 +6,24 @@
  */
 import icons from '../assets/default'
 
-/**
- * 绘制 svg 图标集
- * =============================================================
- * @param {Object} [iconSet] - 图标集对象数据
- * @param {String} iconSet.title - 图标集标题
- * @param {Array} iconSet.symbols - 图标集数组
- * @param {Boolean} [append] - 是否追加到内置图标集，默认值：false
- */
-export const render = (iconSet, append = false) => {
+const symbols = []
+
+export const render = (iconSet) => {
   const $body = document.body
   const $firstChild = $body.firstChild
   const $icons = document.createElement('div')
-  const $svg = document.querySelector('#svg-icons')
-  const symbols = []
+  let $svg = document.querySelector('#svg-icons')
   let html = ''
 
-  if (iconSet && iconSet.symbols) {
-    if (append) {
-      icons.push(iconSet)
-    } else {
-      symbols.push(...iconSet.symbols)
-    }
+  // 绘制 default 图标集
+  if (!iconSet) {
+    icons.forEach((item) => {
+      symbols.push(...item.symbols)
+    })
+  } else {
+    // 绘制自定义的图标集
+    symbols.push(...iconSet.symbols)
   }
-
-  icons.forEach((item) => {
-    symbols.push(...item.symbols)
-  })
 
   html = symbols.join('')
 

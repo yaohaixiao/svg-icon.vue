@@ -15,10 +15,6 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
-import { render } from './utils/utils'
-
-render()
-
 export default {
   name: 'SvgIcon',
   componentName: 'SvgIcon',
