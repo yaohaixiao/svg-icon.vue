@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/@yaohaixiao/svg-icon.vue)](https://www.npmjs.com/package/@yaohaixiao/svg-icon.vue)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+[![prettier code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Coverage](https://codecov.io/gh/yaohaixiao/svg-icon.vue/branch/main/graph/badge.svg)](https://codecov.io/gh/yaohaixiao/vg-icon.vue)
 [![npm downloads](https://img.shields.io/npm/dm/@yaohaixiao/svg-icon.vue)](https://npmcharts.com/compare/@yaohaixiao/svg-icon.vue?minimal=true)
 [![MIT License](https://img.shields.io/github/license/yaohaixiao/svg-icon.vue.svg)](https://github.com/yaohaixiao/svg-icon.vue/blob/master/LICENSE)
