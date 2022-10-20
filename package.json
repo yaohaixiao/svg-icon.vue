@@ -9,7 +9,7 @@
     "build:docs": "set BUILD_FOR=docs && vue-cli-service build ./documentation/main.js --dest docs",
     "build:packages": "vue-cli-service build --target lib --entry ./src/index.js --name svg-icon.vue --dest dist",
     "build": "npm run build:docs && npm run build:packages",
-    "lint": "npm run lint:style && npm run lint:script",
+    "lint": "npm run lint:style && npm run lint:script && npm run prettier:check",
     "lint:fix": "npm run lint:style:fix && npm run lint:script:fix",
     "lint:script": "vue-cli-service lint",
     "lint:script:fix": "npm run lint:script --cache --fix",
@@ -27,7 +27,6 @@
     "example": "documentation"
   },
   "dependencies": {
-    "less-loader": "^11.0.0",
     "vue": "^2.6.14"
   },
   "devDependencies": {
