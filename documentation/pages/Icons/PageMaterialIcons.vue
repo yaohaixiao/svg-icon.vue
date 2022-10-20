@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Material</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Google</li>
           <li>
             Homepage:
-            <a href="https://material.io/resources/icons"
-              >https://material.io/resources/icons</a
-            >
+            <a href="https://material.io/resources/icons">
+              https://material.io/resources/icons
+            </a>
           </li>
           <li>License：Apache License 2.0</li>
         </ul>

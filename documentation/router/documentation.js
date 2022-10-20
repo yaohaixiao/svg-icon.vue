@@ -8,7 +8,10 @@ export default {
   text: 'API Documentation',
   path: 'docs',
   icon: 'aside-pc',
-  component: () => import(/* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'),
+  component: () =>
+    import(
+      /* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'
+    ),
   meta: {
     hide: true
   },
@@ -21,7 +24,9 @@ export default {
         hide: false
       },
       component: () =>
-        import(/* webpackChunkName: "PageDocumentation" */ '../pages/Documentation/PageDocumentation')
+        import(
+          /* webpackChunkName: "PageDocumentation" */ '../pages/Documentation/PageDocumentation'
+        )
     }
   ]
 }

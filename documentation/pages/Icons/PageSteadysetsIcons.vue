@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Steadysets</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Tommy Sähl</li>
           <li>
             Homepage:
-            <a href="http://dribbble.com/shots/929153-Steady-set-of-icons"
-              >http://dribbble.com/shots/929153-Steady-set-of-icons</a
-            >
+            <a href="http://dribbble.com/shots/929153-Steady-set-of-icons">
+              http://dribbble.com/shots/929153-Steady-set-of-icons
+            </a>
           </li>
           <li>License：Custom (Free to use)</li>
         </ul>

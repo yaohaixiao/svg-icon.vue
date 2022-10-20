@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Vicons</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Victor Erixon</li>
           <li>
             Homepage:
-            <a href="https://designmodo.com/linecons-free/"
-              >https://designmodo.com/linecons-free/</a
-            >
+            <a href="https://designmodo.com/linecons-free/">
+              https://designmodo.com/linecons-free/
+            </a>
           </li>
           <li>License：Custom (Free to use)</li>
         </ul>

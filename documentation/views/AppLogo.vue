@@ -1,9 +1,16 @@
 <template>
-  <div class="app-logo" @click="toHome">
+  <div
+    class="app-logo"
+    @click="toHome">
     <span class="app-logo__icon">
-      <svg-icon name="card-deploy" :size="22" />
+      <svg-icon
+        name="card-deploy"
+        :size="22" />
     </span>
-    <h1 class="app-logo__title"><em class="app-logo__key">svg-icon</em>.vue</h1>
+    <h1 class="app-logo__title">
+      <em class="app-logo__key">svg-icon</em>
+      .vue
+    </h1>
   </div>
 </template>
 
@@ -51,7 +58,7 @@ export default {
   cursor: pointer;
   overflow: hidden;
 
-  &:hover{
+  &:hover {
     .app-logo__icon {
       background-color: @primary_color;
     }
@@ -81,8 +88,8 @@ export default {
 
 .app-logo__title {
   padding-left: 10px;
-  color:@dark_green;
-  font-family: Georgia, "Courier New", Consolas, Arial, sans-serif;
+  color: @dark_green;
+  font-family: Georgia, 'Courier New', Consolas, Arial, sans-serif;
 }
 
 .app-logo__key {

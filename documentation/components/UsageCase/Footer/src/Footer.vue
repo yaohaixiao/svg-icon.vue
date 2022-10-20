@@ -3,9 +3,9 @@
     ref="footer"
     class="usage-case-footer"
     @click="onToggle">
-      <span class="usage-case-footer__icon">
-        <svg-icon :name="icon" />
-      </span>
+    <span class="usage-case-footer__icon">
+      <svg-icon :name="icon" />
+    </span>
     <span class="usage-case-footer__text">{{ text }}</span>
   </footer>
 </template>
@@ -25,7 +25,7 @@ export default {
   components: {
     SvgIcon
   },
-  props:{
+  props: {
     folded: {
       type: Boolean,
       default: false

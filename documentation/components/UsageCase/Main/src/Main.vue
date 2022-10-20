@@ -1,5 +1,8 @@
 <template>
-  <div ref="main" :class="className" :style="cssRules">
+  <div
+    ref="main"
+    :class="className"
+    :style="cssRules">
     <slot />
   </div>
 </template>

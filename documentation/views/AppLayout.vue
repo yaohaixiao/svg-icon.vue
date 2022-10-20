@@ -1,7 +1,10 @@
 <template>
   <base-container>
     <app-header />
-    <base-main use-main-tag flex overflow="hidden">
+    <base-main
+      use-main-tag
+      flex
+      overflow="hidden">
       <app-aside />
       <base-main overflow="hidden">
         <router-view />

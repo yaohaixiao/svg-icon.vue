@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>wpzoom</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -33,9 +33,9 @@
           <li>
             Homepage:
             <a
-              href="http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/"
-              >http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/</a
-            >
+              href="http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/">
+              http://www.wpzoom.com/wpzoom/new-freebie-wpzoom-developer-icon-set-154-free-icons/
+            </a>
           </li>
           <li>License：CC BY-SA 3.0</li>
         </ul>

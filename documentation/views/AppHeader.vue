@@ -1,5 +1,8 @@
 <template>
-  <base-header flex padding="inner" height="outer">
+  <base-header
+    flex
+    padding="inner"
+    height="outer">
     <app-logo />
     <app-nav />
   </base-header>

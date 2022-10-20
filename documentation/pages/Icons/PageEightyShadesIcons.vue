@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Eighty Shades</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Victor Erixon</li>
           <li>
             Homepage:
-            <a href="http://dribbble.com/shots/928458-80-Shades-of-White-Icons"
-              >http://dribbble.com/shots/928458-80-Shades-of-White-Icons</a
-            >
+            <a href="http://dribbble.com/shots/928458-80-Shades-of-White-Icons">
+              http://dribbble.com/shots/928458-80-Shades-of-White-Icons
+            </a>
           </li>
           <li>License：Custom (free to use)</li>
         </ul>

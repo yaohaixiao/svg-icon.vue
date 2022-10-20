@@ -11,8 +11,7 @@
       class="pop-message__icon">
       <svg-icon
         :name="iconName"
-        :size="iconSize"
-      />
+        :size="iconSize" />
     </span>
     <p
       v-if="!dangerouslyUseHTMLString"
@@ -32,8 +31,7 @@
       @click="onClose">
       <svg-icon
         name="close"
-        :size="18"
-      />
+        :size="18" />
     </span>
   </div>
 </template>

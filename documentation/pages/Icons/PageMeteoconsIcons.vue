@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Meteocons</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Alessio Atzeni</li>
           <li>
             Homepage:
-            <a href="http://www.alessioatzeni.com/meteocons/"
-              >http://www.alessioatzeni.com/meteocons/</a
-            >
+            <a href="http://www.alessioatzeni.com/meteocons/">
+              http://www.alessioatzeni.com/meteocons/
+            </a>
           </li>
           <li>License：Custom (both commercial and personal)</li>
         </ul>

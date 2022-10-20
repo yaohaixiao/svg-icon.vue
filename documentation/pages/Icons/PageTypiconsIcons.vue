@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Typicons</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -31,7 +31,8 @@
         <ul>
           <li>Designer：Stephen Hutchings</li>
           <li>
-            Homepage: <a href="http://typicons.com/">http://typicons.com/</a>
+            Homepage:
+            <a href="http://typicons.com/">http://typicons.com/</a>
           </li>
           <li>License：CC BY-SA 3.0</li>
         </ul>

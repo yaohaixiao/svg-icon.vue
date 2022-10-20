@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item current>Usage</breadcrumb-nav-item>
       </breadcrumb-nav>
     </base-header>
@@ -14,15 +21,22 @@
           <template v-slot:case>
             <usage-case-item>
               <svg-icon name="plugins" />
-              <svg-icon name="database-read" :size="24" />
-              <svg-icon name="database-lock" :size="32" />
+              <svg-icon
+                name="database-read"
+                :size="24" />
+              <svg-icon
+                name="database-lock"
+                :size="32" />
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            size 和 color 参数是可选的，只用设置 name 属性（ icon 的名称）即可，默认 size 值为 16px 大小。当然，也可以自定义设置 size 大小。
+            size 和 color 参数是可选的，只用设置 name 属性（ icon
+            的名称）即可，默认 size 值为 16px 大小。当然，也可以自定义设置 size
+            大小。
           </template>
           <template v-slot:code>
-            <pre class="article__pre"><code class="article__code">&lt;template&gt;
+            <pre
+              class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;svg-icon name="plugins" /&gt;
   &lt;svg-icon name="database-read" :size="24" /&gt;
   &lt;svg-icon name="database-lock" :size="32" /&gt;
@@ -43,27 +57,38 @@ export default {
           </template>
         </usage-case>
         <h2 class="article__h2">设置颜色</h2>
-        <p>SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS 样式控制图标颜色，也可以直接设置 color 属性设置颜色。</p>
+        <p>
+          SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS
+          样式控制图标颜色，也可以直接设置 color 属性设置颜色。
+        </p>
         <h3 class="article__h3">通过 CSS 设置颜色</h3>
         <usage-case>
           <template v-slot:case>
             <usage-case-item>
               <span class="case-icon">
-                <svg-icon name="database-read" :size="24" />
+                <svg-icon
+                  name="database-read"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="database-lock" :size="24" />
+                <svg-icon
+                  name="database-lock"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="plugins" :size="24" />
+                <svg-icon
+                  name="plugins"
+                  :size="24" />
               </span>
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            通过设置 SvgIcon 父组件的 CSS 颜色，SvgIcon 组件的图标颜色将其父元素 case-icon 的 color 值一致。
+            通过设置 SvgIcon 父组件的 CSS 颜色，SvgIcon 组件的图标颜色将其父元素
+            case-icon 的 color 值一致。
           </template>
           <template v-slot:code>
-            <pre class="article__pre"><code class="article__code">&lt;template&gt;
+            <pre
+              class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;span class="case-icon"&gt;
     &lt;svg-icon name="database-read" :size="24" /&gt;
   &lt;/span&gt;
@@ -109,21 +134,32 @@ export default {
           <template v-slot:case>
             <usage-case-item>
               <span class="case-icon">
-                <svg-icon name="aside-environment" :size="24" color="#07B759" />
+                <svg-icon
+                  name="aside-environment"
+                  :size="24"
+                  color="#07B759" />
               </span>
               <span class="case-icon">
-                <svg-icon name="aside-branch" :size="24" color="#507AFE" />
+                <svg-icon
+                  name="aside-branch"
+                  :size="24"
+                  color="#507AFE" />
               </span>
               <span class="case-icon">
-                <svg-icon name="aside-pc" :size="24" color="#FF9901" />
+                <svg-icon
+                  name="aside-pc"
+                  :size="24"
+                  color="#FF9901" />
               </span>
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            设置 color 属性后，SvgIcon 的父组件通过 CSS 设置的 color 样式将不再起作用。
+            设置 color 属性后，SvgIcon 的父组件通过 CSS 设置的 color
+            样式将不再起作用。
           </template>
           <template v-slot:code>
-            <pre class="article__pre"><code class="article__code">&lt;template&gt;
+            <pre
+              class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;span class="case-icon"&gt;
     &lt;svg-icon name="aside-environment" :size="24" color="#07B759"/&gt;
   &lt;/span&gt;
@@ -165,27 +201,38 @@ export default {
           </template>
         </usage-case>
         <h2 class="article__h2">高级用法</h2>
-        <p>如果 SvgIcon 组件自带的图标没有您需要的，SvgIcon 组件还支持使用 render() 方法添加自定义的图标集，方法如下。</p>
+        <p>
+          如果 SvgIcon 组件自带的图标没有您需要的，SvgIcon 组件还支持使用
+          render() 方法添加自定义的图标集，方法如下。
+        </p>
         <h3 class="article__h3">导入外部文件中的图标集</h3>
         <usage-case>
           <template v-slot:case>
             <usage-case-item>
               <span class="case-icon">
-                <svg-icon name="fa-asterisk" :size="24" />
+                <svg-icon
+                  name="fa-asterisk"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="fa-plus" :size="24" />
+                <svg-icon
+                  name="fa-plus"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="fa-glass" :size="24" />
+                <svg-icon
+                  name="fa-glass"
+                  :size="24" />
               </span>
             </usage-case-item>
           </template>
           <template v-slot:tips>
-            使用 import 导入外部 .js 文件中的自定义的组件集，然后使用 render() 方法绘制图标集。
+            使用 import 导入外部 .js 文件中的自定义的组件集，然后使用 render()
+            方法绘制图标集。
           </template>
           <template v-slot:code>
-            <pre class="article__pre"><code class="article__code">&lt;template&gt;
+            <pre
+              class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;span class="case-icon"&gt;
     &lt;svg-icon name="fa-asterisk" :size="24" /&gt;
   &lt;/span&gt;
@@ -234,13 +281,19 @@ export default {
           <template v-slot:case>
             <usage-case-item>
               <span class="case-icon">
-                <svg-icon name="moon-home" :size="24" />
+                <svg-icon
+                  name="moon-home"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="moon-home2" :size="24" />
+                <svg-icon
+                  name="moon-home2"
+                  :size="24" />
               </span>
               <span class="case-icon">
-                <svg-icon name="moon-home3" :size="24" />
+                <svg-icon
+                  name="moon-home3"
+                  :size="24" />
               </span>
             </usage-case-item>
           </template>
@@ -248,7 +301,8 @@ export default {
             render() 可以直接绘制 JavaScript 对象数据中的图标集。
           </template>
           <template v-slot:code>
-            <pre class="article__pre"><code class="article__code">&lt;template&gt;
+            <pre
+              class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;span class="case-icon"&gt;
     &lt;svg-icon name="moon-home" :size="24" /&gt;
   &lt;/span&gt;
@@ -351,7 +405,7 @@ export default {
   margin: 0 8px;
   color: @third_text_color;
   vertical-align: middle;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
 
   &:hover {

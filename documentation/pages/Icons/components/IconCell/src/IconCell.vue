@@ -1,7 +1,11 @@
 <template>
-  <div class="icon-cell" @click="onCopy">
+  <div
+    class="icon-cell"
+    @click="onCopy">
     <div class="icon-cell__svg">
-      <svg-icon :name="name" :size="32" />
+      <svg-icon
+        :name="name"
+        :size="32" />
     </div>
     <p class="icon-cell__name">
       {{ name }}

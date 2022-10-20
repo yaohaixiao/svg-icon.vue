@@ -24,9 +24,9 @@
       :name="icon"
       :size="iconSize"
       class="base-link__icon" />
-      <span class="base-link__inner">
-        <slot />
-      </span>
+    <span class="base-link__inner">
+      <slot />
+    </span>
   </a>
 </template>
 
@@ -67,10 +67,7 @@ export default {
       default: false
     },
     download: {
-      type: [
-        Boolean,
-        String
-      ],
+      type: [Boolean, String],
       default: null
     },
     underline: {
@@ -88,7 +85,9 @@ export default {
   },
   computed: {
     className() {
-      const clsDisabled = this.disabled ? `util-anchor-${this.type}--disabled` : ''
+      const clsDisabled = this.disabled
+        ? `util-anchor-${this.type}--disabled`
+        : ''
 
       return [
         'base-link',

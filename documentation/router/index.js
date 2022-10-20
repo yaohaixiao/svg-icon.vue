@@ -20,11 +20,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "AppLayout" */ '../views/AppLayout'),
     redirect: '/docs',
-    children: [
-      Documentation,
-      Usage,
-      Samples
-    ]
+    children: [Documentation, Usage, Samples]
   }
 ]
 

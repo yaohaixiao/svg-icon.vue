@@ -1,6 +1,10 @@
 <template>
-  <div ref="code" class="usage-case-code">
-    <span class="usage-case-code__copy" @click="onCopy">
+  <div
+    ref="code"
+    class="usage-case-code">
+    <span
+      class="usage-case-code__copy"
+      @click="onCopy">
       <svg-icon name="copy" />
       复制代码
     </span>
@@ -39,7 +43,7 @@ export default {
         round: true,
         message: '代码已复制到粘贴板！'
       })
-    },
+    }
   }
 }
 </script>

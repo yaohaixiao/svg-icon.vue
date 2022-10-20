@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Broccolidry</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Visual Idiot</li>
           <li>
             Homepage:
-            <a href="http://brankic1979.com/icons/"
-              >http://brankic1979.com/icons/</a
-            >
+            <a href="http://brankic1979.com/icons/">
+              http://brankic1979.com/icons/
+            </a>
           </li>
           <li>License：Custom (Free to use)</li>
         </ul>

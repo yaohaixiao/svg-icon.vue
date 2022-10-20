@@ -12,8 +12,7 @@
         :icon-size="nav.iconSize"
         :target="nav.target"
         :download="nav.download"
-        class="app-nav__link">
-      </base-link>
+        class="app-nav__link"></base-link>
     </li>
   </ul>
 </template>
@@ -66,7 +65,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.app-nav{
+.app-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -95,7 +94,7 @@ export default {
   margin: 0;
   width: 24px;
   height: 24px;
-  line-height:24px;
+  line-height: 24px;
   cursor: pointer;
   overflow: hidden;
 

@@ -3,6 +3,7 @@
 
 # production
 /dist
+/docs
 /.vscode
 
 # misc

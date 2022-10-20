@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Iconic</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：P.J. Onori</li>
           <li>
             Homepage:
-            <a href="https://github.com/somerandomdude/Iconic"
-              >https://github.com/somerandomdude/Iconic</a
-            >
+            <a href="https://github.com/somerandomdude/Iconic">
+              https://github.com/somerandomdude/Iconic
+            </a>
           </li>
           <li>License：CC BY-SA 3.0</li>
         </ul>

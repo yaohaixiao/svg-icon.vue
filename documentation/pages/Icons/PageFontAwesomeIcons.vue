@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Font Awesome</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -32,9 +32,9 @@
           <li>Designer：Dave Gandy</li>
           <li>
             Homepage:
-            <a href="https://feathericons.com/"
-              >https://github.com/FortAwesome/Font-Awesome</a
-            >
+            <a href="https://feathericons.com/">
+              https://github.com/FortAwesome/Font-Awesome
+            </a>
           </li>
           <li>License：Custom (free to use)</li>
         </ul>

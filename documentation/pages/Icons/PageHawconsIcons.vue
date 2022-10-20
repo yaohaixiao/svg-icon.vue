@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Hawcons</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -31,7 +31,8 @@
         <ul>
           <li>Designer：Yannick</li>
           <li>
-            Homepage: <a href="http://hawcons.com/">http://hawcons.com/</a>
+            Homepage:
+            <a href="http://hawcons.com/">http://hawcons.com/</a>
           </li>
           <li>License：Custom (free to use)</li>
         </ul>

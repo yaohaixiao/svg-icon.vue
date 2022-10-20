@@ -4,14 +4,19 @@
       <slot name="case" />
     </usage-case-header>
     <usage-case-main :expanded="folded">
-      <usage-case-tips v-if="$slots.tips" ref="tips">
+      <usage-case-tips
+        v-if="$slots.tips"
+        ref="tips">
         <slot name="tips" />
       </usage-case-tips>
       <usage-case-code ref="code">
         <slot name="code" />
       </usage-case-code>
     </usage-case-main>
-    <usage-case-footer ref="footer" :folded="folded" @toggle="onToggle" />
+    <usage-case-footer
+      ref="footer"
+      :folded="folded"
+      @toggle="onToggle" />
   </div>
 </template>
 

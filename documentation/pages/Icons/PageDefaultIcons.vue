@@ -1,8 +1,15 @@
 <template>
   <base-container>
-    <base-header flex border height="inner">
+    <base-header
+      flex
+      border
+      height="inner">
       <breadcrumb-nav>
-        <breadcrumb-nav-item to="/" icon="circle-arrow-left">Home</breadcrumb-nav-item>
+        <breadcrumb-nav-item
+          to="/"
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Default</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -18,8 +25,7 @@
           <icon-cell
             v-for="(symbol, j) in boldSet.symbols"
             :key="`bold-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ solidSet.title }}</h2>
         <base-grid
@@ -29,8 +35,7 @@
           <icon-cell
             v-for="(symbol, j) in solidSet.symbols"
             :key="`solid-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ stateSet.title }}</h2>
         <base-grid
@@ -40,8 +45,7 @@
           <icon-cell
             v-for="(symbol, j) in stateSet.symbols"
             :key="`state-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ fileSet.title }}</h2>
         <base-grid
@@ -51,8 +55,7 @@
           <icon-cell
             v-for="(symbol, j) in fileSet.symbols"
             :key="`file-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ languageSet.title }}</h2>
         <base-grid
@@ -62,8 +65,7 @@
           <icon-cell
             v-for="(symbol, j) in languageSet.symbols"
             :key="`language-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ arrowSet.title }}</h2>
         <base-grid
@@ -73,8 +75,7 @@
           <icon-cell
             v-for="(symbol, j) in arrowSet.symbols"
             :key="`arrow-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ pairedSet.title }}</h2>
         <base-grid
@@ -84,8 +85,7 @@
           <icon-cell
             v-for="(symbol, j) in pairedSet.symbols"
             :key="`paired-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
         <h2 class="article__h2">{{ genericSet.title }}</h2>
         <base-grid
@@ -95,8 +95,7 @@
           <icon-cell
             v-for="(symbol, j) in genericSet.symbols"
             :key="`generic-${j}`"
-            :symbol="symbol"
-          />
+            :symbol="symbol" />
         </base-grid>
       </article>
     </base-main>

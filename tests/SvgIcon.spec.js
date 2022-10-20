@@ -1,6 +1,4 @@
-import {
-  shallowMount
-} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 import icoMoonSet from '../documentation/assets/ico-moon'
 import SvgIcon from '../src/SvgIcon'
@@ -8,7 +6,8 @@ import SvgIcon from '../src/SvgIcon'
 import { render } from '@/utils/utils'
 
 const ICON_HOME = 'moon-home'
-const PATH = '<path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path>'
+const PATH =
+  '<path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path>'
 
 describe('SvgIcon.vue', () => {
   let wrapper

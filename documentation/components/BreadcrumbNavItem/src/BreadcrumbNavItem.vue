@@ -16,8 +16,7 @@
         v-if="icon"
         :name="icon"
         :size="16"
-        class="breadcrumb-nav-item__icon"
-      />
+        class="breadcrumb-nav-item__icon" />
       <span class="breadcrumb-nav-item__text">
         <slot />
       </span>
@@ -29,8 +28,7 @@
       <svg-icon
         v-if="separatorIcon"
         :name="separatorIcon"
-        :size="16"
-      />
+        :size="16" />
       <template v-else>
         {{ separator }}
       </template>

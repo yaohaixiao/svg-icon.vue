@@ -48,9 +48,9 @@ export default {
         `util-border-${this.border}`,
         `util-padding-${this.padding}`,
         {
-          'base-aside--flex' : this.flex,
-          'base-aside--background' : this.background,
-          'base-aside--collapsed' : this.collapsed
+          'base-aside--flex': this.flex,
+          'base-aside--background': this.background,
+          'base-aside--collapsed': this.collapsed
         }
       ]
     }

@@ -7,9 +7,9 @@
       <breadcrumb-nav>
         <breadcrumb-nav-item
           to="/"
-          icon="circle-arrow-left"
-          >Home</breadcrumb-nav-item
-        >
+          icon="circle-arrow-left">
+          Home
+        </breadcrumb-nav-item>
         <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
         <breadcrumb-nav-item current>Brankic 1979</breadcrumb-nav-item>
       </breadcrumb-nav>
@@ -33,9 +33,9 @@
           <li>
             Homepage:
             <a
-              href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons"
-              >http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons</a
-            >
+              href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons">
+              http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons
+            </a>
           </li>
           <li>License：Custom (free to use)</li>
         </ul>

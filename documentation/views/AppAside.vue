@@ -1,11 +1,22 @@
 <template>
-  <base-aside background flex padding="none" :collapsed="collapsed">
+  <base-aside
+    background
+    flex
+    padding="none"
+    :collapsed="collapsed">
     <base-main class="aside-main">
       <app-menu />
     </base-main>
-    <base-footer border aling="right" height="inner">
-      <div class="aside-collapse" @click="onToggle">
-        <svg-icon name="aside-collapse" :size="20" />
+    <base-footer
+      border
+      aling="right"
+      height="inner">
+      <div
+        class="aside-collapse"
+        @click="onToggle">
+        <svg-icon
+          name="aside-collapse"
+          :size="20" />
       </div>
     </base-footer>
   </base-aside>

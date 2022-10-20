@@ -1,18 +1,9 @@
 import Vue from 'vue'
 import PopMessage from './src/PopMessage'
 
-import {
-  isFunction,
-  isString,
-  isVNode
-} from '$utils/typeof'
+import { isFunction, isString, isVNode } from '$utils/typeof'
 
-const TYPES = [
-  'success',
-  'warning',
-  'info',
-  'error'
-]
+const TYPES = ['success', 'warning', 'info', 'error']
 
 let MessageConstructor = Vue.extend(PopMessage)
 let instance
