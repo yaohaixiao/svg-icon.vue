@@ -22,3 +22,4 @@ pnpm-debug.log*
 *.sw?
 /.stylelintcache
 report
+/tests/__snapshots__
