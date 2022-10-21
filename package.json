@@ -4,8 +4,8 @@
   "description": "svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。",
   "author": "Robert Yao",
   "scripts": {
+    "analyz": "npm run build:docs --report",
     "start": "vue-cli-service serve ./documentation/main.js",
-    "analyz": "npm run build --report",
     "build:docs": "set BUILD_FOR=docs && vue-cli-service build ./documentation/main.js --dest docs",
     "build:packages": "vue-cli-service build --target lib --entry ./src/index.js --name svg-icon.vue --dest dist",
     "build": "npm run build:docs && npm run build:packages",
@@ -24,7 +24,7 @@
   },
   "main": "src/index.js",
   "directories": {
-    "example": "documentation"
+    "doc": "documentation"
   },
   "dependencies": {
     "vue": "^2.6.14"
@@ -44,6 +44,7 @@
     "@vue/test-utils": "^1.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^27.5.1",
+    "commitlint": "^17.1.2",
     "conventional-changelog-cli": "^2.2.2",
     "core-js": "^3.25.5",
     "eslint": "^8.25.0",
@@ -58,6 +59,7 @@
     "jest-html-reporter": "^3.7.0",
     "jest-serializer-vue": "^2.0.2",
     "less": "^4.1.3",
+    "less-loader": "^11.1.0",
     "lint-staged": "^13.0.3",
     "postcss-less": "^6.0.0",
     "prettier": "^2.7.1",
