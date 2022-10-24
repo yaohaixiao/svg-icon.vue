@@ -69,7 +69,7 @@ export default {
   z-index: 2;
   top: 0;
   right: 0;
-  width: 48px;
+  width: 58px;
   height: 48px;
   transform: rotate(-180deg);
   transition-duration: 0.4s;
