@@ -27,7 +27,7 @@
           class="article__pre"><code class="article__code">npm i @yaohaixiao/svg-icon.vue</code></pre>
         <h3 class="article__h3">在 package.js 文件中添加依赖</h3>
         <pre
-          class="article__pre"><code class="article__code">"@yaohaixiao/svg-icon.vue": "1.x.x"</code></pre>
+          class="article__pre"><code class="article__code">"@yaohaixiao/svg-icon.vue": "2.x.x"</code></pre>
         <h2 class="article__h2">render() 方法</h2>
         <p>
           SvgIcon 组件至 2.0.0 版本开始，不再直接绘制 default

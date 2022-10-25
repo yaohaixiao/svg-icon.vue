@@ -16,7 +16,8 @@
           </router-link>
           <span
             v-if="hasChildren(route)"
-            class="app-menu__arrow">
+            :class="['app-menu__arrow', { 'is-folded': folded }]"
+            @click="onFold">
             <svg-icon
               name="arrow-down"
               :size="16" />
@@ -24,10 +25,11 @@
         </div>
         <ul
           v-if="route.children && !route.meta.hide"
-          class="app-submenu__list">
+          :id="`submenu-${i}`"
+          :class="['app-submenu__list', { 'is-folded': folded }]">
           <li
-            v-for="(child, i) in route.children"
-            :key="`child-${i}`"
+            v-for="(child, j) in route.children"
+            :key="`child-${j}`"
             class="app-submenu__item">
             <router-link
               :to="{ name: child.name }"
@@ -62,13 +64,17 @@ export default {
   },
   data() {
     return {
-      routes: [Documentation, Usage, Icons]
+      routes: [Documentation, Usage, Icons],
+      folded: false
     }
   },
   methods: {
     hasChildren(route) {
       const children = route.children
       return !route.meta.hide && children && children.length > 0
+    },
+    onFold() {
+      this.folded = !this.folded
     }
   }
 }
@@ -114,7 +120,8 @@ export default {
   margin: 0;
   width: 16px;
   height: 16px;
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(-180deg);
+  transition-duration: 0.3s;
   cursor: pointer;
   overflow: hidden;
 
@@ -124,6 +131,10 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &.is-folded {
+    transform: translateY(-50%) rotate(0deg);
   }
 }
 
@@ -152,6 +163,12 @@ export default {
 
   .svg-icon {
     padding-right: 10px;
+  }
+}
+
+.app-submenu__list {
+  &.is-folded {
+    height: 0;
   }
 }
 
