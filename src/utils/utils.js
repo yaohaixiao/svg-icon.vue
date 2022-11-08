@@ -6,13 +6,12 @@
  */
 import defaultSet from '../assets/default'
 
-const symbols = []
-
 export const render = (iconSet) => {
   const $body = document.body
   const $icons = document.createElement('div')
   const $svg = document.querySelector('#svg-icons')
-  let html = ''
+  const symbols = []
+  let html
 
   // 绘制 default 图标集
   if (!iconSet) {
@@ -25,7 +24,7 @@ export const render = (iconSet) => {
   html = symbols.join('')
 
   if ($svg) {
-    $svg.innerHTML = html
+    $svg.innerHTML += html
   } else {
     $icons.innerHTML = `<svg id="svg-icons" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">${html}</svg>`
     $body.insertBefore($icons.firstChild, $body.firstChild)

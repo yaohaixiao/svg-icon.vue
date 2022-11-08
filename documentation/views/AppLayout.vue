@@ -167,16 +167,21 @@ export default {
       this.$refs.iconSetDrawer.close()
     },
     add(icon) {
-      this.icons.push(icon)
+      const icons = [...this.icons]
+
+      icons.push(icon)
+      this.icons = icons
     },
     remove(icon) {
-      const index = this.icons.indexOf(icon)
+      const icons = [...this.icons]
+      const index = icons.indexOf(icon)
 
       if (index < 0) {
         return false
       }
 
-      this.icons.splice(index, 1)
+      icons.splice(index, 1)
+      this.icons = icons
     },
     onDrawerClose() {
       setTimeout(() => {

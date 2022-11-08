@@ -1,8 +1,7 @@
 <template>
   <div
     id="cart"
-    v-once
-    :class="['the-cart', { 'is-hidden': !isOpen }]"
+    :class="['the-cart', { 'is-hidden': !isShow }]"
     @click="onToggle">
     <div class="the-cart__icon">
       <svg-icon
@@ -36,13 +35,22 @@ export default {
   },
   data() {
     return {
-      isOpen: true
+      isShow: true,
+      collections: []
     }
   },
   computed: {
     count() {
-      return this.icons.length
+      return this.collections.length
     }
+  },
+  watch: {
+    icons() {
+      this.update()
+    }
+  },
+  created() {
+    this.update()
   },
   mounted() {
     const $cart = document.querySelector('#cart')
@@ -56,14 +64,17 @@ export default {
     this.$unsubscribe('show:cart', this.show)
   },
   methods: {
+    update() {
+      this.collections = [...this.icons]
+    },
     toggle() {
-      this.isOpen = !this.isOpen
+      this.isShow = !this.isShow
     },
     show() {
-      this.isOpen = true
+      this.isShow = true
     },
     hide() {
-      this.isOpen = false
+      this.isShow = false
     },
     onToggle() {
       this.toggle()

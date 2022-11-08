@@ -96,6 +96,7 @@ import { render } from 'svg-icon.vue/utils/utils'
 render(fontAwesomeSet)
 ```
 
+如果你只想使用内置图标集中特定的几个图标，你可以在 API 文档的 [icons](https://yaohaixiao.github.io/svg-icon.vue/#/icons) 相关页面选中需要的图标，然后点击图标购物车，我们会自动为你生成自定义图标集。并且提供文件下载（svg-icon-set.js）和代码复制功能。 如果你仅仅想使用某个图标，我们也同时提供单独下载 SVG 图标的功能。
 
 ### Import package
 
