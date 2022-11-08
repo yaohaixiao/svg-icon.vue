@@ -75,31 +75,18 @@ export const decodeHTML = (str) => {
 }
 
 /**
- * 设置本地缓存
+ * 创建并下载文件
  * ====================================================
- * @param {String} key
- * @param {*} value
+ * @param {String} fileName 文件名
+ * @param {String} content  文件内容
  */
-export const setStorage = (key, value) => {
-  localStorage.setItem(key, value)
-}
+export const createAndDownloadFile = (fileName, content) => {
+  const $blob = new Blob([content])
+  const $anchor = document.createElement('a')
 
-/**
- * 获取本地缓存
- * ====================================================
- * @param key
- * @returns {string}
- */
-export const getStorage = (key) => {
-  return localStorage.getItem(key)
-}
+  $anchor.download = fileName
+  $anchor.href = URL.createObjectURL($blob)
+  $anchor.click()
 
-/**
- * 清除本地缓存
- * ====================================================
- * @param key
- * @returns {string}
- */
-export const clearStorage = (key) => {
-  localStorage.removeItem(key)
+  URL.revokeObjectURL($blob)
 }

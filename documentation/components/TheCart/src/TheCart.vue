@@ -1,5 +1,7 @@
 <template>
   <div
+    id="cart"
+    v-once
     :class="['the-cart', { 'is-hidden': !isOpen }]"
     @click="onToggle">
     <div class="the-cart__icon">
@@ -43,36 +45,36 @@ export default {
     }
   },
   mounted() {
-    const $el = this.$el
+    const $cart = document.querySelector('#cart')
     const $body = document.body
 
-    $body.appendChild($el)
+    $body.appendChild($cart)
 
-    this.$subscribe('show:cart', this.toggle)
+    this.$subscribe('show:cart', this.show)
   },
   beforeDestroy() {
-    this.$unsubscribe('show:cart', this.toggle)
+    this.$unsubscribe('show:cart', this.show)
   },
   methods: {
     toggle() {
       this.isOpen = !this.isOpen
     },
     show() {
-      this.$broadcast('show:drawer')
+      this.isOpen = true
     },
     hide() {
-      this.$broadcast('hide:drawer')
+      this.isOpen = false
     },
     onToggle() {
       this.toggle()
 
       if (this.isOpen) {
         setTimeout(() => {
-          this.hide()
+          this.$broadcast('hide:drawer')
         }, 300)
       } else {
         setTimeout(() => {
-          this.show()
+          this.$broadcast('show:drawer')
         }, 300)
       }
     }

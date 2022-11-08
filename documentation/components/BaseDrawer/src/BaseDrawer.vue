@@ -45,6 +45,7 @@
             v-for="button in buttons"
             :key="button.name"
             size="regular"
+            :icon="button.icon"
             :type="button.type"
             :disabled="button.disabled || locked"
             :loading="locked && button.name === action"
