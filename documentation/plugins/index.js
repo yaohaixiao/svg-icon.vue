@@ -5,3 +5,4 @@
  * Update: 2022.10.9
  */
 import './pop-message'
+import './emitter'
