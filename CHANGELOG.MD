@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.0.0...2.1.0) (2022-11-08)
+
+
+### Features
+
+* 添加图标集和单个图标下载功能 ([87bc5c0](https://github.com/yaohaixiao/svg-icon.vue/commit/87bc5c0f9fee39b8ede8f324140cef2ea8b82ab5))
+
+
+
 # [1.4.0](https://github.com/yaohaixiao/svg-icon.vue/compare/1.3.0...1.4.0) (2022-10-16)
 
 
