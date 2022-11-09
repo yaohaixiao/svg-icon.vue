@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.1.0...2.2.0) (2022-11-09)
+
+
+### Features
+
+* 为 default 图标库添加新的图标 ([8972f44](https://github.com/yaohaixiao/svg-icon.vue/commit/8972f448a6a07e2f63164030be098feaa78a34c2))
+
+
+
 # [2.1.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.0.0...2.1.0) (2022-11-08)
 
 
