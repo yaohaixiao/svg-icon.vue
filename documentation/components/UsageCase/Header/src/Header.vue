@@ -1,5 +1,5 @@
 <template>
-  <header class="usage-case__header">
+  <header class="usage-case-header">
     <slot />
   </header>
 </template>
@@ -17,4 +17,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="less">
+@import './header';
+</style>

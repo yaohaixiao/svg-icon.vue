@@ -11,12 +11,38 @@
   flex-shrink: 0;
   width: 100%;
   overflow: hidden;
-}
 
-.base-header--flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-self: auto;
-  align-items: center;
+  &__title {
+    .font_size_medium();
+    .font_weight_regular();
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  &__toolbar {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    &_outter {
+      right: 20px;
+    }
+
+    &_inner {
+      right: 16px;
+    }
+  }
+
+  &--flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-self: auto;
+    align-items: center;
+  }
 }

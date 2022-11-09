@@ -15,7 +15,7 @@
         <base-header
           v-if="title"
           flex
-          align="left"
+          text-align="left"
           height="outer"
           padding="inner"
           :border="false">
@@ -203,7 +203,7 @@ export default {
       if (this.visible) {
         this.zIndex = Popper.nextZIndex()
       } else {
-        this.zIndex = Popper.prevZIndex()
+        Popper.prevZIndex()
       }
     }
   },

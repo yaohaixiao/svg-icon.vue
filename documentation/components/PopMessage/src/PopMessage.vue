@@ -44,7 +44,9 @@
  * Update: 2022.10.9
  */
 import SvgIcon from '@/SvgIcon'
+
 import { isFunction } from '$utils/typeof'
+import Popper from '../../../utils/popper'
 
 const TYPES = {
   success: 'success',
@@ -136,7 +138,10 @@ export default {
     }
   },
   mounted() {
-    document.body.appendChild(this.$el)
+    const $wrapper = this.$el
+
+    $wrapper.style.zIndex = Popper.nextZIndex()
+    document.body.appendChild($wrapper)
   },
   beforeDestroy() {
     const $wrapper = this.$el
@@ -146,6 +151,7 @@ export default {
 
     if ($wrapper) {
       $wrapper.parentNode.removeChild($wrapper)
+      Popper.prevZIndex()
     }
 
     this.clearTimer()

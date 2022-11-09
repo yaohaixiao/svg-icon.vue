@@ -10,11 +10,10 @@
   margin: 0 auto;
   overflow: hidden;
 
-  .pre {
+  &__pre {
     .font_size_regular();
     .line_height_small();
     .font_code_family();
-
     margin: 0;
     padding: 20px;
     background: @fourth_bg_color;
@@ -28,25 +27,25 @@
     }
   }
 
-  .code {
+  &__pre {
     .font_code_family();
 
     color: @code_text_color;
   }
-}
 
-.usage-case-code__copy {
-  .height_regular();
-  .line_height_regular();
-  position: absolute;
-  z-index: 2;
-  top: 16px;
-  right: 16px;
-  cursor: pointer;
-  color: @fourth_text_color;
-  overflow: hidden;
+  &__copy {
+    .height_regular();
+    .line_height_regular();
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    color: @fourth_text_color;
+    overflow: hidden;
 
-  &:hover {
-    color: @primary_color;
+    &:hover {
+      color: @primary_color;
+    }
   }
 }

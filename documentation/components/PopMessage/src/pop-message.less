@@ -5,6 +5,8 @@
  * Update: 2022.10.9
  */
 .pop-message {
+  .radius_small();
+  .shadow_light_regular();
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -22,169 +24,164 @@
   font-size: 13px;
   background-color: @white;
   color: @third_text_color;
-  .radius_small();
-
   transition: all 0.5s ease-in-out;
   transform: translateX(-50%);
-  .shadow_light_regular();
-
-  overflow: hidden;
-}
-
-.pop-message__content {
-  margin: 0;
-  max-width: 700px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 13px;
-  padding-left: 16px;
-  color: @third_text_color;
-  .ellipsis(1);
-
-  overflow: hidden;
-}
-
-.pop-message__close,
-.pop-message__icon {
-  position: relative;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
   overflow: hidden;
 
-  .svg-icon {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.pop-message__icon {
-  color: @white;
-}
-
-.pop-message__close {
-  cursor: pointer;
-  color: @fourth_text_color;
-
-  &:hover {
+  &__content {
+    .ellipsis(1);
+    margin: 0;
+    max-width: 700px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    padding-left: 16px;
     color: @third_text_color;
-  }
-}
-
-.pop-message_info {
-  .pop-message__icon {
-    background-color: @primary_color;
-  }
-}
-
-.pop-message_warning {
-  .pop-message__icon {
-    background-color: @warning_color;
-  }
-}
-
-.pop-message_success {
-  .pop-message__icon {
-    background-color: @success_color;
-  }
-}
-
-.pop-message_error {
-  .pop-message__icon {
-    background-color: @danger_color;
-  }
-}
-
-.pop-message_theme_plain {
-  min-width: 190px;
-
-  &.pop-message_info {
-    border-left: 5px solid @primary_color;
-    background-color: @info_tip_bg_color;
+    overflow: hidden;
   }
 
-  &.pop-message_warning {
-    border-left: 5px solid @warning_color;
-    background-color: @warning_tip_bg_color;
-  }
+  &__close,
+  &__icon {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
 
-  &.pop-message_success {
-    border-left: 5px solid @success_color;
-    background-color: @success_tip_bg_color;
-  }
-
-  &.pop-message_error {
-    border-left: 5px solid @danger_color;
-    background-color: @danger_tip_bg_color;
-  }
-}
-
-.pop-message_theme_light {
-  &.pop-message_info {
-    .pop-message__icon {
-      color: @primary_color;
+    .svg-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
-  &.pop-message_warning {
-    .pop-message__icon {
-      color: @warning_color;
+  &__icon {
+    color: @white;
+  }
+
+  &__close {
+    cursor: pointer;
+    color: @fourth_text_color;
+
+    &:hover {
+      color: @third_text_color;
     }
   }
 
-  &.pop-message_success {
+  &_info {
     .pop-message__icon {
-      color: @success_color;
+      background-color: @primary_color;
     }
   }
 
-  &.pop-message_error {
+  &_warning {
     .pop-message__icon {
-      color: @danger_color;
+      background-color: @warning_color;
     }
   }
 
-  .pop-message__content {
-    padding-left: 0;
+  &_success {
+    .pop-message__icon {
+      background-color: @success_color;
+    }
   }
 
-  .pop-message__icon {
-    background-color: @white;
+  &_error {
+    .pop-message__icon {
+      background-color: @danger_color;
+    }
   }
-}
 
-.pop-message--round {
-  .radius(20px);
+  &_theme_plain {
+    min-width: 190px;
 
-  &.pop-message_theme_plain {
-    min-width: 214px;
+    &.pop-message_info {
+      border-left: 5px solid @primary_color;
+      background-color: @info_tip_bg_color;
+    }
+
+    &.pop-message_warning {
+      border-left: 5px solid @warning_color;
+      background-color: @warning_tip_bg_color;
+    }
+
+    &.pop-message_success {
+      border-left: 5px solid @success_color;
+      background-color: @success_tip_bg_color;
+    }
+
+    &.pop-message_error {
+      border-left: 5px solid @danger_color;
+      background-color: @danger_tip_bg_color;
+    }
+  }
+
+  &_light {
+    &.pop-message_info {
+      .pop-message__icon {
+        color: @primary_color;
+      }
+    }
+
+    &.pop-message_warning {
+      .pop-message__icon {
+        color: @warning_color;
+      }
+    }
+
+    &.pop-message_success {
+      .pop-message__icon {
+        color: @success_color;
+      }
+    }
+
+    &.pop-message_error {
+      .pop-message__icon {
+        color: @danger_color;
+      }
+    }
 
     .pop-message__content {
-      padding-left: 16px;
+      padding-left: 0;
+    }
+
+    .pop-message__icon {
+      background-color: @white;
     }
   }
 
-  &.pop-message_theme_light {
-    min-width: 210px;
+  &--round {
+    .radius(20px);
+
+    &.pop-message_theme_plain {
+      min-width: 214px;
+
+      .pop-message__content {
+        padding-left: 16px;
+      }
+    }
+
+    &.pop-message_theme_light {
+      min-width: 210px;
+    }
+
+    .pop-message__content {
+      padding-left: 0;
+    }
+
+    .pop-message__icon {
+      margin: 10px;
+      width: 20px;
+      height: 20px;
+      .radius(10px);
+    }
   }
 
-  .pop-message__content {
-    padding-left: 0;
+  &--visible {
+    opacity: 1;
   }
-
-  .pop-message__icon {
-    margin: 10px;
-    width: 20px;
-    height: 20px;
-    .radius(10px);
-  }
-}
-
-.pop-message--visible {
-  opacity: 1;
 }

@@ -4,19 +4,22 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.8
  */
-let index = 2000
+let zIndex = 100
 
 const Popper = {
   getZIndex() {
-    return index
+    return zIndex
   },
-  prevZIndex() {
-    index -= 1
-    return index
+  setZIndex(index) {
+    zIndex = index
   },
-  nextZIndex() {
-    index += 1
-    return index
+  prevZIndex(step = 1) {
+    zIndex -= step
+    return zIndex
+  },
+  nextZIndex(step = 1) {
+    zIndex += step
+    return zIndex
   }
 }
 

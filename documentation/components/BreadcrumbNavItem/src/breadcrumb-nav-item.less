@@ -5,27 +5,27 @@
  * Update: 2022.10.9
  */
 .breadcrumb-nav-item {
+  .font_size_regular();
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-self: auto;
   align-items: center;
   color: @primary_text_color;
-  .font_size_regular();
 
   &:last-child {
     color: @fourth_text_color;
   }
-}
 
-.breadcrumb-nav-item__icon {
-  + .breadcrumb-mav-item__text {
-    padding-left: 8px;
+  &__icon {
+    + .breadcrumb-mav-item__text {
+      padding-left: 8px;
+    }
   }
-}
 
-.breadcrumb-nav-item__separator {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 4px;
+  &__separator {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 4px;
+  }
 }
