@@ -6,7 +6,7 @@
 
 <script>
 /**
- * Item.vue - UsageCaseItem 组件
+ * UsageCaseItem.vue - UsageCaseItem 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.11

@@ -28,7 +28,7 @@ export default {
     SvgIcon
   },
   props: {
-    icons: {
+    items: {
       type: Array,
       default: () => []
     }
@@ -45,7 +45,7 @@ export default {
     }
   },
   watch: {
-    icons() {
+    items() {
       this.update()
     }
   },
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     update() {
-      this.collections = [...this.icons]
+      this.collections = [...this.items]
     },
     toggle() {
       this.isShow = !this.isShow

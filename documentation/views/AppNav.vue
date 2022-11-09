@@ -38,6 +38,13 @@ export default {
         {
           route: false,
           role: 'link',
+          href: 'http://www.yaohaixiao.com/',
+          icon: 'card-home',
+          iconSize: 18
+        },
+        {
+          route: false,
+          role: 'link',
           href: 'https://github.com/yaohaixiao/svg-icon.vue',
           icon: 'card-branch',
           iconSize: 16
@@ -89,6 +96,7 @@ export default {
   justify-content: center;
   align-self: auto;
   align-items: center;
+  text-align: center;
   position: relative;
   z-index: 1;
   margin: 0;
@@ -113,6 +121,7 @@ export default {
 }
 
 .app-nav__link {
+  .anchor(@fourth_text_color);
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -120,6 +129,5 @@ export default {
   align-items: center;
   width: 24px;
   height: 24px;
-  .anchor(@fourth_text_color);
 }
 </style>

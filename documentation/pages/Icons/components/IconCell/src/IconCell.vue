@@ -98,7 +98,7 @@ export default {
     check(name, action = '加入') {
       this.$message.success({
         round: true,
-        message: `图标“${name}”已${action}图标集购物车！`
+        message: `图标“${name}”已${action}购物车！`
       })
     },
     copy(name) {

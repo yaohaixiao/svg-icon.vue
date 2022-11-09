@@ -282,20 +282,7 @@ export default {
         this.$emit('closed')
       }, 400)
     },
-    onClose() {
-      const beforeClose = this.beforeClose
-
-      if (this.locked || this.opening) {
-        return false
-      }
-
-      if (beforeClose && isFunction(beforeClose)) {
-        beforeClose(this.close)
-      } else {
-        this.close()
-      }
-    },
-    onTrigger(button) {
+    trigger(button) {
       const $content = this.$content
       const name = button.name
       // 获取 buttons 参数中的按钮回调函数
@@ -337,6 +324,22 @@ export default {
         this.unlock()
         this.close()
       }
+    },
+    onClose() {
+      const beforeClose = this.beforeClose
+
+      if (this.locked || this.opening) {
+        return false
+      }
+
+      if (beforeClose && isFunction(beforeClose)) {
+        beforeClose(this.close)
+      } else {
+        this.close()
+      }
+    },
+    onTrigger(button) {
+      this.trigger(button)
     },
     onOverlayClick() {
       if (!this.overlayClosable) {

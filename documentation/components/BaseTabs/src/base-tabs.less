@@ -1,0 +1,30 @@
+/**
+ * base-tabs.less - BaseTabs 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.09
+ */
+.base-tabs {
+  margin: 0;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &_border-card {
+    .shadow_light_regular();
+
+    .base-tabs__content {
+      border: 1px solid @primary_border_color;
+      border-top: none;
+    }
+
+    &:hover {
+      .shadow_dark_regular();
+    }
+  }
+}
