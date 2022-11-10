@@ -1,0 +1,24 @@
+/**
+ * base-empty.less - BaseEmpty 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.10
+ */
+.base-empty {
+  margin: 0 auto;
+  overflow: hidden;
+
+  &__icon,
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__text {
+    .line_height_regular();
+    .height_regular();
+    .font_size_small();
+    color: @fourth_text_color;
+  }
+}

@@ -45,6 +45,10 @@ export default {
       type: String,
       default: ''
     },
+    value: {
+      type: [String, Number, Boolean],
+      default: ''
+    },
     icon: {
       type: String,
       default: ''
@@ -109,7 +113,14 @@ export default {
         return false
       }
 
-      this.$emit('click', this.label, this.id)
+      this.$emit(
+        'click',
+        {
+          label: this.label,
+          value: this.value
+        },
+        this.id
+      )
     },
     onRemove() {
       if (!this.isRemovable) {

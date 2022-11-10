@@ -1,0 +1,124 @@
+/**
+ * cart-drawer-item.less - CartDrawerItem 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.10
+ */
+.cart-drawer-item {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  height: 44px;
+  border-bottom: 1px solid @primary_border_color;
+  border-radius: 4px;
+  padding: 10px 48px 10px 66px;
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    background-color: @hover_bg_color;
+
+    .cart-drawer-item__icon {
+      color: @primary_color;
+    }
+  }
+
+  &.is-empty {
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: default;
+    color: @third_text_color;
+
+    &:hover {
+      background-color: @white;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    color: @third_text_color;
+    overflow: hidden;
+  }
+
+  &__meta {
+    margin: 0;
+    height: 44px;
+    line-height: 44px;
+  }
+
+  &__title {
+    .font_size_large();
+    .font_weight_regular();
+    .ellipsis(1);
+    margin: 0 auto;
+    height: 28px;
+    line-height: 22px;
+  }
+
+  &__dl,
+  &__dt,
+  &__dd {
+    margin: 0;
+    padding: 0;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+  }
+
+  &__dt {
+    color: @fourth_text_color;
+  }
+
+  &__dt,
+  &__dd {
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  &__dd {
+    padding-right: 32px;
+  }
+
+  &__delete {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    top: 22px;
+    right: 16px;
+    color: @fourth_text_color;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      color: @danger_color;
+    }
+
+    .svg-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .base-empty {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

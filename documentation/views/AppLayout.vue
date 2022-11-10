@@ -31,7 +31,7 @@ import AppAside from './AppAside'
 import TheCart from 'components/TheCart'
 import CartDrawer from 'components/CartDrawer'
 
-import { getStorage, clearStorage } from '$utils/storage'
+import { getStorage, setStorage, clearStorage } from '$utils/storage'
 
 export default {
   name: 'AppLayout',
@@ -47,6 +47,11 @@ export default {
   data() {
     return {
       icons: []
+    }
+  },
+  watch: {
+    icons() {
+      setStorage('svg.icon.set', JSON.stringify(this.icons))
     }
   },
   created() {

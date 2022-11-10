@@ -24,7 +24,7 @@ export default {
       default: ''
     },
     size: {
-      type: [String, Number],
+      type: [String, Number, Array],
       default: 16
     },
     color: {
@@ -38,13 +38,20 @@ export default {
         'xlink:href': `#icon-${this.name}`
       }
     },
-    cssRules() {
+    width() {
       const size = this.size
+      return Array.isArray(size) ? size[0] : size
+    },
+    height() {
+      const size = this.size
+      return Array.isArray(size) ? size[1] : size
+    },
+    cssRules() {
       const color = this.color
 
       return {
-        width: `${size}px`,
-        height: `${size}px`,
+        width: `${this.width}px`,
+        height: `${this.height}px`,
         color
       }
     }

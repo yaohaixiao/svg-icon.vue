@@ -58,7 +58,7 @@ export default {
         },
         `util-height-${this.height}`,
         `util-padding-${this.padding}`,
-        `util-align-${this.align}`
+        `util-align-${this.textAlign}`
       ]
     }
   }

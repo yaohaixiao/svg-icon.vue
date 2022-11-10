@@ -79,7 +79,7 @@ export default {
     onToggle() {
       this.toggle()
 
-      if (this.isOpen) {
+      if (this.isShow) {
         setTimeout(() => {
           this.$broadcast('hide:drawer')
         }, 300)

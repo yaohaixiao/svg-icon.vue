@@ -18,13 +18,16 @@
           text-align="left"
           height="outer"
           padding="inner"
-          :border="false">
+          :border="headerBorder">
           <h2 class="base-drawer__title">
             {{ title }}
-            <span class="base-drawer__icon">
+            <span
+              v-if="$scopedSlots.icon"
+              class="base-drawer__icon">
               <slot name="icon" />
             </span>
           </h2>
+          <slot name="tabs" />
           <div class="base-drawer__help">
             <slot name="help" />
           </div>
@@ -40,10 +43,10 @@
           v-if="buttons.length > 0"
           :align="align"
           padding="inner"
-          :border="false">
+          :border="footerBorder">
           <base-button
             v-for="button in buttons"
-            :key="button.name"
+            :key="`button-${button.name}`"
             size="regular"
             :icon="button.icon"
             :type="button.type"
@@ -118,6 +121,14 @@ export default {
     padding: {
       type: String,
       default: 'inner'
+    },
+    headerBorder: {
+      type: Boolean,
+      default: false
+    },
+    footerBorder: {
+      type: Boolean,
+      default: false
     },
     shorter: {
       type: Boolean,

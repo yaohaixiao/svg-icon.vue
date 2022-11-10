@@ -2,13 +2,30 @@
  * cart-drawer.less - CartDrawer 组件样式
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.11.09
+ * Update: 2022.11.10
  */
 .cart-drawer {
+  &__main {
+    padding: 16px 0 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  &__list {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    overflow: auto;
+  }
+
   &__code {
     margin: 0;
     width: 100%;
-    height: 98%;
+    height: 100%;
     line-height: 150%;
     padding: 1em;
     box-sizing: border-box;

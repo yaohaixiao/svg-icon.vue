@@ -12,18 +12,21 @@
       <ul
         :class="listClassName"
         :style="cssRules">
-        <base-tab-item
-          v-for="(item, i) in items"
-          :key="i"
-          :index="i"
-          :closable="closable"
-          :editable="editable"
-          :disabled="item.disabled"
-          :label="item.label"
-          :icon="item.icon"
-          :before-leave="beforeLeave"
-          @click="onChange"
-          @remove="onRemove" />
+        <slot :items="items">
+          <base-tab-item
+            v-for="(item, i) in items"
+            :key="i"
+            :index="i"
+            :closable="closable"
+            :editable="editable"
+            :disabled="item.disabled"
+            :label="item.label"
+            :value="item.value"
+            :icon="item.icon"
+            :before-leave="beforeLeave"
+            @click="onChange"
+            @remove="onRemove" />
+        </slot>
       </ul>
     </div>
     <div
@@ -90,6 +93,10 @@ export default {
       default: false
     },
     editable: {
+      type: Boolean,
+      default: false
+    },
+    scrollable: {
       type: Boolean,
       default: false
     },
@@ -238,7 +245,7 @@ export default {
       const listWidth = this.getListWidth()
       const maxWidth = this.getMaxWidth()
 
-      return listWidth > maxWidth
+      return listWidth > maxWidth && this.scrollable
     },
     getScrollLeft() {
       const listWidth = this.getListWidth()
@@ -322,7 +329,7 @@ export default {
       let index
 
       this.$nextTick(() => {
-        index = this.items.findIndex((item) => item.label === this.value)
+        index = this.items.findIndex((item) => item.value === this.value)
         this.index = index >= 0 ? index : 0
       })
     },
@@ -335,7 +342,7 @@ export default {
           return false
         }
 
-        this.onChange(items[index].label, index)
+        this.onChange(items[index], index)
       })
     },
     add(item) {
@@ -390,11 +397,11 @@ export default {
       this.step = step
       this.scrollLeft = this.getScrollLeft()
     },
-    onChange(label, index) {
+    onChange(tab, index) {
       this.index = index
 
-      this.$emit('input', label)
-      this.$emit('change', label)
+      this.$emit('input', tab.value)
+      this.$emit('change', tab)
     },
     onAdd() {
       const id = (guid += 1)
@@ -412,7 +419,7 @@ export default {
       this.add(item)
 
       this.$emit('add', item)
-      this.$emit('edit', item.label, 'add')
+      this.$emit('edit', item, 'add')
     },
     onRemove(index) {
       const tab = { ...this.items[index] }
@@ -424,7 +431,7 @@ export default {
       this.remove(index)
 
       this.$emit('remove', index)
-      this.$emit('edit', tab.label, 'remove')
+      this.$emit('edit', tab, 'remove')
     }
   }
 }

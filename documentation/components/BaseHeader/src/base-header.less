@@ -19,6 +19,23 @@
     z-index: 1;
     margin: 0;
     overflow: hidden;
+
+    + .base-tab-nav {
+      margin-left: 16px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 0;
+        height: 22px;
+        width: 0;
+        margin-top: -11px;
+        border-left: 1px solid @secondary_border_color;
+        overflow: hidden;
+      }
+    }
   }
 
   &__toolbar {
@@ -44,5 +61,19 @@
     flex-wrap: nowrap;
     align-self: auto;
     align-items: center;
+  }
+
+  .base-tab-nav,
+  .base-tab-nav__main,
+  .base-tabs__list,
+  .base-tab-item {
+    line-height: 52px;
+    height: 52px;
+  }
+
+  .base-tab-nav {
+    &:after {
+      display: none;
+    }
   }
 }

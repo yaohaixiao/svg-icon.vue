@@ -97,7 +97,7 @@ export default {
   methods: {
     update() {
       const tabs = []
-      const panels = []
+      const panes = []
       const defaults = this.$slots.default
 
       if (!defaults || defaults.length < 1) {
@@ -115,30 +115,32 @@ export default {
 
         tabs.push({
           label: instance.label,
+          value: instance.value,
           icon: instance.icon,
           disabled: instance.disabled,
           closable: instance.closable
         })
-        panels.push(instance)
+        panes.push(instance)
       })
 
       this.tabs = tabs
-      this.panels = panels
+      this.panes = panes
     },
     isTabPane(vNode) {
       const componentOptions = vNode.componentOptions
       return (
         vNode.tag &&
         componentOptions &&
-        componentOptions.Ctor.options.name === 'TabPane'
+        componentOptions.Ctor.options.name === 'BaseTabPane'
       )
     },
-    addPane(label) {
+    addPane(tab) {
       let $pane
 
       $pane = new PaneConstructor()
       $pane.$parent = this
-      $pane.label = label
+      $pane.label = tab.label
+      $pane.value = tab.value
       $pane.disabled = this.disabled
       $pane.closable = this.closable
       $pane.$mount()
@@ -159,9 +161,8 @@ export default {
       panes.splice(index, 1)
     },
     add(tab) {
-      console.log('tab', tab)
       this.tabs.push(tab)
-      this.addPane(tab.label)
+      this.addPane(tab)
     },
     remove(index) {
       const tabs = [...this.tabs]
@@ -171,15 +172,15 @@ export default {
 
       this.removePane(index)
     },
-    onChange(label) {
-      this.$emit('input', label)
-      this.$emit('change', label)
+    onChange(tab) {
+      this.$emit('input', tab.value)
+      this.$emit('change', tab)
     },
     onAdd(tab) {
       this.add(tab)
 
       this.$emit('add')
-      this.$emit('edit', tab.label, 'add')
+      this.$emit('edit', tab, 'add')
     },
     onRemove(index) {
       const tab = this.tabs[index]
@@ -187,7 +188,7 @@ export default {
       this.remove(index)
 
       this.$emit('remove')
-      this.$emit('edit', tab.label, 'remove')
+      this.$emit('edit', tab, 'remove')
     }
   }
 }
