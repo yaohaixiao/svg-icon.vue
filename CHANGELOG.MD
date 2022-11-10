@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.2.0...2.2.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* 修复 nav-electrocardiogram 图标 symbol 标签 SVG 格式错误 ([61c4510](https://github.com/yaohaixiao/svg-icon.vue/commit/61c45100f91a1410ee5330a562d5728f0fe1a539))
+
+
+
 # [2.2.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.1.0...2.2.0) (2022-11-09)
 
 
