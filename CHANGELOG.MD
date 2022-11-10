@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.2.1...2.3.0) (2022-11-10)
+
+
+### Features
+
+* render() 方法支持一次绘制多个图标集，并生成对应的 API 文档 ([ecbb627](https://github.com/yaohaixiao/svg-icon.vue/commit/ecbb627611800e3c7ffe1e20b8a19d44802b5ba3))
+
+
+
 ## [2.2.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.2.0...2.2.1) (2022-11-10)
 
 
