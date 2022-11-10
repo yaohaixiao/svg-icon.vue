@@ -40,8 +40,8 @@ module.exports = {
       alias: {
         '@': resolve('src'),
         vue$: 'vue/dist/vue.esm.js',
-        router: resolve('./documentation/router'),
-        components: resolve('./documentation/components'),
+        $router: resolve('./documentation/router'),
+        $components: resolve('./documentation/components'),
         $assets: resolve('./documentation/assets'),
         $utils: resolve('./documentation/utils')
       }

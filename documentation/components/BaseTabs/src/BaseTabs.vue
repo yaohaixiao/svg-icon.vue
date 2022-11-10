@@ -33,8 +33,8 @@
  */
 import Vue from 'vue'
 
-import BaseTabNav from 'components/BaseTabNav'
-import BaseTabPane from 'components/BaseTabPane'
+import BaseTabNav from '$components/BaseTabNav'
+import BaseTabPane from '$components/BaseTabPane'
 
 const PaneConstructor = Vue.extend(BaseTabPane)
 let guid = 0

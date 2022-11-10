@@ -43,7 +43,8 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-import BaseLink from 'components/BaseLink'
+import BaseLink from '$components/BaseLink'
+
 import SvgIcon from '@/SvgIcon'
 
 export default {

@@ -52,9 +52,9 @@
  */
 import SvgIcon from '@/SvgIcon'
 
-import Documentation from '../router/documentation'
-import Usage from '../router/usage'
-import Icons from 'router/icons'
+import Documentation from '$router/documentation'
+import Usage from '$router/usage'
+import Icons from '$router/icons'
 
 export default {
   name: 'AppMenu',

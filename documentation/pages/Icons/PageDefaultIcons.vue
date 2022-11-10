@@ -109,12 +109,12 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
-import BaseContainer from 'components/BaseContainer'
-import BaseHeader from 'components/BaseHeader'
-import BaseMain from 'components/BaseMain'
-import BreadcrumbNav from 'components/BreadcrumbNav'
-import BreadcrumbNavItem from 'components/BreadcrumbNavItem'
-import BaseGrid from 'components/BaseGrid'
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseMain from '$components/BaseMain'
+import BreadcrumbNav from '$components/BreadcrumbNav'
+import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
+import BaseGrid from '$components/BaseGrid'
 
 import IconCell from './components/IconCell'
 

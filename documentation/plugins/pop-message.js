@@ -5,6 +5,6 @@
  * Update: 2022.10.9
  */
 import Vue from 'vue'
-import PopMessage from 'components/PopMessage'
+import PopMessage from '$components/PopMessage'
 
 Vue.prototype.$message = PopMessage

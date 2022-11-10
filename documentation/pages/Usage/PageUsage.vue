@@ -27,6 +27,9 @@
               <svg-icon
                 name="database-lock"
                 :size="32" />
+              <svg-icon
+                name="deploy"
+                :size="[44, 44]" />
             </usage-case-item>
           </template>
           <template v-slot:tips>
@@ -38,8 +41,9 @@
             <pre
               class="article__pre"><code class="article__code">&lt;template&gt;
   &lt;svg-icon name="plugins" /&gt;
-  &lt;svg-icon name="database-read" :size="24" /&gt;
+  &lt;svg-icon name="database-read" size="24" /&gt;
   &lt;svg-icon name="database-lock" :size="32" /&gt;
+  &lt;svg-icon name="deploy" :size="[44, 44]" /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -366,14 +370,14 @@ export default {
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
-import BaseContainer from 'components/BaseContainer'
-import BaseHeader from 'components/BaseHeader'
-import BaseMain from 'components/BaseMain'
-import BreadcrumbNav from 'components/BreadcrumbNav'
-import BreadcrumbNavItem from 'components/BreadcrumbNavItem'
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseMain from '$components/BaseMain'
+import BreadcrumbNav from '$components/BreadcrumbNav'
+import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
 
-import UsageCase from 'components/UsageCase/Case'
-import UsageCaseItem from 'components/UsageCase/Item'
+import UsageCase from '$components/UsageCase/Case'
+import UsageCaseItem from '$components/UsageCase/Item'
 
 import SvgIcon from '@/SvgIcon'
 

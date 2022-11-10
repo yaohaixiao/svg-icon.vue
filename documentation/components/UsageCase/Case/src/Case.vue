@@ -27,11 +27,11 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import UsageCaseHeader from 'components/UsageCase/Header'
-import UsageCaseMain from 'components/UsageCase/Main'
-import UsageCaseCode from 'components/UsageCase/Code'
-import UsageCaseTips from 'components/UsageCase/Tips'
-import UsageCaseFooter from 'components/UsageCase/Footer'
+import UsageCaseHeader from '$components/UsageCase/Header'
+import UsageCaseMain from '$components/UsageCase/Main'
+import UsageCaseCode from '$components/UsageCase/Code'
+import UsageCaseTips from '$components/UsageCase/Tips'
+import UsageCaseFooter from '$components/UsageCase/Footer'
 
 export default {
   name: 'UsageCase',

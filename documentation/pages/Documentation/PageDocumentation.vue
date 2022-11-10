@@ -52,10 +52,10 @@
           <tbody>
             <tr>
               <td>iconSet</td>
-              <td>Object</td>
+              <td>Object | Array</td>
               <td>--</td>
               <td>--</td>
-              <td>可选，图标集数据对象。</td>
+              <td>可选，图标集数据对象或者图标集对象数组。</td>
             </tr>
             <tr>
               <td>iconSet.title</td>
@@ -81,10 +81,14 @@ render()</code></pre>
         <p>绘制自定义的图标集：</p>
         <pre
           class="article__pre"><code class="article__code">import fontAwesomeSet from 'svg-icon.vue/assets/font-awesome'
+import defaultSet from 'svg-icon.vue/assets/default'
 import { render } from 'svg-icon.vue/utils/utils'
 
-// 绘制 Font Awesome 免费版图标集
-render(fontAwesomeSet)</code></pre>
+// 绘制单个（Font Awesome 免费版）图标集
+render(fontAwesomeSet)
+
+// 绘制多个图标集
+render([default, fontAwesomeSet])</code></pre>
         <p>以下是 svg-icon.vue 内置的所有图标集：</p>
         <ol>
           <li>
@@ -215,8 +219,13 @@ export default {
             </tr>
             <tr>
               <td>size</td>
-              <td>number</td>
-              <td>0以上的整数</td>
+              <td>number | string | array</td>
+              <td>
+                number 和 string 类型时，可选值为 0
+                以上的整数，此时宽度和高度相等；
+                <br />
+                array 类型时数组长度为 2，分别代表宽度和高度；
+              </td>
               <td>16</td>
               <td>图标大小</td>
             </tr>
@@ -241,11 +250,11 @@ export default {
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-import BaseContainer from 'components/BaseContainer'
-import BaseHeader from 'components/BaseHeader'
-import BaseMain from 'components/BaseMain'
-import BreadcrumbNav from 'components/BreadcrumbNav'
-import BreadcrumbNavItem from 'components/BreadcrumbNavItem'
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseMain from '$components/BaseMain'
+import BreadcrumbNav from '$components/BreadcrumbNav'
+import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
 
 export default {
   name: 'PageDocumentation',

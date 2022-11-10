@@ -24,7 +24,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
-import BaseLink from 'components/BaseLink'
+import BaseLink from '$components/BaseLink'
 
 export default {
   name: 'AppNav',

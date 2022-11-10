@@ -55,11 +55,11 @@ render(iconSet)
 
 #### Options
 
-| Name              | Type       | Default   | Description                  |
-|-------------------|------------|-----------|------------------------------|
-| `iconSet`         | `Object`   | --        | 可选，图标集数据对象。                  |
-| `iconSet.title`   | `String`   | --        | 必选，图标集名称。                    |
-| `iconSet.symbols` | `Array`    | --        | 必选，存储 svg 图标的 symbols 数组 图标集 |
+| Name              | Type           | Default   | Description                  |
+|-------------------|----------------|-----------|------------------------------|
+| `iconSet`         | `Object,Array` | --        | 可选，图标集数据对象或者图标集数组。           |
+| `iconSet.title`   | `String`       | --        | 必选，图标集名称。                    |
+| `iconSet.symbols` | `Array`        | --        | 必选，存储 svg 图标的 symbols 数组 图标集 |
 
 绘制 default 图标集：
 
@@ -90,10 +90,16 @@ render()
 // 15. svg-icon.vue/assets/vicons
 // 16. svg-icon.vue/assets/wpzoom
 // 17. svg-icon.vue/assets/zondicons
+import defaultSet from 'svg-icon.vue/assets/default'
 import fontAwesomeSet from 'svg-icon.vue/assets/font-awesome'
+
 import { render } from 'svg-icon.vue/utils/utils'
 
+// 绘制单个图标集
 render(fontAwesomeSet)
+
+// 一次绘制多个图标集
+render([defaultSet, fontAwesomeSet])
 ```
 
 如果你只想使用内置图标集中特定的几个图标，你可以在 API 文档的 [icons](https://yaohaixiao.github.io/svg-icon.vue/#/icons) 相关页面选中需要的图标，然后点击图标购物车，我们会自动为你生成自定义图标集。并且提供文件下载（svg-icon-set.js）和代码复制功能。 如果你仅仅想使用某个图标，我们也同时提供单独下载 SVG 图标的功能。
@@ -127,11 +133,11 @@ SvgIcon 组件使用起来十分简单，调用语法如下：
 
 #### Options
 
-| Name    | Type     | Default | Description          |
-|---------|----------|---------|----------------------|
-| `name`  | `String` | --      | 必选，图标名称：图标库中所有图标的名称。 |
-| `size`  | `Number` | 16      | 可选，用来指定 icon 图标大小。   |
-| `color` | `String` | --      | 可选，用来指定 icon 图标颜色。   |
+| Name    | Type                   | Default   | Description                                                                              |
+|---------|------------------------|-----------|------------------------------------------------------------------------------------------|
+| `name`  | `String`               | --        | 必选，图标名称：图标库中所有图标的名称。  |
+| `size`  | `Number, String, Array`| 16        | 可选，用来指定 icon 图标大小。number 和 string 类型时，可选值为 0 以上的整数, 宽度和高度值相等；array时数组长度为 2，分别代表宽度和高度；                                                                       |
+| `color` | `String`               | --        | 可选，用来指定 icon 图标颜色。                                                                       |
 
 
 ## Usage
@@ -145,8 +151,9 @@ size 和 color 参数是可选的，只用设置 name 属性（ icon 的名称�
 ```vue
 <template>
   <svg-icon name="plugins" />
-  <svg-icon name="database-read" :size="24" />
+  <svg-icon name="database-read" size="24" />
   <svg-icon name="database-lock" :size="32" />
+  <svg-icon name="deploy" :size="[44, 44]" />
 </template>
 
 <script>

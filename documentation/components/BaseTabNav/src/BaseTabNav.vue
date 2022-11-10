@@ -59,8 +59,8 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.09
  */
-import BaseTabItem from 'components/BaseTabItem'
-import BaseTabBar from 'components/BaseTabBar'
+import BaseTabItem from '$components/BaseTabItem'
+import BaseTabBar from '$components/BaseTabBar'
 
 import SvgIcon from '@/SvgIcon'
 

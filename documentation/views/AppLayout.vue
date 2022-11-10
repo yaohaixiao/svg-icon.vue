@@ -22,14 +22,14 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-import BaseContainer from 'components/BaseContainer'
-import BaseMain from 'components/BaseMain'
+import BaseContainer from '$components/BaseContainer'
+import BaseMain from '$components/BaseMain'
 
 import AppHeader from './AppHeader'
 import AppAside from './AppAside'
 
-import TheCart from 'components/TheCart'
-import CartDrawer from 'components/CartDrawer'
+import TheCart from '$components/TheCart'
+import CartDrawer from '$components/CartDrawer'
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
 

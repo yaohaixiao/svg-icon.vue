@@ -71,12 +71,12 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.8
  */
-import BaseContainer from 'components/BaseContainer'
-import BaseHeader from 'components/BaseHeader'
-import BaseFooter from 'components/BaseFooter'
-import BaseMain from 'components/BaseMain'
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseFooter from '$components/BaseFooter'
+import BaseMain from '$components/BaseMain'
+import BaseButton from '$components/BaseButton'
 
-import BaseButton from 'components/BaseButton'
 import SvgIcon from '@/SvgIcon'
 
 import Popper from '$utils/popper'

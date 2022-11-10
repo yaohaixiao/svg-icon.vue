@@ -6,6 +6,11 @@
  */
 import defaultSet from '../assets/default'
 
+/**
+ * 绘制 Svg 图标集
+ * =============================================================
+ * @param {Object|Array} [iconSet] - 需要数值的图标集
+ */
 export const render = (iconSet) => {
   const $body = document.body
   const $icons = document.createElement('div')
@@ -17,8 +22,15 @@ export const render = (iconSet) => {
   if (!iconSet) {
     symbols.push(...defaultSet.symbols)
   } else {
-    // 绘制自定义的图标集
-    symbols.push(...iconSet.symbols)
+    // 一次绘制多个图标集
+    if (Array.isArray(iconSet)) {
+      iconSet.forEach((svgSet) => {
+        symbols.push(svgSet.symbols)
+      })
+    } else {
+      // 绘制单个（自定义的）图标集
+      symbols.push(...iconSet.symbols)
+    }
   }
 
   html = symbols.join('')

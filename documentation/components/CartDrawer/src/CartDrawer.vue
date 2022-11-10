@@ -14,9 +14,9 @@
         :tabs="tabs"
         class="cart-drawer__tabs" />
     </template>
-    <div class="cart-drawer__main">
+    <div :class="['cart-drawer__main', { 'is-auto': isIconView }]">
       <ul
-        v-if="active === 'icon'"
+        v-if="isIconView"
         class="cart-drawer__list">
         <template v-if="items.length > 0">
           <cart-drawer-item
@@ -48,11 +48,11 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.10
  */
-import BaseDrawer from 'components/BaseDrawer'
-import BaseTabNav from 'components/BaseTabNav'
-import BaseEmpty from 'components/BaseEmpty'
+import BaseDrawer from '$components/BaseDrawer'
+import BaseTabNav from '$components/BaseTabNav'
+import BaseEmpty from '$components/BaseEmpty'
 
-import CartDrawerItem from '../../CartDrawerItem'
+import CartDrawerItem from '$components/CartDrawerItem'
 
 import { clearStorage } from '$utils/storage'
 import { copyToClipboard, createAndDownloadFile } from '$utils/utils'
