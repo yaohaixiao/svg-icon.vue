@@ -71,60 +71,58 @@ module.exports = {
       return args
     })
 
-    config.when(process.env.BUILD_FOR === 'docs', (config) => {
-      // it can improve the speed of the first screen, it is recommended to turn on preload
-      config
-        .plugin('preload')
-        .use(PreloadWebpackPlugin)
-        .tap(() => [
-          {
-            rel: 'preload',
-            // to ignore runtime.js
-            // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
-            fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
-            // initial, asyncChunks, all, allAssets
-            include: 'initial'
-          }
-        ])
-
-      config.optimization.splitChunks({
-        chunks: 'all',
-        cacheGroups: {
-          vue: {
-            name: 'chunk-vuejs',
-            test: /[\\/]node_modules[\\/]_?vue(.*)/,
-            priority: 20,
-            chunks: 'initial',
-            reuseExistingChunk: true
-          },
-          libs: {
-            name: 'chunk-libs',
-            test: /[\\/]node_modules[\\/]/,
-            priority: 18,
-            reuseExistingChunk: true
-          },
-          icons: {
-            name: 'chunk-icons',
-            // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-            priority: 16,
-            test: resolve('src/'),
-            reuseExistingChunk: true
-          },
-          commons: {
-            // split async commons chunk
-            name: 'chunk-commons',
-            // can customize your rules
-            test: resolve('documentation/components'),
-            priority: 19,
-            chunks: 'async',
-            reuseExistingChunk: true
-          }
+    // it can improve the speed of the first screen, it is recommended to turn on preload
+    config
+      .plugin('preload')
+      .use(PreloadWebpackPlugin)
+      .tap(() => [
+        {
+          rel: 'preload',
+          // to ignore runtime.js
+          // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+          fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
+          // initial, asyncChunks, all, allAssets
+          include: 'initial'
         }
-      })
+      ])
 
-      // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
-      config.optimization.runtimeChunk('single')
+    config.optimization.splitChunks({
+      chunks: 'all',
+      cacheGroups: {
+        vue: {
+          name: 'chunk-vuejs',
+          test: /[\\/]node_modules[\\/]_?vue(.*)/,
+          priority: 20,
+          chunks: 'initial',
+          reuseExistingChunk: true
+        },
+        libs: {
+          name: 'chunk-libs',
+          test: /[\\/]node_modules[\\/]/,
+          priority: 18,
+          reuseExistingChunk: true
+        },
+        icons: {
+          name: 'chunk-icons',
+          // the weight needs to be larger than libs and app, or it will be packaged into libs or app
+          priority: 16,
+          test: resolve('src/'),
+          reuseExistingChunk: true
+        },
+        commons: {
+          // split async commons chunk
+          name: 'chunk-commons',
+          // can customize your rules
+          test: resolve('documentation/components'),
+          priority: 19,
+          chunks: 'async',
+          reuseExistingChunk: true
+        }
+      }
     })
+
+    // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
+    config.optimization.runtimeChunk('single')
   },
 
   transpileDependencies: true
