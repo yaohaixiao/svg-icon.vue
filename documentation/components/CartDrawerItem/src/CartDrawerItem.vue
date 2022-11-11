@@ -1,6 +1,11 @@
 <template>
   <li :class="['cart-drawer-item', { 'is-empty': isEmpty }]">
     <slot>
+      <div class="cart-drawer-item__checkbox">
+        <base-checkbox
+          v-model="checked"
+          @change="onCheck" />
+      </div>
       <div class="cart-drawer-item__icon">
         <svg-icon
           :name="name"
@@ -33,12 +38,15 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.10
  */
+import BaseCheckbox from '$components/BaseCheckbox'
+
 import SvgIcon from '@/SvgIcon'
 
 export default {
   name: 'CartDrawerItem',
   componentName: 'CartDrawerItem',
   components: {
+    BaseCheckbox,
     SvgIcon
   },
   props: {
@@ -50,6 +58,10 @@ export default {
       type: String,
       default: ''
     },
+    isChecked: {
+      type: Boolean,
+      default: false
+    },
     isEmpty: {
       type: Boolean,
       default: false
@@ -57,6 +69,8 @@ export default {
   },
   data() {
     return {
+      id: 0,
+      checked: false,
       item: ''
     }
   },
@@ -90,7 +104,13 @@ export default {
     }
   },
   watch: {
+    index() {
+      this.update()
+    },
     symbol() {
+      this.update()
+    },
+    isChecked() {
       this.update()
     }
   },
@@ -99,7 +119,17 @@ export default {
   },
   methods: {
     update() {
+      this.id = this.index
       this.item = this.symbol
+      this.checked = this.isChecked
+    },
+    onCheck() {
+      this.$emit('check', {
+        symbol: this.item,
+        checked: this.checked,
+        name: this.name,
+        id: this.id
+      })
     },
     onDelete() {
       this.$emit('delete', {

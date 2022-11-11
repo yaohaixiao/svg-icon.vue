@@ -1,0 +1,141 @@
+.base-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  height: 14px;
+  padding-left: 24px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+
+  + .base-checkbox {
+    margin-left: 20px;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  &__inner {
+    .radius_small();
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid @secondary_border_color;
+
+    overflow: hidden;
+
+    .svg-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:not(.is-disabled) {
+      &:hover {
+        border-color: @primary_color;
+      }
+    }
+  }
+
+  &__original {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    opacity: 0;
+    outline: none;
+  }
+
+  &__label {
+    .font_size_small();
+    float: left;
+    margin: 0;
+    height: 14px;
+    line-height: 14px;
+    text-align: left;
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    color: @secondary_text_color;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  &:not(.is-disabled) {
+    &.is-checked {
+      .base-checkbox__inner {
+        border-color: @primary_color;
+        background-color: @primary_color;
+        color: @white;
+
+        &.is-indeterminate {
+          &::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            height: 2px;
+            width: 8px;
+            background-color: @white;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+          }
+        }
+      }
+
+      .base-checkbox__label {
+        color: @primary_color;
+      }
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .base-checkbox__inner,
+    .base-checkbox__label {
+      color: @fourth_text_color;
+      cursor: not-allowed;
+    }
+
+    .base-checkbox__inner {
+      background-color: @hover_bg_color;
+
+      &.is-indeterminate {
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          height: 2px;
+          width: 8px;
+          background-color: @fourth_text_color;
+          transform: translate(-50%, -50%);
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

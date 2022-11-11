@@ -4,15 +4,15 @@
       flex
       border
       height="inner">
-      <breadcrumb-nav>
-        <breadcrumb-nav-item
+      <base-breadcrumb>
+        <base-breadcrumb-item
           to="/"
           icon="circle-arrow-left">
           Home
-        </breadcrumb-nav-item>
-        <breadcrumb-nav-item to="/icons">Icons</breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Feather</breadcrumb-nav-item>
-      </breadcrumb-nav>
+        </base-breadcrumb-item>
+        <base-breadcrumb-item to="/icons">Icons</base-breadcrumb-item>
+        <base-breadcrumb-item current>Feather</base-breadcrumb-item>
+      </base-breadcrumb>
     </base-header>
     <base-main padding="outer">
       <article class="article">
@@ -51,8 +51,8 @@
 import BaseContainer from '$components/BaseContainer'
 import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
-import BreadcrumbNav from '$components/BreadcrumbNav'
-import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
+import BaseBreadcrumb from '$components/BaseBreadcrumb'
+import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 import BaseGrid from '$components/BaseGrid'
 
 import IconCell from './components/IconCell'
@@ -65,8 +65,8 @@ export default {
     BaseContainer,
     BaseHeader,
     BaseMain,
-    BreadcrumbNav,
-    BreadcrumbNavItem,
+    BaseBreadcrumb,
+    BaseBreadcrumbItem,
     BaseGrid,
     IconCell
   },

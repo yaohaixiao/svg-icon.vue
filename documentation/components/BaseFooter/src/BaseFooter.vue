@@ -31,14 +31,14 @@ export default {
       type: String,
       default: 'auto'
     },
-    align: {
+    textAlign: {
       type: String,
       default: 'left'
     }
   },
   computed: {
     className() {
-      const align = this.align
+      const align = this.textAlign
       const flex = this.flex
       const height = this.height
       const padding = this.padding

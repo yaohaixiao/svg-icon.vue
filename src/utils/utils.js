@@ -10,6 +10,8 @@ import defaultSet from '../assets/default'
  * 绘制 Svg 图标集
  * =============================================================
  * @param {Object|Array} [iconSet] - 需要数值的图标集
+ * @param {String} iconSet.title - （iconSet 为对象时）图标集标题
+ * @param {Array} iconSet.symbols - （iconSet 为对象时）图标集的 symbols 数据
  */
 export const render = (iconSet) => {
   const $body = document.body
@@ -25,7 +27,7 @@ export const render = (iconSet) => {
     // 一次绘制多个图标集
     if (Array.isArray(iconSet)) {
       iconSet.forEach((svgSet) => {
-        symbols.push(svgSet.symbols)
+        symbols.push(...svgSet.symbols)
       })
     } else {
       // 绘制单个（自定义的）图标集

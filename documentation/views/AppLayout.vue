@@ -10,7 +10,7 @@
         <router-view />
       </base-main>
     </base-main>
-    <the-cart :items="icons" />
+    <cart-bar :items="icons" />
     <cart-drawer :items="icons" />
   </base-container>
 </template>
@@ -28,7 +28,7 @@ import BaseMain from '$components/BaseMain'
 import AppHeader from './AppHeader'
 import AppAside from './AppAside'
 
-import TheCart from '$components/TheCart'
+import CartBar from '$components/CartBar'
 import CartDrawer from '$components/CartDrawer'
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
@@ -41,7 +41,7 @@ export default {
     BaseMain,
     AppHeader,
     AppAside,
-    TheCart,
+    CartBar,
     CartDrawer
   },
   data() {

@@ -14,16 +14,33 @@
         :tabs="tabs"
         class="cart-drawer__tabs" />
     </template>
+    <template
+      v-if="isIconView"
+      v-slot:toolbar>
+      <base-header
+        role="toolbar"
+        flex
+        height="inner"
+        padding="inner"
+        :border="true"
+        class="cart-drawer__toolbar">
+        <template v-slot:start>
+          <base-checkbox v-model="isAllChecked">全选</base-checkbox>
+        </template>
+      </base-header>
+    </template>
     <div :class="['cart-drawer__main', { 'is-auto': isIconView }]">
       <ul
         v-if="isIconView"
         class="cart-drawer__list">
         <template v-if="items.length > 0">
           <cart-drawer-item
-            v-for="(item, i) in items"
+            v-for="(item, i) in collections"
             :key="`item-${i}`"
-            :symbol="item"
+            :symbol="item.symbol"
+            :is-checked="item.checked"
             :index="i"
+            @check="onCheck"
             @delete="onDelete" />
         </template>
         <cart-drawer-item
@@ -49,7 +66,9 @@
  * Update: 2022.11.10
  */
 import BaseDrawer from '$components/BaseDrawer'
+import BaseHeader from '$components/BaseHeader'
 import BaseTabNav from '$components/BaseTabNav'
+import BaseCheckbox from '$components/BaseCheckbox'
 import BaseEmpty from '$components/BaseEmpty'
 
 import CartDrawerItem from '$components/CartDrawerItem'
@@ -62,7 +81,9 @@ export default {
   componentName: 'CartDrawer',
   components: {
     BaseDrawer,
+    BaseHeader,
     BaseTabNav,
+    BaseCheckbox,
     BaseEmpty,
     CartDrawerItem
   },
@@ -85,14 +106,19 @@ export default {
           value: 'icon'
         },
         {
-          label: 'JavaScript 代码',
+          label: 'JS 源代码',
           value: 'code'
         }
       ],
+      collections: [],
       buttons: []
     }
   },
   computed: {
+    isAllChecked() {
+      const collections = this.collections
+      return collections.length > 0 && collections.every((item) => item.checked)
+    },
     isIconView() {
       return this.active === 'icon'
     },
@@ -136,6 +162,13 @@ export default {
   },
   methods: {
     update() {
+      this.collections = this.items.map((item) => {
+        return {
+          checked: true,
+          symbol: item
+        }
+      })
+
       this.buttons = [
         {
           name: 'cancel',
@@ -201,6 +234,12 @@ export default {
     },
     onClose() {
       this.close()
+    },
+    onCheck({ id, checked }) {
+      const collections = this.collections
+
+      collections[id].checked = checked
+      this.collections = collections
     },
     onDelete({ symbol, name }) {
       this.$broadcast('remove:icon', symbol)

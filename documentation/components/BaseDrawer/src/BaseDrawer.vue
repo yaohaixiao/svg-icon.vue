@@ -14,26 +14,31 @@
       <slot name="header">
         <base-header
           v-if="title"
+          role="header"
           flex
           text-align="left"
           height="outer"
           padding="inner"
           :border="headerBorder">
-          <h2 class="base-drawer__title">
-            {{ title }}
-            <span
-              v-if="$scopedSlots.icon"
-              class="base-drawer__icon">
-              <slot name="icon" />
-            </span>
-          </h2>
+          <template v-slot:title>
+            <h2 class="base-drawer__title">
+              {{ title }}
+              <span
+                v-if="$scopedSlots.icon"
+                class="base-drawer__icon">
+                <slot name="icon" />
+              </span>
+            </h2>
+          </template>
           <slot name="tabs" />
           <div class="base-drawer__help">
             <slot name="help" />
           </div>
         </base-header>
       </slot>
+      <slot name="toolbar" />
       <base-main
+        role="main"
         padding="inner"
         :class="{ 'base-drawer__main': !title && buttons.length < 1 }">
         <slot />
@@ -41,7 +46,8 @@
       <slot name="footer">
         <base-footer
           v-if="buttons.length > 0"
-          :align="align"
+          role="footer"
+          :text-align="align"
           padding="inner"
           :border="footerBorder">
           <base-button

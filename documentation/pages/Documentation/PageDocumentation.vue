@@ -4,14 +4,14 @@
       flex
       border
       height="inner">
-      <breadcrumb-nav>
-        <breadcrumb-nav-item
+      <base-breadcrumb>
+        <base-breadcrumb-item
           to="/"
           icon="circle-arrow-left">
           Home
-        </breadcrumb-nav-item>
-        <breadcrumb-nav-item current>API Documentation</breadcrumb-nav-item>
-      </breadcrumb-nav>
+        </base-breadcrumb-item>
+        <base-breadcrumb-item current>API Documentation</base-breadcrumb-item>
+      </base-breadcrumb>
     </base-header>
     <base-main padding="outer">
       <article class="article">
@@ -253,8 +253,8 @@ export default {
 import BaseContainer from '$components/BaseContainer'
 import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
-import BreadcrumbNav from '$components/BreadcrumbNav'
-import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
+import BaseBreadcrumb from '$components/BaseBreadcrumb'
+import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 
 export default {
   name: 'PageDocumentation',
@@ -263,8 +263,8 @@ export default {
     BaseContainer,
     BaseHeader,
     BaseMain,
-    BreadcrumbNav,
-    BreadcrumbNavItem
+    BaseBreadcrumb,
+    BaseBreadcrumbItem
   }
 }
 </script>

@@ -4,33 +4,41 @@
       flex
       border
       height="inner">
-      <breadcrumb-nav>
-        <breadcrumb-nav-item
+      <base-breadcrumb>
+        <base-breadcrumb-item
           to="/"
           icon="circle-arrow-left">
           Home
-        </breadcrumb-nav-item>
-        <breadcrumb-nav-item current>Usage</breadcrumb-nav-item>
-      </breadcrumb-nav>
+        </base-breadcrumb-item>
+        <base-breadcrumb-item current>Usage</base-breadcrumb-item>
+      </base-breadcrumb>
     </base-header>
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Usage</h1>
         <h2 class="article__h2">基础用法</h2>
-        <usage-case>
+        <base-usage>
           <template v-slot:case>
-            <usage-case-item>
-              <svg-icon name="plugins" />
-              <svg-icon
-                name="database-read"
-                :size="24" />
-              <svg-icon
-                name="database-lock"
-                :size="32" />
-              <svg-icon
-                name="deploy"
-                :size="[44, 44]" />
-            </usage-case-item>
+            <base-usage-case>
+              <span class="case-cell">
+                <svg-icon name="plugins" />
+              </span>
+              <span class="case-cell">
+                <svg-icon
+                  name="database-read"
+                  :size="24" />
+              </span>
+              <span class="case-cell">
+                <svg-icon
+                  name="database-lock"
+                  :size="32" />
+              </span>
+              <span class="case-cell">
+                <svg-icon
+                  name="deploy"
+                  :size="[44, 44]" />
+              </span>
+            </base-usage-case>
           </template>
           <template v-slot:tips>
             size 和 color 参数是可选的，只用设置 name 属性（ icon
@@ -59,16 +67,16 @@ export default {
 }
 &lt;/script&gt;</code></pre>
           </template>
-        </usage-case>
+        </base-usage>
         <h2 class="article__h2">设置颜色</h2>
         <p>
           SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS
           样式控制图标颜色，也可以直接设置 color 属性设置颜色。
         </p>
         <h3 class="article__h3">通过 CSS 设置颜色</h3>
-        <usage-case>
+        <base-usage>
           <template v-slot:case>
-            <usage-case-item>
+            <base-usage-case>
               <span class="case-icon">
                 <svg-icon
                   name="database-read"
@@ -84,7 +92,7 @@ export default {
                   name="plugins"
                   :size="24" />
               </span>
-            </usage-case-item>
+            </base-usage-case>
           </template>
           <template v-slot:tips>
             通过设置 SvgIcon 父组件的 CSS 颜色，SvgIcon 组件的图标颜色将其父元素
@@ -132,11 +140,11 @@ export default {
   }
 &lt;/style&gt;</code></pre>
           </template>
-        </usage-case>
+        </base-usage>
         <h3 class="article__h3">通过 color 属性设置颜色</h3>
-        <usage-case>
+        <base-usage>
           <template v-slot:case>
-            <usage-case-item>
+            <base-usage-case>
               <span class="case-icon">
                 <svg-icon
                   name="aside-environment"
@@ -155,7 +163,7 @@ export default {
                   :size="24"
                   color="#FF9901" />
               </span>
-            </usage-case-item>
+            </base-usage-case>
           </template>
           <template v-slot:tips>
             设置 color 属性后，SvgIcon 的父组件通过 CSS 设置的 color
@@ -203,16 +211,16 @@ export default {
   }
 &lt;/style&gt;</code></pre>
           </template>
-        </usage-case>
+        </base-usage>
         <h2 class="article__h2">高级用法</h2>
         <p>
           如果 SvgIcon 组件自带的图标没有您需要的，SvgIcon 组件还支持使用
           render() 方法添加自定义的图标集，方法如下。
         </p>
         <h3 class="article__h3">导入外部文件中的图标集</h3>
-        <usage-case>
+        <base-usage>
           <template v-slot:case>
-            <usage-case-item>
+            <base-usage-case>
               <span class="case-icon">
                 <svg-icon
                   name="fa-asterisk"
@@ -228,7 +236,7 @@ export default {
                   name="fa-glass"
                   :size="24" />
               </span>
-            </usage-case-item>
+            </base-usage-case>
           </template>
           <template v-slot:tips>
             使用 import 导入外部 .js 文件中的自定义的组件集，然后使用 render()
@@ -279,11 +287,11 @@ export default {
   }
 &lt;/style&gt;</code></pre>
           </template>
-        </usage-case>
+        </base-usage>
         <h3 class="article__h3">导入对象中的图标集</h3>
-        <usage-case>
+        <base-usage>
           <template v-slot:case>
-            <usage-case-item>
+            <base-usage-case>
               <span class="case-icon">
                 <svg-icon
                   name="moon-home"
@@ -299,7 +307,7 @@ export default {
                   name="moon-home3"
                   :size="24" />
               </span>
-            </usage-case-item>
+            </base-usage-case>
           </template>
           <template v-slot:tips>
             render() 可以直接绘制 JavaScript 对象数据中的图标集。
@@ -357,7 +365,7 @@ export default {
   }
 &lt;/style&gt;</code></pre>
           </template>
-        </usage-case>
+        </base-usage>
       </article>
     </base-main>
   </base-container>
@@ -373,19 +381,17 @@ export default {
 import BaseContainer from '$components/BaseContainer'
 import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
-import BreadcrumbNav from '$components/BreadcrumbNav'
-import BreadcrumbNavItem from '$components/BreadcrumbNavItem'
+import BaseBreadcrumb from '$components/BaseBreadcrumb'
+import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 
-import UsageCase from '$components/UsageCase/Case'
-import UsageCaseItem from '$components/UsageCase/Item'
+import BaseUsage from '$components/BaseUsage/Usage'
+import BaseUsageCase from '$components/BaseUsage/Case'
 
 import SvgIcon from '@/SvgIcon'
 
-import fontAwesomeSet from '@/assets/font-awesome'
 import iconSet from '$assets/ico-moon'
 import { render } from '@/utils/utils'
 
-render(fontAwesomeSet)
 render(iconSet)
 
 export default {
@@ -395,23 +401,27 @@ export default {
     BaseContainer,
     BaseHeader,
     BaseMain,
-    BreadcrumbNav,
-    BreadcrumbNavItem,
-    UsageCase,
-    UsageCaseItem,
+    BaseBreadcrumb,
+    BaseBreadcrumbItem,
+    BaseUsage,
+    BaseUsageCase,
     SvgIcon
   }
 }
 </script>
 
 <style scoped lang="less">
-.case-icon {
+.case-icon,
+.case-cell {
   display: inline-block;
   margin: 0 8px;
-  color: @third_text_color;
   vertical-align: middle;
   cursor: pointer;
   overflow: hidden;
+}
+
+.case-icon {
+  color: @third_text_color;
 
   &:hover {
     color: @primary_color;

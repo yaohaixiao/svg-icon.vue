@@ -1,0 +1,187 @@
+/**
+ * base-message.less - BaseMessage 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.11
+ */
+.base-message {
+  .radius_small();
+  .shadow_light_regular();
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: auto;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0.1;
+  top: -50px;
+  left: 50%;
+  min-width: 160px;
+  height: 40px;
+  margin: 0;
+  line-height: 40px;
+  font-size: 13px;
+  background-color: @white;
+  color: @third_text_color;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-50%);
+  overflow: hidden;
+
+  &__content {
+    .ellipsis(1);
+    margin: 0;
+    max-width: 700px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    padding-left: 16px;
+    color: @third_text_color;
+    overflow: hidden;
+  }
+
+  &__close,
+  &__icon {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+
+    .svg-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__icon {
+    color: @white;
+  }
+
+  &__close {
+    cursor: pointer;
+    color: @fourth_text_color;
+
+    &:hover {
+      color: @third_text_color;
+    }
+  }
+
+  &_info {
+    .base-message__icon {
+      background-color: @primary_color;
+    }
+  }
+
+  &_warning {
+    .base-message__icon {
+      background-color: @warning_color;
+    }
+  }
+
+  &_success {
+    .base-message__icon {
+      background-color: @success_color;
+    }
+  }
+
+  &_error {
+    .base-message__icon {
+      background-color: @danger_color;
+    }
+  }
+
+  &_theme_plain {
+    min-width: 190px;
+
+    &.base-message_info {
+      border-left: 5px solid @primary_color;
+      background-color: @info_tip_bg_color;
+    }
+
+    &.base-message_warning {
+      border-left: 5px solid @warning_color;
+      background-color: @warning_tip_bg_color;
+    }
+
+    &.base-message_success {
+      border-left: 5px solid @success_color;
+      background-color: @success_tip_bg_color;
+    }
+
+    &.base-message_error {
+      border-left: 5px solid @danger_color;
+      background-color: @danger_tip_bg_color;
+    }
+  }
+
+  &_light {
+    &.base-message_info {
+      .base-message__icon {
+        color: @primary_color;
+      }
+    }
+
+    &.base-message_warning {
+      .base-message__icon {
+        color: @warning_color;
+      }
+    }
+
+    &.base-message_success {
+      .base-message__icon {
+        color: @success_color;
+      }
+    }
+
+    &.base-message_error {
+      .base-message__icon {
+        color: @danger_color;
+      }
+    }
+
+    .base-message__content {
+      padding-left: 0;
+    }
+
+    .base-message__icon {
+      background-color: @white;
+    }
+  }
+
+  &--round {
+    .radius(20px);
+
+    &.base-message_theme_plain {
+      min-width: 214px;
+
+      .base-message__content {
+        padding-left: 16px;
+      }
+    }
+
+    &.base-message_theme_light {
+      min-width: 210px;
+    }
+
+    .base-message__content {
+      padding-left: 0;
+    }
+
+    .base-message__icon {
+      margin: 10px;
+      width: 20px;
+      height: 20px;
+      .radius(10px);
+    }
+  }
+
+  &--visible {
+    opacity: 1;
+  }
+}

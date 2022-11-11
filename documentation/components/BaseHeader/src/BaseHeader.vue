@@ -5,13 +5,20 @@
       class="base-header__title">
       <slot name="title" />
     </h2>
+    <div
+      v-if="$scopedSlots.start"
+      class="base-header__start">
+      <slot name="start" />
+    </div>
     <slot name="breadcrumb" />
     <slot name="tabs" />
     <slot />
     <div
-      v-if="$scopedSlots.toolbar"
+      v-if="$scopedSlots.toolbar || $scopedSlots.filter || $scopedSlots.actions"
       :class="['base-header__toolbar', `base-header__toolbar_${padding}`]">
       <slot name="toolbar" />
+      <slot name="filter" />
+      <slot name="actions" />
     </div>
   </header>
 </template>
@@ -54,6 +61,7 @@ export default {
         'base-header',
         {
           'base-header--flex': this.flex,
+          'base-header--static': !this.flex,
           'util-border-bottom': this.border
         },
         `util-height-${this.height}`,

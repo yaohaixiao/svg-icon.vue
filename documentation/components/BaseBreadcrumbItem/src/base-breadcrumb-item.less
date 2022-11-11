@@ -1,0 +1,31 @@
+/**
+ * base-breadcrumb-case.less - 面包屑导航项组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.9
+ */
+.base-breadcrumb-item {
+  .font_size_regular();
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: auto;
+  align-items: center;
+  color: @primary_text_color;
+
+  &:last-child {
+    color: @fourth_text_color;
+  }
+
+  &__icon {
+    + .base-breadcrumb-item__text {
+      padding-left: 8px;
+    }
+  }
+
+  &__separator {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 4px;
+  }
+}
