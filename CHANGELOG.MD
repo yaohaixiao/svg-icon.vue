@@ -1,3 +1,12 @@
+## [2.3.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.3.0...2.3.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* 修复 render 绘制多个图标集的问题，调整 docs 中的公共组件 ([4ad44ac](https://github.com/yaohaixiao/svg-icon.vue/commit/4ad44ac177f114cf3e3f9322bda93838d842dc45))
+
+
+
 # [2.3.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.2.1...2.3.0) (2022-11-10)
 
 

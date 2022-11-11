@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['icon-cell', { 'is-checked': isChecked }]"
+    :class="['icon-cell', { 'is-checked': checked }]"
     @click="onCheck">
     <span class="icon-cell__marked">
       <svg-icon
@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       name: '',
-      isChecked: false
+      checked: false
     }
   },
   watch: {
@@ -74,19 +74,28 @@ export default {
   mounted() {
     this.update()
 
-    this.$subscribe('clean:cart', this.update)
+    this.$subscribe('update:icons', this.updateChecked)
+    this.$subscribe('clean:cart', this.updateChecked)
+  },
+  beforeDestroy() {
+    this.$unsubscribe('update:icons', this.updateChecked)
+    this.$unsubscribe('clean:cart', this.updateChecked)
   },
   methods: {
     update() {
-      const icons = getStorage('svg.icon.set')
       const keys = this.symbol.match(/icon-(\w+(-\w+)*)+/)
 
       this.name = keys[1]
 
+      this.updateChecked()
+    },
+    updateChecked() {
+      const icons = getStorage('svg.icon.set')
+
       if (icons) {
-        this.isChecked = JSON.parse(icons).indexOf(this.symbol) > -1
+        this.checked = JSON.parse(icons).indexOf(this.symbol) > -1
       } else {
-        this.isChecked = false
+        this.checked = false
       }
     },
     add(symbol) {
@@ -138,7 +147,7 @@ export default {
       createAndDownloadFile(`${this.name}.svg`, svg)
     },
     toggle() {
-      this.isChecked = !this.isChecked
+      this.checked = !this.checked
     },
     onCheck() {
       let action = ''
@@ -146,7 +155,7 @@ export default {
 
       this.toggle()
 
-      if (this.isChecked) {
+      if (this.checked) {
         this.add(symbol)
         action = '加入'
       } else {

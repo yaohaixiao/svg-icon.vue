@@ -17,86 +17,23 @@
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Default 图标库</h1>
-        <h2 class="article__h2">{{ boldSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in boldSet.symbols"
-            :key="`bold-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ solidSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in solidSet.symbols"
-            :key="`solid-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ stateSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in stateSet.symbols"
-            :key="`state-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ fileSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in fileSet.symbols"
-            :key="`file-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ languageSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in languageSet.symbols"
-            :key="`language-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ arrowSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in arrowSet.symbols"
-            :key="`arrow-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ pairedSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in pairedSet.symbols"
-            :key="`paired-${j}`"
-            :symbol="symbol" />
-        </base-grid>
-        <h2 class="article__h2">{{ genericSet.title }}</h2>
-        <base-grid
-          :columns="6"
-          :gap="10"
-          class="icons-grid">
-          <icon-cell
-            v-for="(symbol, j) in genericSet.symbols"
-            :key="`generic-${j}`"
-            :symbol="symbol" />
-        </base-grid>
+        <template v-for="(iconSet, i) in defaultSets">
+          <h2
+            :key="`title-${i}`"
+            class="article__h2">
+            {{ `${iconSet.title}（${iconSet.symbols.length}）` }}
+          </h2>
+          <base-grid
+            :key="`grid-${i}`"
+            :columns="6"
+            :gap="10"
+            class="article__grid">
+            <icon-cell
+              v-for="(symbol, j) in iconSet.symbols"
+              :key="`generic-${j}`"
+              :symbol="symbol" />
+          </base-grid>
+        </template>
       </article>
     </base-main>
   </base-container>
@@ -149,27 +86,17 @@ export default {
   },
   data() {
     return {
-      boldSet,
-      solidSet,
-      stateSet,
-      fileSet,
-      languageSet,
-      arrowSet,
-      pairedSet,
-      genericSet
+      defaultSets: [
+        boldSet,
+        solidSet,
+        stateSet,
+        fileSet,
+        languageSet,
+        arrowSet,
+        pairedSet,
+        genericSet
+      ]
     }
   }
 }
 </script>
-
-<style scoped lang="less">
-.icons-grid {
-  .radius_regular();
-  padding: 10px;
-  border: 1px solid @primary_border_color;
-
-  &:last-child {
-    margin-bottom: 20px;
-  }
-}
-</style>

@@ -52,6 +52,7 @@ export default {
   watch: {
     icons() {
       setStorage('svg.icon.set', JSON.stringify(this.icons))
+      this.$broadcast('update:icons')
     }
   },
   created() {

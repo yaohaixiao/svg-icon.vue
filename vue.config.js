@@ -61,17 +61,17 @@ module.exports = {
       config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()
     })
 
+    config.plugin('html').tap((args) => {
+      const description = `${pkg.description}`
+
+      args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
+      args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
+      args[0].description = description
+
+      return args
+    })
+
     config.when(process.env.BUILD_FOR === 'docs', (config) => {
-      config.plugin('html').tap((args) => {
-        const description = `${pkg.description}`
-
-        args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
-        args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
-        args[0].description = description
-
-        return args
-      })
-
       // it can improve the speed of the first screen, it is recommended to turn on preload
       config
         .plugin('preload')

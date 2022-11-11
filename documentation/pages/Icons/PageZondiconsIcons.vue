@@ -17,11 +17,13 @@
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Zondicons</h1>
-        <h2 class="article__h2">{{ zondiconsSet.title }}</h2>
+        <h2 class="article__h2">
+          {{ `${zondiconsSet.title}（${count}）` }}
+        </h2>
         <base-grid
           :columns="6"
           :gap="10"
-          class="icons-grid">
+          class="article__grid">
           <icon-cell
             v-for="(symbol, j) in zondiconsSet.symbols"
             :key="`cell-${j}`"
@@ -74,18 +76,13 @@ export default {
     return {
       zondiconsSet
     }
+  },
+  computed: {
+    count() {
+      return this.zondiconsSet.symbols.length
+    }
   }
 }
 </script>
 
-<style scoped lang="less">
-.icons-grid {
-  .radius_regular();
-  padding: 10px;
-  border: 1px solid @primary_border_color;
-
-  &:last-child {
-    margin-bottom: 20px;
-  }
-}
-</style>
+<style scoped></style>

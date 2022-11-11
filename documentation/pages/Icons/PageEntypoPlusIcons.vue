@@ -17,11 +17,13 @@
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Entypo+</h1>
-        <h2 class="article__h2">{{ entypoSet.title }}</h2>
+        <h2 class="article__h2">
+          {{ `${entypoSet.title}（${count}）` }}
+        </h2>
         <base-grid
           :columns="6"
           :gap="10"
-          class="icons-grid">
+          class="article__grid">
           <icon-cell
             v-for="(symbol, j) in entypoSet.symbols"
             :key="`cell-${j}`"
@@ -74,18 +76,13 @@ export default {
     return {
       entypoSet
     }
+  },
+  computed: {
+    count() {
+      return this.entypoSet.symbols.length
+    }
   }
 }
 </script>
 
-<style scoped lang="less">
-.icons-grid {
-  .radius_regular();
-  padding: 10px;
-  border: 1px solid @primary_border_color;
-
-  &:last-child {
-    margin-bottom: 20px;
-  }
-}
-</style>
+<style scoped></style>

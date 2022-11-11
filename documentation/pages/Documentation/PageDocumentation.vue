@@ -176,6 +176,13 @@ render([default, fontAwesomeSet])</code></pre>
           以上图标集除 Google 的 Material 图标集采用 Apache License 2.0
           协议，其余的图标库基本都可以直接用于商业用途。使用时请根据需要选择使用。
         </p>
+        <p>
+          说明：如果你只想使用内置图标集中特定的几个图标，你可以在 API 文档的
+          <a href="https://yaohaixiao.github.io/svg-icon.vue/#/icons">icons</a>
+          相关页面选中需要的图标，然后点击图标购物车，我们会自动为你生成自定义图标集。并且提供下载
+          SVG 图标集和 JS 源代码复制功能。
+          如果你仅仅想使用某个图标，我们也同时提供单独下载 SVG 图标的功能。
+        </p>
         <h2 class="article__h2">导入 SvgIcon 组件</h2>
         <p>
           使用 render() 方法绘制 svg 图标集后，就可以调用 SvgIcon
