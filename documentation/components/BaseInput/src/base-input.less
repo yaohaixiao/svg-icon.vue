@@ -1,0 +1,279 @@
+/**
+ * base-input.less - BaseInput 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.12
+ */
+.base-input,
+.base-textarea {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  min-width: 280px;
+  overflow: hidden;
+
+  + .base-textarea,
+  + .base-input {
+    margin-left: 16px;
+  }
+
+  &.is-hovering {
+    .base-input__inner,
+    .base-textarea__inner {
+      &:not(.is-disabled) {
+        border-color: @primary_color;
+      }
+    }
+  }
+}
+
+.base-input__inner,
+.base-textarea__inner {
+  .radius_small();
+  .font_size_small();
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 4px 10px;
+  width: 240px;
+  border: 1px solid @secondary_border_color;
+  outline: none;
+  vertical-align: top;
+  height: 100%;
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  &:not(.is-disabled) {
+    &:hover,
+    &:focus {
+      border-color: @primary_color;
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    color: @fourth_text_color;
+    background-color: @primary_bg_color;
+  }
+
+  &::placeholder {
+    color: @fourth_text_color;
+  }
+}
+
+.base-input__count,
+.base-textarea__count {
+  .font_size_mini();
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  white-space: nowrap;
+  height: 16px;
+  line-height: 16px;
+  color: @fourth_text_color;
+  overflow: hidden;
+}
+
+.base-input {
+  &__inner {
+    .ellipsis(1);
+
+    &_auto {
+      width: 100%;
+    }
+
+    &_prepend {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &_append {
+      border-radius: 3px 0 0 3px;
+
+      &.base-input__inner_prepend {
+        .radius(0);
+      }
+    }
+  }
+
+  &__prefix,
+  &__suffix {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    height: 100%;
+    min-width: 34px;
+    margin: 0;
+    overflow: hidden;
+
+    .svg-icon {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      color: @default_icon_color;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__prefix {
+    left: 0;
+  }
+
+  &__suffix {
+    right: 0;
+
+    &.overflow-visible {
+      overflow: visible;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    color: @default_icon_color;
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    &:hover {
+      color: @primary_color;
+    }
+
+    &.is-clear {
+      background-color: @white;
+      border-radius: 8px;
+
+      &:hover {
+        color: @danger_color;
+      }
+    }
+
+    .svg-icon {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__count {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &_large {
+    height: 42px;
+  }
+
+  &_medium {
+    height: 38px;
+  }
+
+  &_regular {
+    height: 34px;
+  }
+
+  &_small {
+    height: 30px;
+  }
+
+  &_mini {
+    height: 26px;
+  }
+
+  &_auto {
+    width: 100%;
+  }
+
+  &_suffix {
+    .base-input__inner {
+      padding-right: 34px;
+    }
+  }
+
+  &_prefix {
+    .base-input__inner {
+      padding-left: 34px;
+    }
+  }
+
+  &_prepend,
+  &_append {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-self: auto;
+    align-items: center;
+    overflow: hidden;
+
+    .base-input__inner {
+      flex: 1;
+    }
+  }
+
+  &__prepend,
+  &__append {
+    .padding(0 16px);
+    .font_size_small();
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: auto;
+    align-items: center;
+    flex-shrink: 0;
+    flex-basis: content;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    white-space: nowrap;
+    color: @third_text_color;
+    background-color: @primary_bg_color;
+    overflow: hidden;
+  }
+
+  &__prepend {
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+  }
+
+  &__append {
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+
+    .base-button_text {
+      color: @third_text_color;
+    }
+  }
+}
+
+.base-textarea {
+  &__inner {
+    padding: 10px;
+    font-family: @font_text_family;
+    line-height: 1.5em;
+    overflow: auto;
+
+    &_auto {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__count {
+    bottom: 10px;
+  }
+
+  &_auto {
+    width: 100%;
+    height: 100%;
+  }
+}

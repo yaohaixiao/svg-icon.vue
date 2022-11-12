@@ -13,6 +13,19 @@
         <base-breadcrumb-item to="/icons">Icons</base-breadcrumb-item>
         <base-breadcrumb-item current>Default</base-breadcrumb-item>
       </base-breadcrumb>
+      <template v-slot:filter>
+        <div class="page__filter">
+          <base-input
+            v-model="keyword"
+            autosize
+            autofocus
+            clearable
+            size="small"
+            suffix-icon="search"
+            placeholder="请输入图标名称"
+            @change="onQuery" />
+        </div>
+      </template>
     </base-header>
     <base-main padding="outer">
       <article class="article">
@@ -24,6 +37,7 @@
             {{ `${iconSet.title}（${iconSet.symbols.length}）` }}
           </h2>
           <base-grid
+            v-if="iconSet.symbols.length > 0"
             :key="`grid-${i}`"
             :columns="6"
             :gap="10"
@@ -33,6 +47,9 @@
               :key="`generic-${j}`"
               :symbol="symbol" />
           </base-grid>
+          <base-empty
+            v-else
+            :key="`empty-${i}`" />
         </template>
       </article>
     </base-main>
@@ -51,7 +68,9 @@ import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
 import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
+import BaseEmpty from '$components/BaseEmpty'
 
 import IconCell from './components/IconCell'
 
@@ -71,6 +90,18 @@ import arrowSet from '@/assets/default/arrow'
 import pairedSet from '@/assets/default/paired'
 // 通用类图标
 import genericSet from '@/assets/default/generic'
+import { debounce, cloneDeep } from '$utils/utils'
+
+const DEFAULT_SET = [
+  boldSet,
+  solidSet,
+  stateSet,
+  fileSet,
+  languageSet,
+  arrowSet,
+  pairedSet,
+  genericSet
+]
 
 export default {
   name: 'PageDefaultIcons',
@@ -81,22 +112,41 @@ export default {
     BaseMain,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
+    BaseInput,
     BaseGrid,
+    BaseEmpty,
     IconCell
   },
   data() {
     return {
-      defaultSets: [
-        boldSet,
-        solidSet,
-        stateSet,
-        fileSet,
-        languageSet,
-        arrowSet,
-        pairedSet,
-        genericSet
-      ]
+      defaultSets: [],
+      keyword: ''
     }
+  },
+  created() {
+    this.update()
+  },
+  methods: {
+    update() {
+      const defaultSets = cloneDeep(DEFAULT_SET)
+
+      defaultSets.forEach((iconSet) => {
+        iconSet.symbols = iconSet.symbols.filter((symbol) => {
+          const name = this.getSymbolName(symbol).toLowerCase()
+
+          return name.indexOf(this.keyword.toLowerCase()) > -1
+        })
+      })
+
+      this.defaultSets = defaultSets
+    },
+    getSymbolName(symbol) {
+      const matches = symbol.match(/icon-(\w+(-\w+)*)+/)
+      return matches[1] || ''
+    },
+    onQuery: debounce(function () {
+      this.update()
+    }, 300)
   }
 }
 </script>

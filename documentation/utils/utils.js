@@ -90,3 +90,46 @@ export const createAndDownloadFile = (fileName, content) => {
 
   URL.revokeObjectURL($blob)
 }
+
+/**
+ * 防抖函数
+ * =============================================================
+ * @param {Function} fn 回调函数
+ * @param {Number} delay 延迟时间（毫秒）
+ * @returns {Function}
+ */
+export const debounce = (fn, delay = 300) => {
+  let timer
+
+  return function (...args) {
+    clearTimeout(timer)
+
+    timer = setTimeout(() => fn.apply(this, args), delay)
+  }
+}
+
+/**
+ * 深拷贝对象函数
+ * ================================================
+ * @param {Object} obj - 深拷贝的对象
+ * @returns {unknown[]|null|*}
+ */
+export const cloneDeep = (obj) => {
+  if (obj === null) {
+    return null
+  }
+
+  let clone = Object.assign({}, obj)
+
+  Object.keys(clone).forEach((key) => {
+    return (clone[key] =
+      typeof obj[key] === 'object' ? cloneDeep(obj[key]) : obj[key])
+  })
+
+  if (Array.isArray(obj)) {
+    clone.length = obj.length
+    return Array.from(clone)
+  }
+
+  return clone
+}
