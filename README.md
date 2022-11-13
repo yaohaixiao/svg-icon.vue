@@ -93,7 +93,7 @@ render()
 import defaultSet from 'svg-icon.vue/assets/default'
 import fontAwesomeSet from 'svg-icon.vue/assets/font-awesome'
 
-import { render } from 'svg-icon.vue/utils/utils'
+import { render, getSymbols } from 'svg-icon.vue/utils/utils'
 
 // 绘制单个图标集
 render(fontAwesomeSet)
@@ -103,6 +103,19 @@ render([defaultSet, fontAwesomeSet])
 ```
 
 说明：如果你只想使用内置图标集中特定的几个图标，你可以在 API 文档的 [icons](https://yaohaixiao.github.io/svg-icon.vue/#/icons) 相关页面选中需要的图标，然后点击图标购物车，我们会自动为你生成自定义图标集。并且提供下载 SVG 图标集和 JS 源代码复制功能。 如果你仅仅想使用某个图标，我们也同时提供单独下载 SVG 图标的功能。
+
+### getSymbols()
+
+getSymbols() 方法返回使用 render() 方法绘制的图标集中所有 symbols （数组）数据。
+
+```js
+import { render } from 'svg-icon.vue/utils/utils'
+
+render()
+
+const symbols = getSymbols()
+// => 返回 default 图标集中的 symbols （数组）数据
+```
 
 ### Import package
 

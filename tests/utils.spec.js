@@ -1,4 +1,4 @@
-import { render } from '@/utils/utils'
+import { getSymbols, render } from '@/utils/utils'
 import defaultSet from '@/assets/default'
 import icoMoonSet from '../documentation/assets/ico-moon'
 
@@ -8,6 +8,14 @@ const PATH =
   '<path d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"></path>'
 
 describe('utils.js', () => {
+  it('getSymbols()：获取所有的内置图标集的 symbols 数组数据', async () => {
+    render()
+
+    const symbols = getSymbols()
+
+    expect(symbols.length).toEqual(defaultSet.symbols.length)
+  })
+
   it('render()：加载内置默认 default 图标库', async () => {
     render()
 

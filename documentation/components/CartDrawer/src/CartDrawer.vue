@@ -17,34 +17,24 @@
     <template
       v-if="isIconView"
       v-slot:toolbar>
-      <base-header
-        role="toolbar"
-        flex
-        height="inner"
-        padding="inner"
-        :border="true"
-        class="cart-drawer__toolbar">
-        <template v-slot:start>
-          <base-checkbox
-            v-model="checked"
-            :indeterminate="isIndeterminate"
-            :disabled="disabled"
-            @change="onCheckAll">
-            全选（{{ count }}）
-          </base-checkbox>
-        </template>
-      </base-header>
+      <cart-drawer-toolbar
+        :is-checked="checked"
+        :items="options"
+        :selected="selected"
+        @check="onCheckAll"
+        @import="onImport" />
     </template>
     <div :class="['cart-drawer__main', { 'is-auto': isIconView && !disabled }]">
       <ul
         v-if="isIconView"
         :class="['cart-drawer__list', { 'is-empty': disabled }]">
-        <template v-if="items.length > 0">
+        <template v-if="options.length > 0">
           <cart-drawer-item
-            v-for="(item, i) in collections"
+            v-for="(item, i) in options"
             :key="`item-${i}`"
             :symbol="item.symbol"
             :is-checked="item.checked"
+            :is-build-in="item.isBuildIn"
             :index="i"
             @check="onCheckItem"
             @delete="onDeleteItem" />
@@ -72,25 +62,26 @@
  * Update: 2022.11.10
  */
 import BaseDrawer from '$components/BaseDrawer'
-import BaseHeader from '$components/BaseHeader'
 import BaseTabNav from '$components/BaseTabNav'
-import BaseCheckbox from '$components/BaseCheckbox'
 import BaseEmpty from '$components/BaseEmpty'
 
+import CartDrawerToolbar from '$components/CartDrawerToolbar'
 import CartDrawerItem from '$components/CartDrawerItem'
 
 import { clearStorage } from '$utils/storage'
 import { copyToClipboard, createAndDownloadFile } from '$utils/utils'
+import { render, getSymbols } from '@/utils/utils'
+
+let guid = 0
 
 export default {
   name: 'CartDrawer',
   componentName: 'CartDrawer',
   components: {
     BaseDrawer,
-    BaseHeader,
     BaseTabNav,
-    BaseCheckbox,
     BaseEmpty,
+    CartDrawerToolbar,
     CartDrawerItem
   },
   props: {
@@ -118,6 +109,8 @@ export default {
         }
       ],
       collections: [],
+      imports: [],
+      options: [],
       buttons: []
     }
   },
@@ -125,16 +118,14 @@ export default {
     isIconView() {
       return this.active === 'icon'
     },
-    isIndeterminate() {
-      const selected = this.selected
-
-      return selected.length > 0 && selected.length < this.collections.length
+    isUnchecked() {
+      return this.count === 0
     },
     disabled() {
-      return this.collections.length === 0
+      return this.options.length === 0
     },
     selected() {
-      return this.collections.filter((item) => item.checked)
+      return this.options.filter((item) => item.checked)
     },
     symbols() {
       return this.selected.map((item) => item.symbol)
@@ -184,12 +175,15 @@ export default {
   },
   methods: {
     update() {
-      this.collections = this.items.map((item) => {
+      this.collections = this.items.map((symbol) => {
         return {
           checked: true,
-          symbol: item
+          isBuiltIn: true,
+          symbol
         }
       })
+
+      this.options = this.collections.concat(this.imports)
 
       this.updateCheckAll()
       this.updateButtons()
@@ -211,6 +205,7 @@ export default {
           disabled: this.disabled,
           action: () => {
             clearStorage('svg.icon.set')
+            this.imports = []
 
             this.$message.success({
               round: true,
@@ -224,7 +219,7 @@ export default {
           name: 'download',
           text: '下载',
           icon: 'download',
-          disabled: this.count === 0,
+          disabled: this.isUnchecked,
           action: () => {
             if (this.isIconView) {
               createAndDownloadFile('svg-icon-set.svg', this.svg)
@@ -239,7 +234,7 @@ export default {
           icon: 'copy',
           size: 'small',
           type: 'primary',
-          disabled: this.count === 0,
+          disabled: this.isUnchecked,
           action: () => {
             copyToClipboard(this.isIconView ? this.svg : this.code)
             this.$message.success({
@@ -251,19 +246,87 @@ export default {
       ]
     },
     uncheckAll() {
-      this.collections = this.items.map((item) => {
+      const options = this.collections.concat(this.imports)
+
+      this.options = options.map((item) => {
+        const { isBuildIn, symbol } = item
+
         return {
           checked: false,
-          symbol: item
+          isBuildIn,
+          symbol
         }
       })
     },
     checkAll() {
-      this.collections = this.items.map((item) => {
+      const options = this.collections.concat(this.imports)
+
+      this.options = options.map((item) => {
+        const { isBuildIn, symbol } = item
+
         return {
           checked: true,
-          symbol: item
+          isBuildIn,
+          symbol
         }
+      })
+    },
+    doCheck(id, checked) {
+      const collections = [...this.options]
+
+      collections[id].checked = checked
+      this.options = collections
+    },
+    doImport(symbol, id) {
+      const symbols = getSymbols()
+      const theSameSymbol = symbols.find((item) => {
+        const PATTERN_ID = /id="(.*?)"/
+        const match = item.match(PATTERN_ID)
+        const name = match && match[1] ? match[1] : ''
+
+        return name.toLowerCase() === id.toLowerCase()
+      })
+
+      if (theSameSymbol) {
+        guid += 1
+        symbol = symbol.replace(id, `${id}-${guid}`)
+        render({
+          symbols: [symbol]
+        })
+      }
+
+      this.imports.push({
+        checked: true,
+        isBuildIn: false,
+        symbol
+      })
+
+      this.update()
+    },
+    doDelete(symbol, name, isBuildIn) {
+      let imports
+      let $symbol
+
+      if (!isBuildIn) {
+        imports = [...this.imports]
+        $symbol = document.querySelector(`#icon-${name}`)
+
+        this.imports = imports.filter((item) => {
+          return item.symbol !== symbol
+        })
+
+        if ($symbol) {
+          $symbol.parentNode.removeChild($symbol)
+        }
+
+        this.update()
+      } else {
+        this.$broadcast('remove:icon', symbol)
+      }
+
+      this.$message.success({
+        round: true,
+        message: `图标 ${name} 已移除购物车！`
       })
     },
     show() {
@@ -277,28 +340,21 @@ export default {
         this.$broadcast('show:cart')
       }, 300)
     },
-    onCheckAll(checked) {
-      const isIndeterminate = this.isIndeterminate
-
+    onCheckAll(checked, isIndeterminate) {
       if (isIndeterminate || (checked && !isIndeterminate)) {
         this.checkAll()
       } else {
         this.uncheckAll()
       }
     },
-    onCheckItem({ id, checked }) {
-      const collections = [...this.collections]
-
-      collections[id].checked = checked
-      this.collections = collections
+    onImport(symbol, id) {
+      this.doImport(symbol, id)
     },
-    onDeleteItem({ symbol, name }) {
-      this.$broadcast('remove:icon', symbol)
-
-      this.$message.success({
-        round: true,
-        message: `图标 ${name} 已移除购物车！`
-      })
+    onCheckItem({ id, checked }) {
+      this.doCheck(id, checked)
+    },
+    onDeleteItem({ symbol, name, isBuildIn }) {
+      this.doDelete(symbol, name, isBuildIn)
     },
     onClose() {
       this.close()

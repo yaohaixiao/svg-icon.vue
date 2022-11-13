@@ -62,6 +62,10 @@ export default {
       type: Boolean,
       default: false
     },
+    isBuildIn: {
+      type: Boolean,
+      default: true
+    },
     isEmpty: {
       type: Boolean,
       default: false
@@ -71,6 +75,7 @@ export default {
     return {
       id: 0,
       checked: false,
+      buildIn: true,
       item: ''
     }
   },
@@ -112,6 +117,9 @@ export default {
     },
     isChecked() {
       this.update()
+    },
+    isBuiltIn() {
+      this.update()
     }
   },
   created() {
@@ -122,20 +130,22 @@ export default {
       this.id = this.index
       this.item = this.symbol
       this.checked = this.isChecked
+      this.buildIn = this.isBuildIn
     },
     onCheck() {
       this.$emit('check', {
+        id: this.id,
         symbol: this.item,
         checked: this.checked,
-        name: this.name,
-        id: this.id
+        name: this.name
       })
     },
     onDelete() {
       this.$emit('delete', {
+        id: this.id,
         symbol: this.item,
         name: this.name,
-        id: this.id
+        isBuildIn: this.buildIn
       })
     }
   }

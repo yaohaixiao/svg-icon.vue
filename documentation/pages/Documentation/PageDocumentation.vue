@@ -183,6 +183,19 @@ render([default, fontAwesomeSet])</code></pre>
           SVG 图标集和 JS 源代码复制功能。
           如果你仅仅想使用某个图标，我们也同时提供单独下载 SVG 图标的功能。
         </p>
+        <h2 class="article__h2">getSymbols() 方法</h2>
+        <p>
+          getSymbols() 方法返回使用 render() 方法绘制的图标集中所有 symbols
+          （数组）数据。
+        </p>
+        <pre
+          class="article__pre"><code class="article__code">import { render, getSymbols } from 'svg-icon.vue/utils/utils'
+
+// 绘制 default 图标集
+render()
+
+// => 返回 default 图标集中的 symbols （数组）数据
+const symbols = getSymbols()</code></pre>
         <h2 class="article__h2">导入 SvgIcon 组件</h2>
         <p>
           使用 render() 方法绘制 svg 图标集后，就可以调用 SvgIcon

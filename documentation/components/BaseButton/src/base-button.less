@@ -53,7 +53,7 @@
   }
 
   &__inner {
-    .font_size_regular();
+    .font_size_small();
     display: inline-block;
     line-height: 16px;
     height: 16px;
@@ -369,10 +369,18 @@
 
   &_text {
     border-color: transparent;
-    color: #409eff;
     background: transparent;
     padding: 0;
     min-width: 20px;
+
+    &:not(.is-disabled) {
+      color: @secondary_text_color;
+
+      .svg-icon,
+      &:hover {
+        color: @primary_color;
+      }
+    }
 
     &.is-disabled {
       color: @default_tip_disabled_text_color;
