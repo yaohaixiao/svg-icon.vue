@@ -1,3 +1,12 @@
+# [2.4.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.3.1...2.4.0) (2022-11-13)
+
+
+### Features
+
+* 添加 getSymbols() 方法 ([f3dad77](https://github.com/yaohaixiao/svg-icon.vue/commit/f3dad77293b9eeb63b7a5c1931fc87e799b609f8))
+
+
+
 ## [2.3.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.3.0...2.3.1) (2022-11-11)
 
 
