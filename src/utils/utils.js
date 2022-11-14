@@ -49,6 +49,7 @@ export const render = (iconSet) => {
 /**
  * 获取所有 symbols
  * =============================================================
+ * @since 2.4.0
  * @return {Array} symbols
  */
 export const getSymbols = () => {
