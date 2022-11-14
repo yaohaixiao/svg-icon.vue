@@ -1,0 +1,257 @@
+/**
+ * base-tag.less - BaseTag 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.14
+ */
+.base-tag {
+  .radius_small();
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+  overflow: hidden;
+
+  + .base-tag {
+    margin-left: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    user-select: none;
+  }
+
+  &__close {
+    .radius(6.5px);
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: auto;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    margin: 0;
+    width: 13px;
+    height: 13px;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    .svg-icon {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      color: @white;
+    }
+  }
+
+  &_mini {
+    .line_height(16px);
+    .height(16px);
+    .padding(0 3px);
+    .radius_mini();
+    .font_size_mini();
+
+    .base-tag__close {
+      right: 3px;
+    }
+
+    &.is-closable {
+      padding-right: 18px;
+    }
+  }
+
+  &_small {
+    .line_height_mini();
+    .height_mini();
+    .padding_regular();
+    .font_size_mini();
+  }
+
+  &_regular {
+    .line_height_small();
+    .height_small();
+    .font_size_mini();
+  }
+
+  &_medium {
+    .line_height_medium();
+    .height_medium();
+    .font_size_mini();
+  }
+
+  &_large {
+    .height(30px);
+    .line_height(30px);
+    .padding(0 12px);
+    .font_size_small();
+  }
+
+  &_info {
+    &.base-tag {
+      &_light {
+        background-color: @info_tag_bg_color;
+        color: @info_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @info_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @info_tip_border_color;
+        background-color: @white;
+        color: @info_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @info_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &_warning {
+    &.base-tag {
+      &_light {
+        background-color: @warning_tag_bg_color;
+        color: @warning_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @warning_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @warning_tip_border_color;
+        background-color: @white;
+        color: @warning_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @warning_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &_success {
+    &.base-tag {
+      &_light {
+        background-color: @success_tag_bg_color;
+        color: @success_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @success_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @success_tip_border_color;
+        background-color: @white;
+        color: @success_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @success_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &_danger {
+    &.base-tag {
+      &_light {
+        background-color: @danger_tag_bg_color;
+        color: @danger_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @danger_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @danger_tip_border_color;
+        background-color: @white;
+        color: @danger_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @danger_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &_special {
+    &.base-tag {
+      &_light {
+        background-color: @special_tag_bg_color;
+        color: @special_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @special_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @special_tag_text_color;
+        background-color: @white;
+        color: @special_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @special_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &_default {
+    &.base-tag {
+      &_light {
+        background-color: @default_tag_bg_color;
+        color: @default_tag_text_color;
+      }
+
+      &_dark {
+        background-color: @default_tag_text_color;
+        color: @white;
+      }
+
+      &_plain {
+        border: 1px solid @default_tip_border_color;
+        background-color: @white;
+        color: @default_tag_text_color;
+      }
+
+      &__close {
+        &:hover {
+          background-color: @default_tag_text_color;
+        }
+      }
+    }
+  }
+
+  &.is-closable {
+    padding-right: 24px;
+  }
+}

@@ -1,0 +1,203 @@
+/**
+ * base-tips.less - BaseTips 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.12
+ */
+.base-tips {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  min-height: 40px;
+  clear: both;
+  overflow: hidden;
+
+  &__text {
+    .line_height_regular();
+    position: relative;
+    z-index: 1;
+    margin: 8px 0;
+    padding: 0 30px 0 32px;
+    font-size: @font_size_regular;
+
+    color: @third_text_color;
+    overflow: hidden;
+
+    &.is-disallowed {
+      user-select: none;
+    }
+  }
+
+  &__strong {
+    color: @success_color;
+    font-weight: normal;
+  }
+
+  &__em {
+    color: @danger_color;
+    font-style: normal;
+  }
+
+  &__icon,
+  &__close {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__close {
+    right: 6px;
+    cursor: pointer;
+    color: @gray;
+
+    &:hover {
+      color: @dark_gray;
+    }
+  }
+
+  &_info {
+    border-color: @info_tip_border_color;
+    background-color: @info_tip_bg_color;
+
+    .base-tips__icon {
+      color: @info_hover_color;
+    }
+  }
+
+  &_warning {
+    border-color: @warning_tip_border_color;
+    background-color: @warning_tip_bg_color;
+
+    .base-tips__icon {
+      color: @warning_icon_color;
+    }
+  }
+
+  &_success {
+    border-color: @success_tip_border_color;
+    background-color: @success_tip_bg_color;
+
+    .base-tips__icon {
+      color: @success_icon_color;
+    }
+  }
+
+  &_danger {
+    border-color: @danger_tip_border_color;
+    background-color: @danger_tip_bg_color;
+
+    .base-tips__icon {
+      color: @danger_icon_color;
+    }
+  }
+
+  &_default {
+    border-color: @default_tip_border_color;
+    background-color: @default_tip_bg_color;
+
+    .base-tips__icon {
+      color: @default_icon_color;
+    }
+  }
+
+  &.with-radius {
+    .radius_regular();
+  }
+
+  &_light {
+    &.with-border {
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
+
+  &_plain {
+    .base-tips {
+      &__icon {
+        display: none;
+      }
+
+      &__text {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        padding: 8px 38px 8px 16px;
+
+        .base-tips__icon {
+          display: none;
+        }
+
+        &.full-width {
+          padding: 8px 20px;
+        }
+      }
+
+      &__close {
+        top: 18px;
+        right: 16px;
+      }
+    }
+
+    &.base-tips {
+      &.with-radius {
+        .radius_small();
+      }
+
+      &_info {
+        border-color: @info_icon_color;
+      }
+
+      &_warning {
+        border-color: @warning_icon_color;
+      }
+
+      &_success {
+        border-color: @success_icon_color;
+      }
+
+      &_danger {
+        border-color: @danger_icon_color;
+      }
+
+      &_default {
+        border-color: @default_icon_color;
+      }
+
+      &.with-border {
+        border-width: 0 0 0 5px;
+        border-style: solid;
+      }
+    }
+  }
+}
+
+.util-align-left {
+  .base-tips__icon {
+    left: 6px;
+  }
+}
+
+.util-align-center {
+  .base-tips__text {
+    padding: 0 30px 0 10px;
+
+    .base-tips__icon {
+      position: inherit;
+      display: inline-block;
+      vertical-align: middle;
+      top: 0;
+      left: 0;
+      margin: -4px 2px 0 0;
+    }
+  }
+}

@@ -21,7 +21,8 @@
  */
 import SvgIcon from '@/SvgIcon'
 
-import { copyToClipboard, decodeHTML } from '$utils/utils'
+import { copyToClipboard } from '$utils/utils'
+import { decodeHTML } from '$utils/string'
 
 export default {
   name: 'BaseUsageCode',

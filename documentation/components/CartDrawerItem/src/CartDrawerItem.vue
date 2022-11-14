@@ -12,12 +12,24 @@
           :size="32" />
       </div>
       <div class="cart-drawer-item__meta">
-        <h3 class="cart-drawer-item__title">{{ name }}</h3>
+        <h3 class="cart-drawer-item__title">
+          {{ name }}
+          <base-tag
+            v-if="!buildIn"
+            type="success"
+            size="small">
+            导入
+          </base-tag>
+        </h3>
         <dl class="cart-drawer-item__dl">
           <dt class="cart-drawer-item__dt">宽：</dt>
           <dd class="cart-drawer-item__dd">{{ width }}</dd>
           <dt class="cart-drawer-item__dt">高：</dt>
           <dd class="cart-drawer-item__dd">{{ height }}</dd>
+          <dt class="cart-drawer-item__dt">viewBox：</dt>
+          <dd class="cart-drawer-item__dd">
+            {{ `0 0 ${size.width} ${size.height}` }}
+          </dd>
         </dl>
       </div>
       <div
@@ -39,6 +51,7 @@
  * Update: 2022.11.10
  */
 import BaseCheckbox from '$components/BaseCheckbox'
+import BaseTag from '$components/BaseTag'
 
 import SvgIcon from '@/SvgIcon'
 
@@ -47,6 +60,7 @@ export default {
   componentName: 'CartDrawerItem',
   components: {
     BaseCheckbox,
+    BaseTag,
     SvgIcon
   },
   props: {

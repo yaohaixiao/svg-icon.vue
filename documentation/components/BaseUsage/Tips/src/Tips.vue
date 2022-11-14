@@ -8,7 +8,7 @@
 
 <script>
 /**
- * Tips.vue - BaseUsageTips 组件
+ * BaseTips.vue - BaseUsageTips 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.11

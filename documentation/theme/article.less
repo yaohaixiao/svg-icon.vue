@@ -12,16 +12,59 @@
 @import './mixins/ellipsis';
 
 .article {
+  .font_weight_regular();
   margin: 0 auto;
   padding: 20px;
   overflow: hidden;
+
+  &__h1 {
+    .line_height_huge();
+    text-align: center;
+    font-weight: @font_weight_regular;
+    font-family: Georgia, 'Courier New', Consolas, Arial, sans-serif;
+    font-size: 26px;
+    margin-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid @primary_border_color;
+    color: @primary_text_color;
+  }
+
+  &__h2,
+  &__h3,
+  &__h4,
+  &__h5 {
+    margin-top: 24px;
+  }
+
+  &__h2 {
+    .font_size_huge();
+    font-weight: @font_weight_regular;
+    color: @primary_text_color;
+  }
+
+  &__h3 {
+    .font_size_large();
+    font-weight: @font_weight_regular;
+    color: @primary_text_color;
+  }
+
+  &__h4 {
+    .font_size_medium();
+    font-weight: @font_weight_regular;
+    color: @primary_text_color;
+  }
+
+  &__h5 {
+    .font_size_regular();
+    font-weight: @font_weight_regular;
+    color: @primary_text_color;
+  }
 
   &__pre {
     .font_size_regular();
     .line_height_small();
     .font_code_family();
-
-    margin: 0;
+    margin: 1em auto;
     padding: 20px;
     background: @fourth_bg_color;
     color: @code_text_color;
@@ -36,49 +79,7 @@
 
   &__code {
     .font_code_family();
-
     color: @code_text_color;
-  }
-
-  &__h1 {
-    .line_height_huge();
-
-    text-align: center;
-    font-weight: @font_weight_regular;
-    font-family: Georgia, 'Courier New', Consolas, Arial, sans-serif;
-    font-size: 26px;
-    margin-top: 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid @primary_border_color;
-    color: @primary_text_color;
-  }
-
-  &__h2 {
-    .font_size_huge();
-
-    font-weight: @font_weight_regular;
-    color: @primary_text_color;
-  }
-
-  &__h3 {
-    .font_size_large();
-
-    font-weight: @font_weight_regular;
-    color: @primary_text_color;
-  }
-
-  &__h4 {
-    .font_size_medium();
-
-    font-weight: @font_weight_regular;
-    color: @primary_text_color;
-  }
-
-  &__h5 {
-    .font_size_regular();
-
-    font-weight: @font_weight_regular;
-    color: @primary_text_color;
   }
 
   &__table {
@@ -96,7 +97,6 @@
     th,
     td {
       .line_height_medium();
-
       padding: 10px 16px;
       text-align: left;
       border-bottom: 1px solid @primary_border_color;
