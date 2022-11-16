@@ -1,43 +1,60 @@
 <template>
-  <li :class="['cart-drawer-item', { 'is-empty': isEmpty }]">
+  <li
+    :data-index="id"
+    :class="['cart-drawer-item', { 'is-empty': isEmpty }]"
+    @dragenter="dragEnter"
+    @dragover="dragOver"
+    @dragleave="dragLeave"
+    @drop="dragDrop"
+    @dragend="dragEnd">
     <slot>
-      <div class="cart-drawer-item__checkbox">
-        <base-checkbox
-          v-model="checked"
-          @change="onCheck" />
-      </div>
-      <div class="cart-drawer-item__icon">
-        <svg-icon
-          :name="name"
-          :size="32" />
-      </div>
-      <div class="cart-drawer-item__meta">
-        <h3 class="cart-drawer-item__title">
-          {{ name }}
-          <base-tag
-            v-if="!buildIn"
-            type="success"
-            size="small">
-            导入
-          </base-tag>
-        </h3>
-        <dl class="cart-drawer-item__dl">
-          <dt class="cart-drawer-item__dt">宽：</dt>
-          <dd class="cart-drawer-item__dd">{{ width }}</dd>
-          <dt class="cart-drawer-item__dt">高：</dt>
-          <dd class="cart-drawer-item__dd">{{ height }}</dd>
-          <dt class="cart-drawer-item__dt">viewBox：</dt>
-          <dd class="cart-drawer-item__dd">
-            {{ `0 0 ${size.width} ${size.height}` }}
-          </dd>
-        </dl>
-      </div>
       <div
-        class="cart-drawer-item__delete"
-        @click="onDelete">
-        <svg-icon
-          name="trash"
-          :size="20" />
+        draggable="true"
+        class="cart-drawer-item__inner"
+        @dragstart="dragStart">
+        <div class="cart-drawer-item__draggable">
+          <svg-icon
+            name="drag"
+            :size="20" />
+        </div>
+        <div class="cart-drawer-item__checkbox">
+          <base-checkbox
+            v-model="checked"
+            @change="onCheck" />
+        </div>
+        <div class="cart-drawer-item__icon">
+          <svg-icon
+            :name="name"
+            :size="32" />
+        </div>
+        <div class="cart-drawer-item__meta">
+          <h3 class="cart-drawer-item__title">
+            {{ name }}
+            <base-tag
+              v-if="!buildIn"
+              type="success"
+              size="small">
+              导入
+            </base-tag>
+          </h3>
+          <dl class="cart-drawer-item__dl">
+            <dt class="cart-drawer-item__dt">宽：</dt>
+            <dd class="cart-drawer-item__dd">{{ width }}</dd>
+            <dt class="cart-drawer-item__dt">高：</dt>
+            <dd class="cart-drawer-item__dd">{{ height }}</dd>
+            <dt class="cart-drawer-item__dt">viewBox：</dt>
+            <dd class="cart-drawer-item__dd">
+              {{ `0 0 ${size.width} ${size.height}` }}
+            </dd>
+          </dl>
+        </div>
+        <div
+          class="cart-drawer-item__delete"
+          @click="onDelete">
+          <svg-icon
+            name="trash"
+            :size="20" />
+        </div>
       </div>
     </slot>
   </li>
@@ -54,6 +71,11 @@ import BaseCheckbox from '$components/BaseCheckbox'
 import BaseTag from '$components/BaseTag'
 
 import SvgIcon from '@/SvgIcon'
+import { closest } from '../../../utils/dom'
+
+const CLS_ITEM = 'cart-drawer-item'
+const CLS_OVER = `${CLS_ITEM}_over`
+const CLS_DRAGGING = `${CLS_ITEM}_dragging`
 
 export default {
   name: 'CartDrawerItem',
@@ -145,6 +167,45 @@ export default {
       this.item = this.symbol
       this.checked = this.isChecked
       this.buildIn = this.isBuildIn
+    },
+    dragStart(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+
+      evt.dataTransfer.dropEffect = 'move'
+      evt.dataTransfer.effectAllowed = 'move'
+      $item.classList.add(CLS_DRAGGING)
+
+      this.$emit('dragstart', $item.getAttribute('data-index'))
+      this.$broadcast('show:clone')
+      this.$broadcast('fill:clone', evt.target.innerHTML)
+    },
+    dragEnter(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+
+      $item.classList.add(CLS_OVER)
+    },
+    dragOver(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+
+      // evt.preventDefault()
+      $item.classList.add(CLS_OVER)
+    },
+    dragLeave(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+
+      $item.classList.remove('cart-drawer-item_over')
+      this.$emit('dragleave', $item.getAttribute('data-index'))
+    },
+    dragDrop() {
+      console.log('dragDrop')
+    },
+    dragEnd(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, false)
+
+      $item.classList.remove(CLS_DRAGGING)
+
+      this.$emit('dragend')
+      this.$broadcast('hide:clone')
     },
     onCheck() {
       this.$emit('check', {

@@ -1,11 +1,12 @@
 <template>
-  <base-header
+  <base-toolbar
     role="toolbar"
     flex
+    border
+    padding="outer"
     height="inner"
-    :border="true"
     class="cart-drawer-toolbar">
-    <template v-slot:start>
+    <template v-slot:left>
       <base-checkbox
         v-model="checked"
         :indeterminate="isIndeterminate"
@@ -15,7 +16,7 @@
         全选（{{ count }}）
       </base-checkbox>
     </template>
-    <template v-slot:actions>
+    <template v-slot:right>
       <base-button
         type="text"
         icon="import"
@@ -30,11 +31,11 @@
         class="cart-drawer-toolbar__import"
         @change="onReadFiles" />
     </template>
-  </base-header>
+  </base-toolbar>
 </template>
 
 <script>
-import BaseHeader from '$components/BaseHeader'
+import BaseToolbar from '$components/BaseToolbar'
 import BaseCheckbox from '$components/BaseCheckbox'
 import BaseButton from '$components/BaseButton'
 
@@ -42,7 +43,7 @@ export default {
   name: 'CartDrawerToolbar',
   componentName: 'CartDrawerToolbar',
   components: {
-    BaseHeader,
+    BaseToolbar,
     BaseCheckbox,
     BaseButton
   },

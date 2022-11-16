@@ -1,10 +1,10 @@
 /**
- * base-header.less - 页头容器组件样式
+ * base-toolbar.less - 页头容器组件样式
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.8
+ * Update: 2022.11.15
  */
-.base-header {
+.base-toolbar {
   position: relative;
   margin: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   width: 100%;
   overflow: hidden;
 
-  &__title {
+  &__left {
     position: relative;
     z-index: 1;
     margin: 0;
@@ -36,27 +36,14 @@
     }
   }
 
-  &__title {
-    .font_size_medium();
-    .font_weight_regular();
-  }
-
   &--static {
-    .base-header__actions {
+    .base-toolbar__right {
       position: absolute;
       z-index: 2;
       top: 50%;
       right: 0;
       transform: translateY(-50%);
       overflow: hidden;
-
-      &_outter {
-        right: 20px;
-      }
-
-      &_inner {
-        right: 16px;
-      }
     }
   }
 
@@ -67,7 +54,7 @@
     align-self: auto;
     align-items: center;
 
-    .base-header__actions {
+    .base-toolbar__right {
       margin-left: auto;
     }
   }

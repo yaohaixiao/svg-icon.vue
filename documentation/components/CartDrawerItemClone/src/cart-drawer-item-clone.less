@@ -1,0 +1,130 @@
+/**
+ * cart-drawer-item-clone.less - CartDrawerItem 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.10
+ */
+.cart-drawer-item-clone {
+  .shadow_light_regular();
+  position: absolute;
+  z-index: 100000;
+  margin: 0;
+  height: 44px;
+  background-color: @white;
+  border: 1px solid @primary_border_color;
+  border-radius: 4px;
+  padding: 10px 48px 10px 96px;
+  cursor: move;
+  list-style: none;
+  overflow: hidden;
+
+  .cart-drawer-item-clone {
+    &__draggable,
+    &__checkbox,
+    &__icon,
+    &__delete {
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__checkbox {
+      top: 25px;
+      left: 20px;
+      width: 16px;
+      height: 16px;
+      overflow: hidden;
+
+      .base-checkbox {
+        vertical-align: top;
+      }
+    }
+
+    &__icon {
+      top: 16px;
+      left: 48px;
+      width: 32px;
+      height: 32px;
+      color: @third_text_color;
+      overflow: hidden;
+    }
+
+    &__meta {
+      margin: 0;
+      height: 44px;
+      line-height: 44px;
+    }
+
+    &__title {
+      .font_size_large();
+      .font_weight_regular();
+      .ellipsis(1);
+      margin: 0 auto;
+      height: 28px;
+      line-height: 22px;
+    }
+
+    &__dl,
+    &__dt,
+    &__dd {
+      margin: 0;
+      padding: 0;
+      height: 16px;
+      line-height: 16px;
+      overflow: hidden;
+    }
+
+    &__dt {
+      color: @fourth_text_color;
+    }
+
+    &__dt,
+    &__dd {
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    &__dd {
+      padding-right: 32px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &__draggable,
+    &__delete {
+      width: 20px;
+      height: 20px;
+      top: 22px;
+      color: @fourth_text_color;
+      cursor: pointer;
+      overflow: hidden;
+
+      .svg-icon {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__delete {
+      right: 16px;
+
+      &:hover {
+        color: @danger_color;
+      }
+    }
+
+    &__draggable {
+      display: none;
+      left: 0;
+      cursor: move;
+
+      &:hover {
+        color: @primary_color;
+      }
+    }
+  }
+}

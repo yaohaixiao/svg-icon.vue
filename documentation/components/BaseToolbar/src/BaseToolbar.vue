@@ -1,31 +1,31 @@
 <template>
-  <header :class="className">
-    <h2
-      v-if="$scopedSlots.title"
-      class="base-header__title">
-      <slot name="title" />
-    </h2>
+  <div :class="className">
+    <div
+      v-if="$scopedSlots.left"
+      class="base-toolbar__left">
+      <slot name="left" />
+    </div>
     <slot name="breadcrumb" />
     <slot name="tabs" />
     <slot />
     <div
-      v-if="$scopedSlots.actions"
-      class="'base-header__actions">
-      <slot name="actions" />
+      v-if="$scopedSlots.right"
+      class="base-toolbar__right">
+      <slot name="right" />
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
 /**
- * BaseHeader.vue - 页头容器组件
+ * BaseToolbar.vue - BaseToolbar 组件
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.08
+ * Update: 2022.10.15
  */
 export default {
-  name: 'BaseHeader',
-  componentName: 'BaseHeader',
+  name: 'BaseToolbar',
+  componentName: 'BaseToolbar',
   props: {
     flex: {
       type: Boolean,
@@ -33,11 +33,11 @@ export default {
     },
     border: {
       type: Boolean,
-      default: true
+      default: false
     },
     padding: {
       type: String,
-      default: 'outer'
+      default: 'inner'
     },
     height: {
       type: String,
@@ -51,10 +51,9 @@ export default {
   computed: {
     className() {
       return [
-        'base-header',
+        'base-toolbar',
+        `base-toolbar--${this.flex ? 'flex' : 'static'}`,
         {
-          'base-header--flex': this.flex,
-          'base-header--static': !this.flex,
           'util-border-bottom': this.border
         },
         `util-height-${this.height}`,
@@ -67,5 +66,5 @@ export default {
 </script>
 
 <style lang="less">
-@import './base-header';
+@import './base-toolbar';
 </style>

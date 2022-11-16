@@ -50,9 +50,9 @@ export default {
 
       return [
         'base-main',
+        { 'base-main--flex': flex },
         `util-padding-${this.padding}`,
         `util-overflow-${this.overflow}`,
-        { 'base-main--flex': flex },
         direction
       ]
     }

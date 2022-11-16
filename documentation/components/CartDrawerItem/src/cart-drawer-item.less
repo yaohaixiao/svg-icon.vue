@@ -1,5 +1,5 @@
 /**
- * cart-drawer-case.less - CartDrawerItem 组件样式
+ * cart-drawer-item.less - CartDrawerItem 组件样式
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.11.10
@@ -23,6 +23,10 @@
   &:hover {
     background-color: @hover_bg_color;
 
+    .cart-drawer-item__draggable {
+      display: block;
+    }
+
     .cart-drawer-item__icon {
       color: @primary_color;
     }
@@ -40,11 +44,17 @@
     }
   }
 
-  &__checkbox {
+  &__draggable,
+  &__checkbox,
+  &__icon,
+  &__delete {
     position: absolute;
     z-index: 2;
+  }
+
+  &__checkbox {
     top: 25px;
-    left: 16px;
+    left: 20px;
     width: 16px;
     height: 16px;
     overflow: hidden;
@@ -55,10 +65,8 @@
   }
 
   &__icon {
-    position: absolute;
-    z-index: 2;
     top: 16px;
-    left: 46px;
+    left: 48px;
     width: 32px;
     height: 32px;
     color: @third_text_color;
@@ -108,20 +116,14 @@
     }
   }
 
+  &__draggable,
   &__delete {
-    position: absolute;
-    z-index: 2;
     width: 20px;
     height: 20px;
     top: 22px;
-    right: 16px;
     color: @fourth_text_color;
     cursor: pointer;
     overflow: hidden;
-
-    &:hover {
-      color: @danger_color;
-    }
 
     .svg-icon {
       position: absolute;
@@ -130,6 +132,41 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+
+  &__delete {
+    right: 16px;
+
+    &:hover {
+      color: @danger_color;
+    }
+  }
+
+  &__draggable {
+    display: none;
+    left: 0;
+    cursor: move;
+
+    &:hover {
+      color: @primary_color;
+    }
+  }
+
+  &_dragging {
+    background-color: @info_tag_bg_color;
+
+    &:hover {
+      background-color: @info_tag_bg_color;
+    }
+  }
+
+  &_over {
+    .radius(0);
+    padding-top: 9px;
+    background-color: @special_tag_bg_color;
+    border-top: 1px dashed @primary_color;
+    border-bottom: 1px dashed @primary_color;
+    opacity: 0.5;
   }
 
   .base-empty {

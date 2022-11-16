@@ -18,7 +18,7 @@
           flex
           text-align="left"
           height="outer"
-          padding="inner"
+          padding="outer"
           :border="headerBorder">
           <template v-slot:title>
             <h2 class="base-drawer__title">
@@ -39,7 +39,7 @@
       <slot name="toolbar" />
       <base-main
         role="main"
-        padding="inner"
+        :padding="padding"
         :class="{ 'base-drawer__main': !title && buttons.length < 1 }">
         <slot />
       </base-main>
@@ -48,7 +48,7 @@
           v-if="buttons.length > 0"
           role="footer"
           :text-align="align"
-          padding="inner"
+          padding="outer"
           :border="footerBorder">
           <base-button
             v-for="button in buttons"

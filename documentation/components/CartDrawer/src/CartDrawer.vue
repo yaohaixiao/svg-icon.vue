@@ -3,7 +3,9 @@
     ref="drawer"
     :title="title"
     header-border
+    footer-border
     size="medium"
+    padding="none"
     :buttons="buttons"
     custom-class="card-drawer"
     @close="onClose">
@@ -37,7 +39,10 @@
             :is-build-in="item.isBuildIn"
             :index="i"
             @check="onCheckItem"
-            @delete="onDeleteItem" />
+            @delete="onDeleteItem"
+            @dragstart="onDragStart"
+            @dragleave="onDragLeave"
+            @dragend="onDragEnd" />
         </template>
         <cart-drawer-item
           v-else
@@ -96,6 +101,8 @@ export default {
   },
   data() {
     return {
+      start: 0,
+      last: 0,
       active: 'icon',
       checked: false,
       tabs: [
@@ -329,6 +336,13 @@ export default {
         message: `图标 ${name} 已移除购物车！`
       })
     },
+    swap(start, last) {
+      const options = [...this.options]
+
+      ;[options[start], options[last]] = [options[last], options[start]]
+
+      this.options = options
+    },
     show() {
       this.$refs.drawer.open()
     },
@@ -355,6 +369,18 @@ export default {
     },
     onDeleteItem({ symbol, name, isBuildIn }) {
       this.doDelete(symbol, name, isBuildIn)
+    },
+    onDragStart(start) {
+      this.start = parseInt(start, 10)
+      console.log('onDragStart', this.start)
+    },
+    onDragLeave(last) {
+      this.last = parseInt(last, 10)
+      console.log('onDragLeave', this.last)
+    },
+    onDragEnd() {
+      this.swap(this.start, this.last)
+      console.log('onDragEnd')
     },
     onClose() {
       this.close()
