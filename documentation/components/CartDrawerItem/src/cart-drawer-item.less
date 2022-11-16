@@ -153,9 +153,11 @@
   }
 
   &_dragging {
+    opacity: 1;
     background-color: @info_tag_bg_color;
 
     &:hover {
+      opacity: 1;
       background-color: @info_tag_bg_color;
     }
   }
@@ -167,6 +169,20 @@
     border-top: 1px dashed @primary_color;
     border-bottom: 1px dashed @primary_color;
     opacity: 0.5;
+  }
+
+  &--ghost {
+    .shadow_light_regular();
+    position: absolute;
+    z-index: 300;
+    top: -400px;
+    left: -2000px;
+    background-color: @white;
+    border: 1px solid @primary_border_color;
+    border-radius: 4px;
+    padding: 10px 48px 10px 96px;
+    opacity: 1;
+    cursor: move;
   }
 
   .base-empty {

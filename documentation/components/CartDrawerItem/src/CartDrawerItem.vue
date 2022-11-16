@@ -11,7 +11,8 @@
       <div
         draggable="true"
         class="cart-drawer-item__inner"
-        @dragstart="dragStart">
+        @dragstart="dragStart"
+        @drag="drag">
         <div class="cart-drawer-item__draggable">
           <svg-icon
             name="drag"
@@ -169,43 +170,63 @@ export default {
       this.buildIn = this.isBuildIn
     },
     dragStart(evt) {
-      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+      const $target = evt.target
+      const $item = closest($target, `.${CLS_ITEM}`, this.$el, true)
+      const $ghost = $item.cloneNode(true)
+
+      $item.classList.add(CLS_DRAGGING)
+
+      $ghost.id = 'drag-drawer-item-ghost'
+      $ghost.classList.add('cart-drawer-item--ghost')
+      document.body.appendChild($ghost)
+      evt.dataTransfer.setDragImage($ghost, 0, 0)
+
+      this.$emit('dragstart', $item.getAttribute('data-index'))
+    },
+    drag(evt) {
+      const $clone = document.querySelector('#drag-drawer-item-ghost')
+
+      $clone.style.top = `${evt.pageY}px`
+      $clone.style.left = `${evt.pageX}px`
 
       evt.dataTransfer.dropEffect = 'move'
       evt.dataTransfer.effectAllowed = 'move'
-      $item.classList.add(CLS_DRAGGING)
-
-      this.$emit('dragstart', $item.getAttribute('data-index'))
-      this.$broadcast('show:clone')
-      this.$broadcast('fill:clone', evt.target.innerHTML)
     },
     dragEnter(evt) {
       const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
 
+      evt.preventDefault()
       $item.classList.add(CLS_OVER)
     },
     dragOver(evt) {
       const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
 
-      // evt.preventDefault()
+      evt.preventDefault()
       $item.classList.add(CLS_OVER)
     },
     dragLeave(evt) {
       const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
 
-      $item.classList.remove('cart-drawer-item_over')
-      this.$emit('dragleave', $item.getAttribute('data-index'))
+      $item.classList.remove(CLS_OVER)
     },
-    dragDrop() {
-      console.log('dragDrop')
+    dragDrop(evt) {
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
+
+      $item.classList.remove(CLS_OVER)
+
+      this.$emit('drop', $item.getAttribute('data-index'))
     },
     dragEnd(evt) {
-      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, false)
+      const $ghost = document.querySelector('#drag-drawer-item-ghost')
+      const $item = closest(evt.target, `.${CLS_ITEM}`, this.$el, true)
 
       $item.classList.remove(CLS_DRAGGING)
 
+      if ($ghost) {
+        $ghost.parentNode.removeChild($ghost)
+      }
+
       this.$emit('dragend')
-      this.$broadcast('hide:clone')
     },
     onCheck() {
       this.$emit('check', {

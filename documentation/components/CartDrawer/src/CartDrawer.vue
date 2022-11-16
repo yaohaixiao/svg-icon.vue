@@ -41,7 +41,7 @@
             @check="onCheckItem"
             @delete="onDeleteItem"
             @dragstart="onDragStart"
-            @dragleave="onDragLeave"
+            @drop="onDragDrop"
             @dragend="onDragEnd" />
         </template>
         <cart-drawer-item
@@ -374,9 +374,9 @@ export default {
       this.start = parseInt(start, 10)
       console.log('onDragStart', this.start)
     },
-    onDragLeave(last) {
+    onDragDrop(last) {
       this.last = parseInt(last, 10)
-      console.log('onDragLeave', this.last)
+      console.log('onDragDrop', this.last)
     },
     onDragEnd() {
       this.swap(this.start, this.last)
