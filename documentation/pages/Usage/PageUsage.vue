@@ -368,6 +368,18 @@ export default {
         </base-usage>
       </article>
     </base-main>
+    <base-footer
+      flex
+      height="inner">
+      <div class="util-align-left base-footer__navigation">
+        Prev Page：
+        <router-link to="/docs">API Documentation</router-link>
+      </div>
+      <div class="util-align-right base-footer__navigation">
+        Next Page：
+        <router-link to="/icons">Icons</router-link>
+      </div>
+    </base-footer>
   </base-container>
 </template>
 
@@ -383,6 +395,7 @@ import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
 import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseFooter from '$components/BaseFooter'
 
 import BaseUsage from '$components/BaseUsage/Usage'
 import BaseUsageCase from '$components/BaseUsage/Case'
@@ -403,6 +416,7 @@ export default {
     BaseMain,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
+    BaseFooter,
     BaseUsage,
     BaseUsageCase,
     SvgIcon

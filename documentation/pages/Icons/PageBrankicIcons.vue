@@ -58,6 +58,18 @@
         </ul>
       </article>
     </base-main>
+    <base-footer
+      flex
+      height="inner">
+      <div class="util-align-left base-footer__navigation">
+        Prev Page：
+        <router-link to="/icons/default">Default 图标库</router-link>
+      </div>
+      <div class="util-align-right base-footer__navigation">
+        Next Page：
+        <router-link to="/icons/broccolidry">Broccolidry 图标库</router-link>
+      </div>
+    </base-footer>
   </base-container>
 </template>
 
@@ -73,6 +85,8 @@ import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
 import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseFooter from '$components/BaseFooter'
+
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
@@ -91,6 +105,7 @@ export default {
     BaseMain,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
+    BaseFooter,
     BaseInput,
     BaseGrid,
     BaseEmpty,

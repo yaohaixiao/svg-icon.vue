@@ -22,6 +22,15 @@
         <api-component-section />
       </article>
     </base-main>
+    <base-footer
+      flex
+      height="inner"
+      text-align="right">
+      <div class="base-footer__navigation">
+        Next Page：
+        <router-link to="/usage">Usage</router-link>
+      </div>
+    </base-footer>
   </base-container>
 </template>
 
@@ -37,6 +46,7 @@ import BaseHeader from '$components/BaseHeader'
 import BaseMain from '$components/BaseMain'
 import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseFooter from '$components/BaseFooter'
 
 import ApiInstallSection from './components/ApiInstallSection'
 import ApiMethodsSection from './components/ApiMethodsSection'
@@ -51,6 +61,7 @@ export default {
     BaseMain,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
+    BaseFooter,
     ApiInstallSection,
     ApiMethodsSection,
     ApiComponentSection
