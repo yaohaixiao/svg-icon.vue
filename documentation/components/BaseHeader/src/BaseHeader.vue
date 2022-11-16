@@ -9,8 +9,9 @@
     <slot name="tabs" />
     <slot />
     <div
-      v-if="$scopedSlots.actions"
-      class="'base-header__actions">
+      v-if="$scopedSlots.filter || $scopedSlots.actions"
+      class="base-header__actions">
+      <slot name="filter" />
       <slot name="actions" />
     </div>
   </header>
