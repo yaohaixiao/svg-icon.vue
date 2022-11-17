@@ -27,34 +27,11 @@
         @import="onImport" />
     </template>
     <div :class="['cart-drawer__main', { 'is-auto': isIconView && !disabled }]">
-      <ul
-        v-if="isIconView"
-        :class="['cart-drawer__list', { 'is-empty': disabled }]">
-        <template v-if="options.length > 0">
-          <cart-drawer-item
-            v-for="(item, i) in options"
-            :key="`item-${i}`"
-            :symbol="item.symbol"
-            :is-checked="item.checked"
-            :is-build-in="item.isBuildIn"
-            :index="i"
-            @check="onCheckItem"
-            @delete="onDeleteItem"
-            @dragstart="onDragStart"
-            @drop="onDragDrop"
-            @dragend="onDragEnd" />
-        </template>
-        <cart-drawer-item
-          v-else
-          is-empty>
-          <base-empty />
-        </cart-drawer-item>
-      </ul>
-      <textarea
-        v-else
-        readonly
-        :value="code"
-        class="cart-drawer__code" />
+      <component
+        :is="active"
+        v-bind="attrs"
+        @update="onUpdate"
+        @delete="onDelete" />
     </div>
   </base-drawer>
 </template>
@@ -68,10 +45,10 @@
  */
 import BaseDrawer from '$components/BaseDrawer'
 import BaseTabNav from '$components/BaseTabNav'
-import BaseEmpty from '$components/BaseEmpty'
 
 import CartDrawerToolbar from '$components/CartDrawerToolbar'
-import CartDrawerItem from '$components/CartDrawerItem'
+import CartDrawerList from '$components/CartDrawerList'
+import CartDrawerCode from '$components/CartDrawerCode'
 
 import { clearStorage } from '$utils/storage'
 import { copyToClipboard, createAndDownloadFile } from '$utils/utils'
@@ -85,9 +62,9 @@ export default {
   components: {
     BaseDrawer,
     BaseTabNav,
-    BaseEmpty,
     CartDrawerToolbar,
-    CartDrawerItem
+    CartDrawerList,
+    CartDrawerCode
   },
   props: {
     title: {
@@ -103,16 +80,16 @@ export default {
     return {
       start: 0,
       last: 0,
-      active: 'icon',
+      active: 'CartDrawerList',
       checked: false,
       tabs: [
         {
           label: 'SVG 图标集',
-          value: 'icon'
+          value: 'CartDrawerList'
         },
         {
           label: 'JS 源代码',
-          value: 'code'
+          value: 'CartDrawerCode'
         }
       ],
       collections: [],
@@ -123,10 +100,24 @@ export default {
   },
   computed: {
     isIconView() {
-      return this.active === 'icon'
+      return this.active === 'CartDrawerList'
     },
     isUnchecked() {
       return this.count === 0
+    },
+    attrs() {
+      const options = this.options
+      const isEmpty = this.disabled
+      const code = this.code
+
+      if (this.isIconView) {
+        return {
+          options,
+          isEmpty
+        }
+      } else {
+        return { code }
+      }
     },
     disabled() {
       return this.options.length === 0
@@ -278,12 +269,6 @@ export default {
         }
       })
     },
-    doCheck(id, checked) {
-      const collections = [...this.options]
-
-      collections[id].checked = checked
-      this.options = collections
-    },
     doImport(symbol, id) {
       const symbols = getSymbols()
       const theSameSymbol = symbols.find((item) => {
@@ -310,38 +295,14 @@ export default {
 
       this.update()
     },
-    doDelete(symbol, name, isBuildIn) {
-      let imports
-      let $symbol
+    doDelete(symbol) {
+      const imports = [...this.imports]
 
-      if (!isBuildIn) {
-        imports = [...this.imports]
-        $symbol = document.querySelector(`#icon-${name}`)
-
-        this.imports = imports.filter((item) => {
-          return item.symbol !== symbol
-        })
-
-        if ($symbol) {
-          $symbol.parentNode.removeChild($symbol)
-        }
-
-        this.update()
-      } else {
-        this.$broadcast('remove:icon', symbol)
-      }
-
-      this.$message.success({
-        round: true,
-        message: `图标 ${name} 已移除购物车！`
+      this.imports = imports.filter((item) => {
+        return item.symbol !== symbol
       })
-    },
-    swap(start, last) {
-      const options = [...this.options]
 
-      ;[options[start], options[last]] = [options[last], options[start]]
-
-      this.options = options
+      this.update()
     },
     show() {
       this.$refs.drawer.open()
@@ -364,23 +325,11 @@ export default {
     onImport(symbol, id) {
       this.doImport(symbol, id)
     },
-    onCheckItem({ id, checked }) {
-      this.doCheck(id, checked)
+    onUpdate(options) {
+      this.options = [...options]
     },
-    onDeleteItem({ symbol, name, isBuildIn }) {
-      this.doDelete(symbol, name, isBuildIn)
-    },
-    onDragStart(start) {
-      this.start = parseInt(start, 10)
-      console.log('onDragStart', this.start)
-    },
-    onDragDrop(last) {
-      this.last = parseInt(last, 10)
-      console.log('onDragDrop', this.last)
-    },
-    onDragEnd() {
-      this.swap(this.start, this.last)
-      console.log('onDragEnd')
+    onDelete(symbol) {
+      this.doDelete(symbol)
     },
     onClose() {
       this.close()

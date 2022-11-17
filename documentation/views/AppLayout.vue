@@ -7,7 +7,9 @@
       overflow="hidden">
       <app-aside />
       <base-main overflow="hidden">
-        <router-view />
+        <keep-alive>
+          <router-view />
+        </keep-alive>
       </base-main>
     </base-main>
     <cart-bar :items="icons" />
