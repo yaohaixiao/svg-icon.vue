@@ -15,6 +15,12 @@
 </template>
 
 <script>
+/**
+ * ApiInstallSection.vue - API Docs - Install Section
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.17
+ */
 export default {
   name: 'ApiInstallSection',
   componentName: 'ApiInstallSection'

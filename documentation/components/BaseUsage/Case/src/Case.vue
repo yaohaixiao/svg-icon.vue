@@ -19,7 +19,7 @@ export default {
       type: Boolean,
       default: false
     },
-    align: {
+    textAlign: {
       type: String,
       default: 'left'
     }
@@ -28,7 +28,7 @@ export default {
     className() {
       return [
         'base-usage-case',
-        `util-align-${this.align}`,
+        `util-align-${this.textAlign}`,
         {
           'base-usage-case--flex': this.flex
         }

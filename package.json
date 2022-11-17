@@ -68,6 +68,7 @@
     "stylelint-selector-bem-pattern": "^2.1.1",
     "vue-cli-plugin-style-resources-loader": "^0.1.5",
     "vue-eslint-parser": "^9.1.0",
+    "vue-i18n": "^8.28.2",
     "vue-jest": "^3.0.7",
     "vue-router": "^3.2.0",
     "vue-template-compiler": "^2.6.14",

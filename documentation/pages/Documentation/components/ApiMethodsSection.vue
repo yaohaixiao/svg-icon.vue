@@ -179,6 +179,12 @@ const symbols = getSymbols()</code></pre>
 </template>
 
 <script>
+/**
+ * ApiMethodsSection.vue - API Docs - Methods Section
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.17
+ */
 import BaseTips from '$components/BaseTips'
 
 export default {

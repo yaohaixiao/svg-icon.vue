@@ -1,9 +1,9 @@
 <template>
   <div
     ref="code"
-    class="usage-case-code">
+    class="base-usage-code">
     <span
-      class="usage-case-code__copy"
+      class="base-usage-code__copy"
       @click="onCopy">
       <svg-icon name="copy" />
       复制代码

@@ -69,6 +69,12 @@ export default {
 </template>
 
 <script>
+/**
+ * ApiComponentSection.vue - API Docs - Component Section
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.17
+ */
 export default {
   name: 'ApiComponentSection',
   componentName: 'ApiComponentSection'

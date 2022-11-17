@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-.usage-case-code {
+.base-usage-code {
   position: relative;
   z-index: 1;
   margin: 0 auto;
@@ -14,7 +14,7 @@
     .font_size_regular();
     .line_height_small();
     .font_code_family();
-    margin: 0;
+    margin: 0 auto;
     padding: 20px;
     background: @fourth_bg_color;
     color: @code_text_color;
@@ -27,9 +27,8 @@
     }
   }
 
-  &__pre {
+  &__code {
     .font_code_family();
-
     color: @code_text_color;
   }
 
