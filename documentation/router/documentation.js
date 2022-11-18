@@ -7,7 +7,7 @@
 export default {
   text: 'API Documentation',
   path: 'docs',
-  icon: 'aside-pc',
+  icon: 'bold-document',
   component: () =>
     import(
       /* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'

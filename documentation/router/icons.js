@@ -8,7 +8,7 @@ export default {
   text: 'Icons',
   name: 'ModuleIcons',
   path: 'icons',
-  icon: 'nav-app-store',
+  icon: 'bold-app-store',
   component: () =>
     import(/* webpackChunkName: "ModuleIcons" */ '../pages/Icons/ModuleIcons'),
   meta: {

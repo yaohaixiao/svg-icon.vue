@@ -7,7 +7,7 @@
 export default {
   text: 'Usage',
   path: 'usage',
-  icon: 'aside-modeling',
+  icon: 'bold-units',
   component: () =>
     import(/* webpackChunkName: "ModuleUsage" */ '../pages/Usage/ModuleUsage'),
   meta: {
