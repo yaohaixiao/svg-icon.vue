@@ -25,7 +25,7 @@ describe('utils.js', () => {
 
     expect($svg.id).toEqual(SVG_ICONS)
     expect($svg.getAttribute('aria-hidden')).toEqual('true')
-    expect($first.id).toEqual('icon-nav-app-store')
+    expect($first.id).toEqual('icon-bold-app-store')
     expect($last.id).toEqual('icon-close')
   })
 
@@ -52,7 +52,7 @@ describe('utils.js', () => {
 
     expect($svg.id).toEqual(SVG_ICONS)
     expect($svg.getAttribute('aria-hidden')).toEqual('true')
-    expect($first.id).toEqual('icon-nav-app-store')
+    expect($first.id).toEqual('icon-bold-app-store')
     expect($last.id).toEqual('icon-moon-home3')
     expect($symbols.innerHTML).toEqual(PATH)
   })

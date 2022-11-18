@@ -39,21 +39,21 @@ export default {
           route: false,
           role: 'link',
           href: 'http://www.yaohaixiao.com/',
-          icon: 'card-home',
+          icon: 'bold-home',
           iconSize: 18
         },
         {
           route: false,
           role: 'link',
           href: 'https://github.com/yaohaixiao/svg-icon.vue',
-          icon: 'card-branch',
+          icon: 'bold-branch',
           iconSize: 16
         },
         {
           route: false,
           role: 'link',
           href: 'https://github.com/yaohaixiao/svg-icon.vue/archive/refs/heads/main.zip',
-          icon: 'card-download',
+          icon: 'bold-download',
           iconSize: 20,
           download: 'svg-icon.vue-main.zip',
           target: '_blank'
@@ -62,7 +62,7 @@ export default {
           route: false,
           role: 'link',
           href: 'https://github.com/yaohaixiao/svg-icon.vue/issues',
-          icon: 'card-help',
+          icon: 'bold-help',
           iconSize: 20
         }
       ]

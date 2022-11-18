@@ -437,7 +437,7 @@ const entypoSet = {
     '<symbol id="icon-entypo-copy" viewBox="0 0 20 20">' +
     '<path d="M11 0h-8c-0.553 0-1 0.447-1 1v12c0 0.552 0.447 1 1 1h5v2h2v-2h-1.999v-2h1.999v-2h-2v2h-4v-10h6v4h2v-5c0-0.552-0.447-1-1-1zM8 7v1h2v-2h-1c-0.553 0-1 0.447-1 1zM12 20h2v-2h-2v2zM12 8h2v-2h-2v2zM8 19c0 0.552 0.447 1 1 1h1v-2h-2v1zM17 6h-1v2h2v-1c0-0.552-0.447-1-1-1zM16 20h1c0.553 0 1-0.448 1-1v-1h-2v2zM16 12h2v-2h-2v2zM16 16h2v-2h-2v2z"></path>' +
     '</symbol>',
-    '<symbol id="icon-entypo-credit-card" viewBox="0 0 20 20">' +
+    '<symbol id="icon-entypo-credit-bold" viewBox="0 0 20 20">' +
     '<path d="M18 3h-16c-1.101 0-2 0.9-2 2v10c0 1.1 0.899 2 2 2h16c1.1 0 2-0.9 2-2v-10c0-1.1-0.9-2-2-2zM18 15h-16v-6h16v6zM18 6h-16v-1h16v1zM4 11.1v0.6h0.6v-0.6h-0.6zM7.6 12.299v0.601h1.2v-0.601h0.6v-0.6h0.6v-0.6h-1.2v0.6h-0.601v0.6h-0.599zM10 12.9v-0.601h-0.601v0.601h0.601zM7 12.9v-0.601h-1.2v0.601h1.2zM7.6 11.699h0.6v-0.6h-1.2v1.199h0.6v-0.599zM5.199 12.299h0.601v-0.6h0.6v-0.6h-1.2v0.6h-0.6v0.6h-0.6v0.601h1.199v-0.601z"></path>' +
     '</symbol>',
     '<symbol id="icon-entypo-credit" viewBox="0 0 20 20">' +

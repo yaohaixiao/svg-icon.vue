@@ -4,7 +4,7 @@
     @click="toHome">
     <span class="app-logo__icon">
       <svg-icon
-        name="card-deploy"
+        name="bold-deploy"
         :size="22" />
     </span>
     <h1 class="app-logo__title">
