@@ -1,3 +1,12 @@
+## [2.4.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.4.0...2.4.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* 调整默认图标库 boldSet 图标集的名称，移除重复的图标 ([36a2506](https://github.com/yaohaixiao/svg-icon.vue/commit/36a2506512a12392d85ad4e10c2e1306ac57f971))
+
+
+
 # [2.4.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.3.1...2.4.0) (2022-11-13)
 
 
