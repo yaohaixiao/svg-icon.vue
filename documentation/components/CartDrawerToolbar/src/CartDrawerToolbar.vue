@@ -35,6 +35,12 @@
 </template>
 
 <script>
+/**
+ * CartDrawerToolbar.vue - CartDrawerToolbar 组件
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.17
+ */
 import BaseToolbar from '$components/BaseToolbar'
 import BaseCheckbox from '$components/BaseCheckbox'
 import BaseButton from '$components/BaseButton'

@@ -19,7 +19,7 @@
 
 <script>
 /**
- * BaseHeader.vue - 页头容器组件
+ * BaseHeader.vue - BaseHeader 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.08

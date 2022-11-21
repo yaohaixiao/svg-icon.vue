@@ -28,7 +28,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.09
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'BaseTabItem',

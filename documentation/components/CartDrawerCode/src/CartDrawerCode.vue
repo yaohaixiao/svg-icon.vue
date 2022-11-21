@@ -1,13 +1,13 @@
-<template>
+<template functional>
   <textarea
     readonly
-    :value="code"
-    class="cart-drawer-code" />
+    :value="props.code"
+    class="cart-drawer__code" />
 </template>
 
 <script>
 /**
- * CartDrawerCode.vue - CartDrawerCode 组件
+ * CartDrawerCode.vue - CartDrawerCode (函数)组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.11.17
@@ -23,7 +23,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="less">
-@import './cart-drawer-code';
-</style>

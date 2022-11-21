@@ -8,7 +8,7 @@
 
 <script>
 /**
- * BaseGrid.vue - Grid 布局组件
+ * BaseGrid.vue - BaseGrid 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.08

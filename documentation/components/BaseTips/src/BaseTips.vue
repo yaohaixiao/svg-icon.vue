@@ -47,7 +47,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.14
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 import { stripScripts } from '$utils/string'
 

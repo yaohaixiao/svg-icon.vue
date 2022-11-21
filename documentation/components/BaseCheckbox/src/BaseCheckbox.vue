@@ -34,7 +34,13 @@
 </template>
 
 <script>
-import SvgIcon from '@/SvgIcon'
+/**
+ * BaseCheckbox.vue - 按钮组件
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.11
+ */
+const SvgIcon = () => import('@/SvgIcon')
 
 import { isBoolean } from '$utils/typeof'
 

@@ -32,12 +32,12 @@
 
 <script>
 /**
- * BaseLink.vue - 链接组件
+ * BaseLink.vue - BaseLink 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.9
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'BaseLink',

@@ -17,7 +17,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'BaseUsageFooter',

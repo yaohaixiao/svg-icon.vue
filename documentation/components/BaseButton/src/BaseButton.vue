@@ -32,7 +32,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.8
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'BaseButton',

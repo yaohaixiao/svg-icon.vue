@@ -71,8 +71,9 @@
 import BaseCheckbox from '$components/BaseCheckbox'
 import BaseTag from '$components/BaseTag'
 
-import SvgIcon from '@/SvgIcon'
-import { closest } from '../../../utils/dom'
+const SvgIcon = () => import('@/SvgIcon')
+
+import { closest } from '$utils/dom'
 
 const CLS_ITEM = 'cart-drawer-item'
 const CLS_OVER = `${CLS_ITEM}_over`

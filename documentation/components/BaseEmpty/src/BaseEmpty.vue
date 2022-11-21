@@ -22,7 +22,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.10
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'BaseEmpty',

@@ -72,7 +72,7 @@
 
 <script>
 /**
- * BaseDrawer.vue - 侧滑弹窗组件
+ * BaseDrawer.vue - DevDrawer 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.11.8
@@ -83,7 +83,7 @@ import BaseFooter from '$components/BaseFooter'
 import BaseMain from '$components/BaseMain'
 import BaseButton from '$components/BaseButton'
 
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 import Popper from '$utils/popper'
 

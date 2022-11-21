@@ -62,7 +62,7 @@
 import BaseTabItem from '$components/BaseTabItem'
 import BaseTabBar from '$components/BaseTabBar'
 
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 const ITEM_SELECTOR = '.base-tab-item'
 let guid = 0

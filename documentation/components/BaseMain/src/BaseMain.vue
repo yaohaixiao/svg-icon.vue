@@ -13,7 +13,7 @@
 
 <script>
 /**
- * BaseMain.vue - Main 布局组件
+ * BaseMain.vue - BaseMain 组件
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.10.08

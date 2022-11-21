@@ -43,10 +43,10 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.11
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 import { isFunction } from '$utils/typeof'
-import Popper from '../../../utils/popper'
+import Popper from '$utils/popper'
 
 const TYPES = {
   success: 'success',
