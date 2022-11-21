@@ -48,9 +48,9 @@ import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 import BaseFooter from '$components/BaseFooter'
 
-import ApiInstallSection from './components/ApiInstallSection'
-import ApiMethodsSection from './components/ApiMethodsSection'
-import ApiComponentSection from './components/ApiComponentSection'
+const ApiInstallSection = () => import('./components/ApiInstallSection')
+const ApiMethodsSection = () => import('./components/ApiMethodsSection')
+const ApiComponentSection = () => import('./components/ApiComponentSection')
 
 export default {
   name: 'PageDocumentation',

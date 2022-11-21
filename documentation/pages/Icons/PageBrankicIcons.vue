@@ -91,7 +91,8 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-import IconCell from './components/IconCell'
+const IconCell = () => import('./components/IconCell')
+
 import brankic1979Set from '@/assets/brankic-1979'
 
 import { debounce } from '$utils/utils'

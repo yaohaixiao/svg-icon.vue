@@ -17,8 +17,8 @@
  */
 import BaseHeader from '$components/BaseHeader'
 
-import AppLogo from './AppLogo'
-import AppNav from './AppNav'
+const AppLogo = () => import('./AppLogo')
+const AppNav = () => import('./AppNav')
 
 export default {
   name: 'AppHeader',

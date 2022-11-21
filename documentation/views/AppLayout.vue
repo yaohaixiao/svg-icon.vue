@@ -27,11 +27,11 @@
 import BaseContainer from '$components/BaseContainer'
 import BaseMain from '$components/BaseMain'
 
-import AppHeader from './AppHeader'
-import AppAside from './AppAside'
-
 import CartBar from '$components/CartBar'
 import CartDrawer from '$components/CartDrawer'
+
+const AppHeader = () => import('./AppHeader')
+const AppAside = () => import('./AppAside')
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
 

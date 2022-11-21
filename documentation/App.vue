@@ -21,12 +21,12 @@ export default {
 html,
 body,
 #app {
-  height: 100%;
-  margin: 0;
-  padding: 0;
   .font_text_family();
   .font_size_regular();
   .line_height_regular();
+  height: 100%;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: @white;

@@ -86,7 +86,7 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-import IconCell from './components/IconCell'
+const IconCell = () => import('./components/IconCell')
 
 // 粗线条图标
 import boldSet from '@/assets/default/bold'

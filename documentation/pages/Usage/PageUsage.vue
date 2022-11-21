@@ -50,9 +50,9 @@ import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 import BaseFooter from '$components/BaseFooter'
 
-import UsageBasicSection from './components/UsageBasicSection'
-import UsageSetColorSection from './components/UsageSetColorSection'
-import UsageAdvancedSection from './components/UsageAdvancedSection'
+const UsageBasicSection = () => import('./components/UsageBasicSection')
+const UsageSetColorSection = () => import('./components/UsageSetColorSection')
+const UsageAdvancedSection = () => import('./components/UsageAdvancedSection')
 
 export default {
   name: 'PageUsage',

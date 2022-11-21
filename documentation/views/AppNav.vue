@@ -12,7 +12,7 @@
         :icon-size="nav.iconSize"
         :target="nav.target"
         :download="nav.download"
-        class="app-nav__link"></base-link>
+        class="app-nav__link" />
     </li>
   </ul>
 </template>

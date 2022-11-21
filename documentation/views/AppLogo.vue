@@ -21,7 +21,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'AppLogo',

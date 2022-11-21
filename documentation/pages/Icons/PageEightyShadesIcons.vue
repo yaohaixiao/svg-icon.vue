@@ -90,7 +90,8 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-import IconCell from './components/IconCell'
+const IconCell = () => import('./components/IconCell')
+
 import eightyShadesSet from '@/assets/eighty-shades'
 import { debounce } from '$utils/utils'
 

@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.4.1...2.5.0) (2022-11-21)
+
+
+### Features
+
+* 添加绘制所有内置SVG图标的 assets/index.js 模块 ([62f7433](https://github.com/yaohaixiao/svg-icon.vue/commit/62f7433937b43d6e8042e7cddc7b417475fde007))
+
+
+
 ## [2.4.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.4.0...2.4.1) (2022-11-18)
 
 

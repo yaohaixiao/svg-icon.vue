@@ -50,7 +50,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 import Documentation from '$router/documentation'
 import Usage from '$router/usage'

@@ -106,16 +106,14 @@ module.exports = {
           name: 'chunk-icons',
           // the weight needs to be larger than libs and app, or it will be packaged into libs or app
           priority: 16,
-          test: resolve('src/'),
+          test: resolve('src/assets'),
           reuseExistingChunk: true
         },
-        commons: {
-          // split async commons chunk
-          name: 'chunk-commons',
-          // can customize your rules
+        common: {
+          name: 'chunk-common',
+          // the weight needs to be larger than libs and app, or it will be packaged into libs or app
+          priority: 16,
           test: resolve('documentation/components'),
-          priority: 19,
-          chunks: 'async',
           reuseExistingChunk: true
         }
       }

@@ -33,8 +33,8 @@ import BaseMain from '$components/BaseMain'
 import BaseFooter from '$components/BaseFooter'
 import BaseAside from '$components/BaseAside'
 
-import AppMenu from './AppMenu'
-import SvgIcon from '@/SvgIcon'
+const AppMenu = () => import('./AppMenu')
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'AppAside',
