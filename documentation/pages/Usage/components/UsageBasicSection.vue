@@ -62,7 +62,7 @@ export default {
 import BaseUsage from '$components/BaseUsage/Usage'
 import BaseUsageCase from '$components/BaseUsage/Case'
 
-import SvgIcon from '@/SvgIcon'
+const SvgIcon = () => import('@/SvgIcon')
 
 export default {
   name: 'UsageBasicSection',

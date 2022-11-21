@@ -50,9 +50,18 @@ import BaseBreadcrumb from '$components/BaseBreadcrumb'
 import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 import BaseFooter from '$components/BaseFooter'
 
-const UsageBasicSection = () => import('./components/UsageBasicSection')
-const UsageSetColorSection = () => import('./components/UsageSetColorSection')
-const UsageAdvancedSection = () => import('./components/UsageAdvancedSection')
+const UsageBasicSection = () =>
+  import(
+    /* webpackChunkName: "UsageBasicSection" */ './components/UsageBasicSection'
+  )
+const UsageSetColorSection = () =>
+  import(
+    /* webpackChunkName: "UsageSetColorSection" */ './components/UsageSetColorSection'
+  )
+const UsageAdvancedSection = () =>
+  import(
+    /* webpackChunkName: "UsageAdvancedSection" */ './components/UsageAdvancedSection'
+  )
 
 export default {
   name: 'PageUsage',
