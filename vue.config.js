@@ -89,19 +89,19 @@ module.exports = {
       ])
 
     // 预获取高频使用资源（以下都是要过滤的）
-    config
-      .plugin('prefetch')
-      .use(PreloadWebpackPlugin)
-      .tap(() => [
-        {
-          rel: 'prefetch',
-          fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
-          include: {
-            type: 'asyncChunks',
-            entries: ['app']
-          }
-        }
-      ])
+    // config
+    //   .plugin('prefetch')
+    //   .use(PreloadWebpackPlugin)
+    //   .tap(() => [
+    //     {
+    //       rel: 'prefetch',
+    //       fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
+    //       include: {
+    //         type: 'asyncChunks',
+    //         entries: ['app']
+    //       }
+    //     }
+    //   ])
 
     config.optimization.splitChunks({
       chunks: 'all',
