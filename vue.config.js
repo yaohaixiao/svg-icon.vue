@@ -61,16 +61,15 @@ module.exports = {
       config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()
     })
 
-    config.plugin('html').tap(() => {
+    config.plugin('html').tap((args) => {
       const description = `${pkg.description}`
+      const arg = args[0]
 
-      return [
-        {
-          title: `svg-icon.vue - v${pkg.version} | ${description}`,
-          keywords: `javascript,svg,icon,svg-icon.vue,vue,vue.js`,
-          description: description
-        }
-      ]
+      arg.title = `svg-icon.vue - v${pkg.version} | ${description}`
+      arg.keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
+      arg.description = description
+
+      return args
     })
 
     // it can improve the speed of the first screen, it is recommended to turn on preload
@@ -88,20 +87,20 @@ module.exports = {
         }
       ])
 
-    // 预获取高频使用资源（以下都是要过滤的）
-    // config
-    //   .plugin('prefetch')
-    //   .use(PreloadWebpackPlugin)
-    //   .tap(() => [
-    //     {
-    //       rel: 'prefetch',
-    //       fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
-    //       include: {
-    //         type: 'asyncChunks',
-    //         entries: ['app']
-    //       }
-    //     }
-    //   ])
+    // prefetch all asyncChunks
+    config
+      .plugin('prefetch')
+      .use(PreloadWebpackPlugin)
+      .tap(() => [
+        {
+          rel: 'prefetch',
+          // fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
+          include: {
+            type: 'asyncChunks',
+            entries: ['app']
+          }
+        }
+      ])
 
     config.optimization.splitChunks({
       chunks: 'all',
