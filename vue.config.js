@@ -43,7 +43,8 @@ module.exports = {
         $router: resolve('./documentation/router'),
         $components: resolve('./documentation/components'),
         $assets: resolve('./documentation/assets'),
-        $utils: resolve('./documentation/utils')
+        $utils: resolve('./documentation/utils'),
+        $mixins: resolve('./documentation/mixins')
       }
     },
     module: {

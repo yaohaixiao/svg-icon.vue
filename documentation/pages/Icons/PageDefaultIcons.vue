@@ -31,25 +31,27 @@
       <article class="article">
         <h1 class="article__h1">Default 图标库</h1>
         <template v-for="(iconSet, i) in defaultSets">
-          <h2
-            :key="`title-${i}`"
-            class="article__h2">
-            {{ `${iconSet.title}（${iconSet.symbols.length}）` }}
-          </h2>
-          <base-grid
-            v-if="iconSet.symbols.length > 0"
-            :key="`grid-${i}`"
-            :columns="6"
-            :gap="10"
-            class="article__grid">
-            <icon-cell
-              v-for="(symbol, j) in iconSet.symbols"
-              :key="`generic-${j}`"
-              :symbol="symbol" />
-          </base-grid>
-          <base-empty
-            v-else
-            :key="`empty-${i}`" />
+          <template v-if="defer(i + 1)">
+            <h2
+              :key="`title-${i}`"
+              class="article__h2">
+              {{ `${iconSet.title}（${iconSet.symbols.length}）` }}
+            </h2>
+            <base-grid
+              v-if="iconSet.symbols.length > 0"
+              :key="`grid-${i}`"
+              :columns="6"
+              :gap="10"
+              class="article__grid">
+              <icon-cell
+                v-for="(symbol, j) in iconSet.symbols"
+                :key="`generic-${j}`"
+                :symbol="symbol" />
+            </base-grid>
+            <base-empty
+              v-else
+              :key="`empty-${i}`" />
+          </template>
         </template>
       </article>
     </base-main>
@@ -85,6 +87,8 @@ import BaseFooter from '$components/BaseFooter'
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
+
+import Defer from '$mixins/defer'
 
 const IconCell = () =>
   import(/* webpackChunkName: "IconCell" */ './components/IconCell')
@@ -133,6 +137,7 @@ export default {
     BaseEmpty,
     IconCell
   },
+  mixins: [Defer()],
   data() {
     return {
       defaultSets: [],

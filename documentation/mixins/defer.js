@@ -1,5 +1,5 @@
 /**
- * defer.js - Defer 延迟渲染 mixin
+ * defer.js - Defer 延迟渲染 mixins
  * =============================================================
  * Created By: Yaohaixiao
  * Update: 2022.11.22
