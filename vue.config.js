@@ -78,73 +78,71 @@ module.exports = {
         ]
       })
 
-    config.when(process.env.BUILD_FOR === 'docs', (config) => {
-      // it can improve the speed of the first screen, it is recommended to turn on preload
-      config
-        .plugin('preload')
-        .use(PreloadWebpackPlugin)
-        .tap(() => [
-          {
-            rel: 'preload',
-            // to ignore runtime.js
-            // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
-            fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
-            // initial, asyncChunks, all, allAssets
-            include: 'initial'
-          }
-        ])
+    // it can improve the speed of the first screen, it is recommended to turn on preload
+    config
+      .plugin('preload')
+      .use(PreloadWebpackPlugin)
+      .tap(() => [
+        {
+          rel: 'preload',
+          // to ignore runtime.js
+          // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+          fileBlacklist: [/\.map$/, /runtime\..*\.js$/],
+          // initial, asyncChunks, all, allAssets
+          include: 'initial'
+        }
+      ])
 
-      // prefetch all asyncChunks
-      config
-        .plugin('prefetch')
-        .use(PreloadWebpackPlugin)
-        .tap(() => [
-          {
-            rel: 'prefetch',
-            // fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
-            include: {
-              type: 'asyncChunks',
-              entries: ['app']
-            }
-          }
-        ])
-
-      config.optimization.splitChunks({
-        chunks: 'all',
-        cacheGroups: {
-          vue: {
-            name: 'chunk-vuejs',
-            test: /[\\/]node_modules[\\/]_?vue(.*)/,
-            priority: 30,
-            chunks: 'initial',
-            reuseExistingChunk: true
-          },
-          libs: {
-            name: 'chunk-libs',
-            test: /[\\/]node_modules[\\/]/,
-            priority: 22,
-            reuseExistingChunk: true
-          },
-          icons: {
-            name: 'chunk-icons',
-            // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-            priority: 18,
-            test: resolve('src/assets'),
-            reuseExistingChunk: true
-          },
-          commons: {
-            name: 'chunk-commons',
-            // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-            priority: 16,
-            test: resolve('documentation/components'),
-            reuseExistingChunk: true
+    // prefetch all asyncChunks
+    config
+      .plugin('prefetch')
+      .use(PreloadWebpackPlugin)
+      .tap(() => [
+        {
+          rel: 'prefetch',
+          // fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
+          include: {
+            type: 'asyncChunks',
+            entries: ['app']
           }
         }
-      })
+      ])
 
-      // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
-      config.optimization.runtimeChunk('single')
+    config.optimization.splitChunks({
+      chunks: 'all',
+      cacheGroups: {
+        vue: {
+          name: 'chunk-vuejs',
+          test: /[\\/]node_modules[\\/]_?vue(.*)/,
+          priority: 30,
+          chunks: 'initial',
+          reuseExistingChunk: true
+        },
+        libs: {
+          name: 'chunk-libs',
+          test: /[\\/]node_modules[\\/]/,
+          priority: 22,
+          reuseExistingChunk: true
+        },
+        icons: {
+          name: 'chunk-icons',
+          // the weight needs to be larger than libs and app, or it will be packaged into libs or app
+          priority: 18,
+          test: resolve('src/assets'),
+          reuseExistingChunk: true
+        },
+        commons: {
+          name: 'chunk-commons',
+          // the weight needs to be larger than libs and app, or it will be packaged into libs or app
+          priority: 16,
+          test: resolve('documentation/components'),
+          reuseExistingChunk: true
+        }
+      }
     })
+
+    // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
+    config.optimization.runtimeChunk('single')
   },
 
   transpileDependencies: true
