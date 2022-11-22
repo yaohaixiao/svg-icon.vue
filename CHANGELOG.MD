@@ -1,3 +1,12 @@
+## [2.5.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.5.0...2.5.1) (2022-11-22)
+
+
+### Bug Fixes
+
+* 修复发布 package 配置报错问题 ([57771ca](https://github.com/yaohaixiao/svg-icon.vue/commit/57771ca488f24a84632344d9ee3ddcd13deabe25))
+
+
+
 # [2.5.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.4.1...2.5.0) (2022-11-21)
 
 
