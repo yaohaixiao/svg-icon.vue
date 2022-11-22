@@ -11,7 +11,6 @@ const BundleAnalyzerPlugin =
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 
 const pkg = require('./package.json')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const resolve = (dir) => {
   return path.join(__dirname, dir)
