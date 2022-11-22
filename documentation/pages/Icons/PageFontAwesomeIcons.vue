@@ -90,7 +90,8 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-const IconCell = () => import('./components/IconCell')
+const IconCell = () =>
+  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
 
 import fontAwesomeSet from '@/assets/font-awesome'
 import { debounce } from '$utils/utils'

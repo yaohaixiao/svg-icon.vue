@@ -91,7 +91,8 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-const IconCell = () => import('./components/IconCell')
+const IconCell = () =>
+  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
 
 import wpzoomSet from '@/assets/wpzoom'
 import { debounce } from '$utils/utils'

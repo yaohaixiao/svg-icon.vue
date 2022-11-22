@@ -91,7 +91,8 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-const IconCell = () => import('./components/IconCell')
+const IconCell = () =>
+  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
 
 import brankic1979Set from '@/assets/brankic-1979'
 

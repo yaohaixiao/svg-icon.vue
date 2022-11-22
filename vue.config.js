@@ -61,14 +61,16 @@ module.exports = {
       config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()
     })
 
-    config.plugin('html').tap((args) => {
+    config.plugin('html').tap(() => {
       const description = `${pkg.description}`
 
-      args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
-      args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
-      args[0].description = description
-
-      return args
+      return [
+        {
+          title: `svg-icon.vue - v${pkg.version} | ${description}`,
+          keywords: `javascript,svg,icon,svg-icon.vue,vue,vue.js`,
+          description: description
+        }
+      ]
     })
 
     // it can improve the speed of the first screen, it is recommended to turn on preload
@@ -86,31 +88,46 @@ module.exports = {
         }
       ])
 
+    // 预获取高频使用资源（以下都是要过滤的）
+    config
+      .plugin('prefetch')
+      .use(PreloadWebpackPlugin)
+      .tap(() => [
+        {
+          rel: 'prefetch',
+          fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
+          include: {
+            type: 'asyncChunks',
+            entries: ['app']
+          }
+        }
+      ])
+
     config.optimization.splitChunks({
       chunks: 'all',
       cacheGroups: {
         vue: {
           name: 'chunk-vuejs',
           test: /[\\/]node_modules[\\/]_?vue(.*)/,
-          priority: 20,
+          priority: 30,
           chunks: 'initial',
           reuseExistingChunk: true
         },
         libs: {
           name: 'chunk-libs',
           test: /[\\/]node_modules[\\/]/,
-          priority: 18,
+          priority: 22,
           reuseExistingChunk: true
         },
         icons: {
           name: 'chunk-icons',
           // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-          priority: 16,
+          priority: 18,
           test: resolve('src/assets'),
           reuseExistingChunk: true
         },
-        common: {
-          name: 'chunk-common',
+        commons: {
+          name: 'chunk-commons',
           // the weight needs to be larger than libs and app, or it will be packaged into libs or app
           priority: 16,
           test: resolve('documentation/components'),
