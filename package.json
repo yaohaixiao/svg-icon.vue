@@ -19,7 +19,7 @@
   "scripts": {
     "analyz": "npm run build --report",
     "start": "vue-cli-service serve ./documentation/main.js",
-    "build": "set BUILD_FOR=docs && vue-cli-service build ./documentation/main.js --dest docs",
+    "build": "vue-cli-service build ./documentation/main.js --dest docs",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "npm run lint:style && npm run lint:script && npm run prettier:check",
     "lint:fix": "npm run lint:style:fix && npm run lint:script:fix",

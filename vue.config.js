@@ -9,9 +9,9 @@ const path = require('path')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const pkg = require('./package.json')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const resolve = (dir) => {
   return path.join(__dirname, dir)
@@ -63,20 +63,16 @@ module.exports = {
       config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()
     })
 
-    config
-      .plugin('html')
-      .use(HTMLWebpackPlugin)
-      .tap(() => {
-        const description = `${pkg.description}`
+    config.plugin('html').tap((args) => {
+      const description = `${pkg.description}`
+      const option = args[0]
 
-        return [
-          {
-            title: `svg-icon.vue - v${pkg.version} | ${description}`,
-            keywords: `javascript,svg,icon,svg-icon.vue,vue,vue.js`,
-            description: description
-          }
-        ]
-      })
+      option.title = `svg-icon.vue - v${pkg.version} | ${description}`
+      option.keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
+      option.description = description
+
+      return args
+    })
 
     // it can improve the speed of the first screen, it is recommended to turn on preload
     config
