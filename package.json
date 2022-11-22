@@ -1,12 +1,28 @@
 {
   "name": "@yaohaixiao/svg-icon.vue",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。",
-  "author": "Robert Yao",
+  "author": {
+    "name": "Robert Yao",
+    "email": "yaohaixiao@gmail.com"
+  },
+  "keywords": [
+    "javascript",
+    "svg",
+    "icon",
+    "vue",
+    "vue.js",
+    "svg-icon.vue"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "unpkg": "dist/svgicon.umd.min.js",
   "scripts": {
     "analyz": "npm run build --report",
     "start": "vue-cli-service serve ./documentation/main.js",
-    "build": "vue-cli-service build ./documentation/main.js --dest docs",
+    "build:docs": "set BUILD_FOR=docs && vue-cli-service build ./documentation/main.js --dest docs",
+    "build:packages": "set BUILD_FOR=prod && vue-cli-service build --target lib --inline-vue --entry ./index.js --name svgicon --dest dist",
+    "build": "npm run build:packages && npm run build:docs",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "npm run lint:style && npm run lint:script && npm run prettier:check",
     "lint:fix": "npm run lint:style:fix && npm run lint:script:fix",
@@ -20,7 +36,14 @@
     "prepare": "husky install",
     "prepublish": "npm run lint && npm run test:unit && npm run build"
   },
-  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaohaixiao/svg-icon.vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yaohaixiao/svg-icon.vue/issues"
+  },
+  "homepage": "https://github.com/yaohaixiao/svg-icon.vue#readme",
   "directories": {
     "doc": "documentation"
   },
@@ -75,19 +98,6 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1"
   },
-  "bugs": {
-    "url": "https://github.com/yaohaixiao/svg-icon.vue/issues"
-  },
-  "homepage": "https://github.com/yaohaixiao/svg-icon.vue#readme",
-  "keywords": [
-    "javascript",
-    "svg",
-    "icon",
-    "vue",
-    "vue.js",
-    "svg-icon.vue"
-  ],
-  "license": "MIT",
   "engines": {
     "node": ">=6.10"
   },
@@ -109,9 +119,5 @@
       "npm run lint:style:fix"
     ],
     "*.{js,less,vue}": "prettier --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yaohaixiao/svg-icon.vue.git"
   }
 }
