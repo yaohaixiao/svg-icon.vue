@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/svg-icon.vue",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "description": "svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。",
   "author": {
     "name": "Robert Yao",
@@ -16,10 +16,19 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "unpkg": "dist/svgicon.umd.min.js",
+  "files": [
+    "dist/**/*.js",
+    "index.js"
+  ],
   "scripts": {
-    "analyz": "npm run build --report",
+    "analyz": "npm run build:docs --report",
     "start": "vue-cli-service serve ./documentation/main.js",
-    "build": "vue-cli-service build ./documentation/main.js --dest docs",
+    "build:docs": "set BUILD_FOR=docs && npm run build:docs:icons && vue-cli-service build ./documentation/main.js --dest docs",
+    "build:docs:icons": "rollup -c ./build/rollup.config.docs.js --bundleConfigAsCjs",
+    "build:lib": "set BUILD_FOR=lib && vue-cli-service build --target lib --inline-vue --entry ./index.js --name svgicon --dest dist && npm run build:lib:icons",
+    "build:lib:icons": "rollup -c ./build/rollup.config.lib.js --bundleConfigAsCjs",
+    "build": "npm run build:docs && npm run build:lib",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "npm run lint:style && npm run lint:script && npm run prettier:check",
     "lint:fix": "npm run lint:style:fix && npm run lint:script:fix",
@@ -52,6 +61,9 @@
     "@babel/eslint-parser": "^7.19.1",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
@@ -83,6 +95,7 @@
     "postcss-less": "^6.0.0",
     "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
+    "rollup": "^3.4.0",
     "style-resources-loader": "^1.5.0",
     "stylelint": "^14.13.0",
     "stylelint-selector-bem-pattern": "^2.1.1",

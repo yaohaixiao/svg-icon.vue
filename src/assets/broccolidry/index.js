@@ -8,7 +8,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.16
  */
-const meteoconsSet = {
+const broccolidrySet = {
   title: 'Broccolidry 图标集',
   code: 'broccolidry',
   symbols: [
@@ -339,4 +339,4 @@ const meteoconsSet = {
   ]
 }
 
-export default meteoconsSet
+export default broccolidrySet

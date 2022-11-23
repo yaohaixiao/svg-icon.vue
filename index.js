@@ -1,4 +1,4 @@
-import SvgIcon from '@/SvgIcon'
+import SvgIcon from './src/SvgIcon'
 
 /* istanbul ignore next */
 SvgIcon.install = function (Vue) {

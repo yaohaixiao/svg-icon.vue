@@ -4,25 +4,25 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.21
  */
-import defaultSet from '@/assets/default'
-import brankic1979Set from '@/assets/brankic-1979'
-import broccolidrySet from '@/assets/broccolidry'
-import eightyShadesSet from '@/assets/eighty-shades'
-import entypoSet from '@/assets/entypo'
-import featherSet from '@/assets/feather'
-import fontAwesomeSet from '@/assets/font-awesome'
-import hawconsSet from '@/assets/hawcons'
-import iconicSet from '@/assets/iconic'
-import lineconsSet from '@/assets/linecons'
-import materialSet from '@/assets/material'
-import meteoconsSet from '@/assets/meteocons'
-import steadysetsSet from '@/assets/steadysets'
-import typiconsSet from '@/assets/typicons'
-import viconsSet from '@/assets/vicons'
-import wpzoomSet from '@/assets/wpzoom'
-import zondiconsSet from '@/assets/zondicons'
+import defaultSet from './default'
+import brankic1979Set from './brankic-1979'
+import broccolidrySet from './broccolidry'
+import eightyShadesSet from './eighty-shades'
+import entypoSet from './entypo'
+import featherSet from './feather'
+import fontAwesomeSet from './font-awesome'
+import hawconsSet from './hawcons'
+import iconicSet from './iconic'
+import lineconsSet from './linecons'
+import materialSet from './material'
+import meteoconsSet from './meteocons'
+import steadysetsSet from './steadysets'
+import typiconsSet from './typicons'
+import viconsSet from './vicons'
+import wpzoomSet from './wpzoom'
+import zondiconsSet from './zondicons'
 
-import { render } from '@/utils/utils'
+import { render } from '../utils/utils'
 
 render([
   defaultSet,
