@@ -1,3 +1,12 @@
+# [2.6.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.5.1...2.6.0) (2022-11-23)
+
+
+### Features
+
+* 为每个图标集添加 icons.js 用于直接绘制该图标库的所有 SVG 图标； ([69d53af](https://github.com/yaohaixiao/svg-icon.vue/commit/69d53af3b404dae1263fee65576ec5c417e4d89e))
+
+
+
 ## [2.5.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.5.0...2.5.1) (2022-11-22)
 
 
