@@ -151,13 +151,6 @@ module.exports = {
             priority: 22,
             reuseExistingChunk: true
           },
-          icons: {
-            name: 'chunk-icons',
-            // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-            priority: 18,
-            test: resolve('src/assets'),
-            reuseExistingChunk: true
-          },
           commons: {
             name: 'chunk-commons',
             // the weight needs to be larger than libs and app, or it will be packaged into libs or app
