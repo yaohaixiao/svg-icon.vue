@@ -93,6 +93,9 @@ const IconCell = () =>
 
 import featherSet from '@/assets/feather'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(featherSet)
 
 export default {
   name: 'PageFeatherIcons',

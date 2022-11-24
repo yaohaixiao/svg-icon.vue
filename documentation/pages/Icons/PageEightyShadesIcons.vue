@@ -95,6 +95,9 @@ const IconCell = () =>
 
 import eightyShadesSet from '@/assets/eighty-shades'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(eightyShadesSet)
 
 export default {
   name: 'PageEightyShadesIcons',

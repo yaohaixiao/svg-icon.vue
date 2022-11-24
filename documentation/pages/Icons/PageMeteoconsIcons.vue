@@ -95,6 +95,9 @@ const IconCell = () =>
 
 import meteoconsSet from '@/assets/meteocons'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(meteoconsSet)
 
 export default {
   name: 'PageMeteoconsIcons',

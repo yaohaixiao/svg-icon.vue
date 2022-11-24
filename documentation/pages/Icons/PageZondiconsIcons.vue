@@ -89,6 +89,9 @@ const IconCell = () =>
 
 import zondiconsSet from '@/assets/zondicons'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(zondiconsSet)
 
 export default {
   name: 'PageZondiconsIcons',

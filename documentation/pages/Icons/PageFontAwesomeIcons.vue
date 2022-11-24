@@ -95,6 +95,9 @@ const IconCell = () =>
 
 import fontAwesomeSet from '@/assets/font-awesome'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(fontAwesomeSet)
 
 export default {
   name: 'PageFontAwesomeIcons',

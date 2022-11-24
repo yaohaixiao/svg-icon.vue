@@ -95,6 +95,9 @@ const IconCell = () =>
 
 import materialSet from '@/assets/material'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(materialSet)
 
 export default {
   name: 'PageMaterialIcons',

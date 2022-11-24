@@ -12,7 +12,7 @@ const PLUGIN_CONFIG = [nodeResolve(), commonjs(), terser()]
 
 export default [
   {
-    input: 'src/assets/index.js',
+    input: 'src/assets/default/icons.js',
     output: {
       file: 'public/assets/icons.min.js',
       format: 'iife',

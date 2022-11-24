@@ -95,6 +95,9 @@ const IconCell = () =>
 
 import steadysetsSet from '@/assets/steadysets'
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(steadysetsSet)
 
 export default {
   name: 'PageSteadysetsIcons',

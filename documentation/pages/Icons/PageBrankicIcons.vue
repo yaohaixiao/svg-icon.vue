@@ -95,8 +95,10 @@ const IconCell = () =>
   import(/* webpackChunkName: "IconCell" */ './components/IconCell')
 
 import brankic1979Set from '@/assets/brankic-1979'
-
 import { debounce } from '$utils/utils'
+import { render } from '@/utils/utils'
+
+render(brankic1979Set)
 
 export default {
   name: 'PageBrankicIcons',
