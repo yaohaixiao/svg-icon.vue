@@ -36,7 +36,7 @@
         <base-grid
           v-if="count > 0"
           :columns="6"
-          :gap="10"
+          :gap="16"
           class="article__grid">
           <icon-cell
             v-for="(symbol, j) in symbols"

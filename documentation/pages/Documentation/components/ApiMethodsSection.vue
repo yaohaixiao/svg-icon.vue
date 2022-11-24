@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">Methods</h2>
     <p>
       svg-icon.vue 的 API 对外提供了 render() 和 getSymbols()
