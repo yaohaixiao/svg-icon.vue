@@ -96,9 +96,6 @@ const IconCell = () =>
 
 import wpzoomSet from '@/assets/wpzoom'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(wpzoomSet)
 
 export default {
   name: 'PageWpzoomIcons',

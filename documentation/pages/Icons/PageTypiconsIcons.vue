@@ -93,9 +93,6 @@ const IconCell = () =>
 
 import typiconsSet from '@/assets/typicons'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(typiconsSet)
 
 export default {
   name: 'PageTypiconsIcons',

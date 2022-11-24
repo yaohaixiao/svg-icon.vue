@@ -95,9 +95,6 @@ const IconCell = () =>
 
 import viconsSet from '@/assets/vicons'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(viconsSet)
 
 export default {
   name: 'PageViconsIcons',

@@ -97,9 +97,6 @@ const IconCell = () =>
 
 import broccolidrySet from '@/assets/broccolidry'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(broccolidrySet)
 
 export default {
   name: 'PageBroccolidryIcons',

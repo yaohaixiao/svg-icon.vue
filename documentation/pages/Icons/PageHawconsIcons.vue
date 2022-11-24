@@ -93,9 +93,6 @@ const IconCell = () =>
 
 import hawconsSet from '@/assets/hawcons'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(hawconsSet)
 
 export default {
   name: 'PageHawconsIcons',

@@ -93,9 +93,6 @@ const IconCell = () =>
 
 import entypoSet from '@/assets/entypo'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(entypoSet)
 
 export default {
   name: 'PageEntypoPlusIcons',

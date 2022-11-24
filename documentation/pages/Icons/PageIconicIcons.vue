@@ -95,9 +95,6 @@ const IconCell = () =>
 
 import iconicSet from '@/assets/iconic'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(iconicSet)
 
 export default {
   name: 'PageIconicIcons',

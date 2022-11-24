@@ -95,9 +95,6 @@ const IconCell = () =>
 
 import lineconsSet from '@/assets/linecons'
 import { debounce } from '$utils/utils'
-import { render } from '@/utils/utils'
-
-render(lineconsSet)
 
 export default {
   name: 'PageLineconsIcons',
