@@ -11,6 +11,7 @@ const BundleAnalyzerPlugin =
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const pkg = require('./package.json')
 
 const resolve = (dir) => {
@@ -40,7 +41,8 @@ module.exports = {
     plugins: [
       new HtmlInlineScriptPlugin({
         scriptMatchPattern: [/runtime[.-]?(.*?)\.js$/, /app[.-]?(.*?)\.js$/]
-      })
+      }),
+      new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)
     ],
     resolve: {
       alias: {
@@ -103,6 +105,7 @@ module.exports = {
           const description = `${pkg.description}`
           // inject script to body
           args[0].inject = 'body'
+          args[0].inlineSource = 'app.(.*?).(css)$'
           args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
           args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
           args[0].description = description
@@ -125,7 +128,7 @@ module.exports = {
               /\.map$/,
               /hot-update\.js$/,
               /runtime[.-]?(.*?)\.js$/,
-              /app[.-]?(.*?)\.js$/
+              /app[.-]?(.*?)\.(js|css)$/
             ],
             // initial, asyncChunks, all, allAssets
             include: 'initial'
