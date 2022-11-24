@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">基础用法</h2>
     <base-usage>
       <template v-slot:case>

@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">Install</h2>
     <p>
       svg-icon.vue 的安装十分简单，可以直接在命令行中运行 npm install

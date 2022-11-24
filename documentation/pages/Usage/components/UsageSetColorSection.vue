@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">设置颜色</h2>
     <p>
       SvgIcon 组件既可以使用包含 icon 的父节点设置 CSS

@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">高级用法</h2>
     <p>
       如果 SvgIcon 组件自带的图标没有您需要的，SvgIcon 组件还支持使用 render()

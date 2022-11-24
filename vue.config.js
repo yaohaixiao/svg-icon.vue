@@ -9,7 +9,9 @@ const path = require('path')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const pkg = require('./package.json')
 
 const resolve = (dir) => {
@@ -36,6 +38,12 @@ module.exports = {
     }
   },
   configureWebpack: {
+    plugins: [
+      new HtmlInlineScriptPlugin({
+        scriptMatchPattern: [/runtime[.-]?(.*?)\.js$/, /app[.-]?(.*?)\.js$/]
+      }),
+      new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)
+    ],
     resolve: {
       alias: {
         '@': resolve('src'),
@@ -75,7 +83,7 @@ module.exports = {
     config.when(buildFor === 'lib', (config) => {
       config
         .plugin('html')
-        .use(HTMLWebpackPlugin)
+        .use(HtmlWebpackPlugin)
         .tap(() => {
           const description = `${pkg.description}`
 
@@ -95,7 +103,9 @@ module.exports = {
         // .use(HTMLWebpackPlugin)
         .tap((args) => {
           const description = `${pkg.description}`
-
+          // inject script to body
+          args[0].inject = 'body'
+          args[0].inlineSource = 'app.(.*?).(css)$'
           args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
           args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
           args[0].description = description
@@ -114,7 +124,12 @@ module.exports = {
             rel: 'preload',
             // to ignore runtime.js
             // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
-            fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
+            fileBlacklist: [
+              /\.map$/,
+              /hot-update\.js$/,
+              /runtime[.-]?(.*?)\.js$/,
+              /app[.-]?(.*?)\.(js|css)$/
+            ],
             // initial, asyncChunks, all, allAssets
             include: 'initial'
           }
@@ -135,7 +150,12 @@ module.exports = {
           }
         ])
 
-      config.optimization.splitChunks({
+      // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
+      config.optimization.runtimeChunk('single').splitChunks({
+        // 表示选择哪些 chunks 进行分割，可选值有：
+        // async
+        // initial
+        // all
         chunks: 'all',
         cacheGroups: {
           vue: {
@@ -148,7 +168,7 @@ module.exports = {
           libs: {
             name: 'chunk-libs',
             test: /[\\/]node_modules[\\/]/,
-            priority: 22,
+            priority: 20,
             reuseExistingChunk: true
           },
           commons: {
@@ -160,9 +180,6 @@ module.exports = {
           }
         }
       })
-
-      // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
-      config.optimization.runtimeChunk('single')
     })
   },
 

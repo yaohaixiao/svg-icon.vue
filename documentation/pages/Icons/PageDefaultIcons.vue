@@ -41,7 +41,7 @@
               v-if="iconSet.symbols.length > 0"
               :key="`grid-${i}`"
               :columns="6"
-              :gap="10"
+              :gap="16"
               class="article__grid">
               <icon-cell
                 v-for="(symbol, j) in iconSet.symbols"

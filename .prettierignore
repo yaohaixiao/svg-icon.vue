@@ -5,6 +5,8 @@
 /dist
 /docs
 /.vscode
+/report
+/public
 
 # misc
 .DS_Store
@@ -29,5 +31,3 @@ screenshot
 .eslintcache
 
 .husky
-src/assets
-/report

@@ -1,5 +1,7 @@
 <template>
-  <section class="article__section">
+  <section
+    class="article__section"
+    v-once>
     <h2 class="article__h2">Component</h2>
     <p>
       svg-icon.vue 为开发者提供了 SvgIcon 组件，使用它来显示 render() 方法绘制的
