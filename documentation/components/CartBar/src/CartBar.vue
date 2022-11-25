@@ -19,7 +19,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.08
  */
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 export default {
   name: 'CartBar',

@@ -169,7 +169,7 @@ export default {
 import BaseUsage from '$components/BaseUsage/Usage'
 import BaseUsageCase from '$components/BaseUsage/Case'
 
-const SvgIcon = () => import(/* webpackChunkName: "SvgIcon" */ '@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 import iconSet from '$assets/ico-moon'
 import { render } from '@/utils/utils'

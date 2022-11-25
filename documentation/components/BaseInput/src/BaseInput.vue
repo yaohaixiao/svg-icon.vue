@@ -128,7 +128,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.12
  */
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 import { debounce } from '$utils/utils'
 

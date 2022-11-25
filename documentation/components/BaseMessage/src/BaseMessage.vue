@@ -43,7 +43,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.11
  */
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 import { isFunction } from '$utils/typeof'
 import Popper from '$utils/popper'

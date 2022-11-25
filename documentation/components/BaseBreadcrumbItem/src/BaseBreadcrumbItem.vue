@@ -45,7 +45,7 @@
  */
 import BaseLink from '$components/BaseLink'
 
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 export default {
   name: 'BaseBreadcrumbItem',

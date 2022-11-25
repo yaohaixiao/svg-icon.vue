@@ -71,7 +71,7 @@
 import BaseCheckbox from '$components/BaseCheckbox'
 import BaseTag from '$components/BaseTag'
 
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 import { closest } from '$utils/dom'
 

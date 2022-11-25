@@ -90,8 +90,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import Defer from '$mixins/defer'
 
-const IconCell = () =>
-  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
+import IconCell from './components/IconCell'
 
 // 粗线条图标
 import boldSet from '@/assets/default/bold'

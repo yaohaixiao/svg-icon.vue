@@ -90,8 +90,7 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-const IconCell = () =>
-  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
+import IconCell from './components/IconCell'
 
 import eightyShadesSet from '@/assets/eighty-shades'
 import { debounce } from '$utils/utils'

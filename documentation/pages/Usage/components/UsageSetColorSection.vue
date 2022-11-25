@@ -159,7 +159,7 @@
 import BaseUsage from '$components/BaseUsage/Usage'
 import BaseUsageCase from '$components/BaseUsage/Case'
 
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 export default {
   name: 'UsageSetColorSection',

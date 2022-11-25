@@ -83,7 +83,7 @@ import BaseFooter from '$components/BaseFooter'
 import BaseMain from '$components/BaseMain'
 import BaseButton from '$components/BaseButton'
 
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
 
 import Popper from '$utils/popper'
 

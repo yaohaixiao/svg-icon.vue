@@ -3,9 +3,9 @@
 [![npm version](https://img.shields.io/npm/v/@yaohaixiao/svg-icon.vue)](https://www.npmjs.com/package/@yaohaixiao/svg-icon.vue)
 [![prettier code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Coverage](https://codecov.io/gh/yaohaixiao/svg-icon.vue/branch/main/graph/badge.svg)](https://codecov.io/gh/yaohaixiao/vg-icon.vue)
+[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 [![npm downloads](https://img.shields.io/npm/dm/@yaohaixiao/svg-icon.vue)](https://npmcharts.com/compare/@yaohaixiao/svg-icon.vue?minimal=true)
 [![MIT License](https://img.shields.io/github/license/yaohaixiao/svg-icon.vue.svg)](https://github.com/yaohaixiao/svg-icon.vue/blob/master/LICENSE)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 svg-icon.vue 为开发者提供了一个用来在 VUE 项目中显示 SVG 图标的工具。
 
