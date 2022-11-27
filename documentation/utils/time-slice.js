@@ -34,7 +34,7 @@ const timeSlice = (gen) => {
       return false
     }
 
-    if (window.requestIdleCallback) {
+    if (isFunction(requestIdleCallback)) {
       requestIdleCallback(next)
     } else {
       setTimeout(next, 10)

@@ -143,7 +143,7 @@ export default {
             yield
           }
         })()
-      }, 300)
+      }, 150)
     })
   },
   methods: {
