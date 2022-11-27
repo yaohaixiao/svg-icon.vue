@@ -17,8 +17,8 @@
  */
 import BaseHeader from '$components/BaseHeader'
 
-const AppLogo = () => import('./AppLogo')
-const AppNav = () => import('./AppNav')
+const AppLogo = () => import(/* webpackChunkName: "AppLogo" */ './AppLogo')
+const AppNav = () => import(/* webpackChunkName: "AppNav" */ './AppNav')
 
 export default {
   name: 'AppHeader',

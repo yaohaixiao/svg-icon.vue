@@ -30,8 +30,9 @@ import BaseMain from '$components/BaseMain'
 import CartBar from '$components/CartBar'
 import CartDrawer from '$components/CartDrawer'
 
-const AppHeader = () => import('./AppHeader')
-const AppAside = () => import('./AppAside')
+const AppHeader = () =>
+  import(/* webpackChunkName: "AppHeader" */ './AppHeader')
+const AppAside = () => import(/* webpackChunkName: "AppAside" */ './AppAside')
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
 

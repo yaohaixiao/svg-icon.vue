@@ -33,8 +33,9 @@ import BaseMain from '$components/BaseMain'
 import BaseFooter from '$components/BaseFooter'
 import BaseAside from '$components/BaseAside'
 
-const AppMenu = () => import('./AppMenu')
-const SvgIcon = () => import('@/SvgIcon')
+import SvgIcon from '@/SvgIcon'
+
+const AppMenu = () => import(/* webpackChunkName: "AppMenu" */ './AppMenu')
 
 export default {
   name: 'AppAside',
