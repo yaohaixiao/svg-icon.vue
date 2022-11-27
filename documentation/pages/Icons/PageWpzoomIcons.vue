@@ -139,12 +139,14 @@ export default {
     }
 
     this.$nextTick(() => {
-      timeSlice(function* () {
-        while (icons.length > 0) {
-          add()
-          yield
-        }
-      })()
+      setTimeout(() => {
+        timeSlice(function* () {
+          while (icons.length > 0) {
+            add()
+            yield
+          }
+        })()
+      }, 300)
     })
   },
   methods: {
