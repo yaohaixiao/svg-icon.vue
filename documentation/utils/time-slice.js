@@ -7,7 +7,8 @@
 import { isFunction } from '$utils/typeof'
 
 /**
- * 时间切片功能函数
+ * 时间切片功能函数：主要用于优化长时任务的性能，将长时任务分解成
+ * 多个短时间任务
  * ====================================================
  * @param {Function} gen
  * @return {(function(): (boolean|undefined))|*|boolean}
