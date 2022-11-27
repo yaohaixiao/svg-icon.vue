@@ -94,7 +94,10 @@ import BaseEmpty from '$components/BaseEmpty'
 import IconCell from './components/IconCell'
 
 import brankic1979Set from '@/assets/brankic-1979'
-import { debounce } from '$utils/utils'
+import { debounce, cloneDeep } from '$utils/utils'
+import timeSlice from '$utils/time-slice'
+
+const step = 30
 
 export default {
   name: 'PageBrankicIcons',
@@ -124,14 +127,31 @@ export default {
     }
   },
   created() {
-    this.update()
+    const icons = cloneDeep(this.brankic1979Set.symbols)
+
+    this.symbols = icons.splice(0, step)
+  },
+  mounted() {
+    const icons = cloneDeep(this.brankic1979Set.symbols)
+    const add = () => {
+      this.symbols = this.symbols.concat(icons.splice(0, step))
+    }
+
+    this.$nextTick(() => {
+      timeSlice(function* () {
+        while (icons.length > 0) {
+          add()
+          yield
+        }
+      })()
+    })
   },
   methods: {
-    update() {
+    query(keyword) {
       this.symbols = this.brankic1979Set.symbols.filter((symbol) => {
         const name = this.getSymbolName(symbol).toLowerCase()
 
-        return name.indexOf(this.keyword.toLowerCase()) > -1
+        return name.indexOf(keyword.toLowerCase()) > -1
       })
     },
     getSymbolName(symbol) {
@@ -139,7 +159,7 @@ export default {
       return matches[1] || ''
     },
     onQuery: debounce(function () {
-      this.update()
+      this.update(this.keyword)
     }, 300)
   }
 }

@@ -95,7 +95,11 @@ import BaseEmpty from '$components/BaseEmpty'
 import IconCell from './components/IconCell'
 
 import broccolidrySet from '@/assets/broccolidry'
-import { debounce } from '$utils/utils'
+
+import { cloneDeep, debounce } from '$utils/utils'
+import timeSlice from '$utils/time-slice'
+
+const step = 30
 
 export default {
   name: 'PageBroccolidryIcons',
@@ -125,14 +129,31 @@ export default {
     }
   },
   created() {
-    this.update()
+    const icons = cloneDeep(this.broccolidrySet.symbols)
+
+    this.symbols = icons.splice(0, step)
+  },
+  mounted() {
+    const icons = cloneDeep(this.broccolidrySet.symbols)
+    const add = () => {
+      this.symbols = this.symbols.concat(icons.splice(0, step))
+    }
+
+    this.$nextTick(() => {
+      timeSlice(function* () {
+        while (icons.length > 0) {
+          add()
+          yield
+        }
+      })()
+    })
   },
   methods: {
-    update() {
+    query(keyword) {
       this.symbols = this.broccolidrySet.symbols.filter((symbol) => {
         const name = this.getSymbolName(symbol).toLowerCase()
 
-        return name.indexOf(this.keyword.toLowerCase()) > -1
+        return name.indexOf(keyword.toLowerCase()) > -1
       })
     },
     getSymbolName(symbol) {
@@ -140,7 +161,7 @@ export default {
       return matches[1] || ''
     },
     onQuery: debounce(function () {
-      this.update()
+      this.query(this.keyword)
     }, 300)
   }
 }
