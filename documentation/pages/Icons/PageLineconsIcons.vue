@@ -118,17 +118,15 @@ export default {
     return {
       lineconsSet,
       keyword: '',
-      symbols: []
-    }
-  },
-  computed: {
-    count() {
-      return this.symbols.length
+      symbols: [],
+      count: 0
     }
   },
   created() {
-    const icons = cloneDeep(this.lineconsSet.symbols)
+    const symbols = this.lineconsSet.symbols
+    const icons = cloneDeep(symbols)
 
+    this.count = symbols.length
     this.symbols = icons.splice(0, step)
   },
   mounted() {
@@ -150,11 +148,14 @@ export default {
   },
   methods: {
     query(keyword) {
-      this.symbols = this.lineconsSet.symbols.filter((symbol) => {
+      const symbols = this.lineconsSet.symbols.filter((symbol) => {
         const name = this.getSymbolName(symbol).toLowerCase()
 
         return name.indexOf(keyword.toLowerCase()) > -1
       })
+
+      this.count = symbols.length
+      this.symbols = symbols
     },
     getSymbolName(symbol) {
       const matches = symbol.match(/icon-(\w+(-\w+)*)+/)

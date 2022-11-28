@@ -118,17 +118,15 @@ export default {
     return {
       eightyShadesSet,
       keyword: '',
-      symbols: []
-    }
-  },
-  computed: {
-    count() {
-      return this.symbols.length
+      symbols: [],
+      count: eightyShadesSet.length
     }
   },
   created() {
-    const icons = cloneDeep(this.eightyShadesSet.symbols)
+    const symbols = this.eightyShadesSet.symbols
+    const icons = cloneDeep(symbols)
 
+    this.count = symbols.length
     this.symbols = icons.splice(0, step)
   },
   mounted() {
@@ -150,11 +148,14 @@ export default {
   },
   methods: {
     update(keyword) {
-      this.symbols = this.eightyShadesSet.symbols.filter((symbol) => {
+      const symbols = this.eightyShadesSet.symbols.filter((symbol) => {
         const name = this.getSymbolName(symbol).toLowerCase()
 
         return name.indexOf(keyword.toLowerCase()) > -1
       })
+
+      this.count = symbols.length
+      this.symbols = symbols
     },
     getSymbolName(symbol) {
       const matches = symbol.match(/icon-(\w+(-\w+)*)+/)

@@ -1,11 +1,11 @@
 <template>
   <base-container>
-    <app-header />
+    <app-header v-once />
     <base-main
       use-main-tag
       flex
       overflow="hidden">
-      <app-aside />
+      <app-aside v-once />
       <base-main overflow="hidden">
         <keep-alive>
           <router-view />
