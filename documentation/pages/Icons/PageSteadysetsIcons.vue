@@ -162,7 +162,7 @@ export default {
       return matches[1] || ''
     },
     onQuery: debounce(function () {
-      this.query()
+      this.query(this.keyword)
     }, 300)
   }
 }

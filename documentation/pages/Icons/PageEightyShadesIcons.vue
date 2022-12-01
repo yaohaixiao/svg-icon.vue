@@ -147,7 +147,7 @@ export default {
     })
   },
   methods: {
-    update(keyword) {
+    query(keyword) {
       const symbols = this.eightyShadesSet.symbols.filter((symbol) => {
         const name = this.getSymbolName(symbol).toLowerCase()
 
