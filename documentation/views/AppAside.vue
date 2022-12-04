@@ -35,7 +35,7 @@ import BaseAside from '$components/BaseAside'
 
 import SvgIcon from '@/SvgIcon'
 
-import AppMenu from './AppMenu'
+const AppMenu = () => import(/* webpackChunkName: "AppMenu" */ './AppMenu')
 
 export default {
   name: 'AppAside',
