@@ -80,7 +80,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .app-menu {
   margin: 0;
   padding: 10px 0;

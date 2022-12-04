@@ -16,5 +16,3 @@ export default {
   componentName: 'ModuleDocumentation'
 }
 </script>
-
-<style scoped></style>

@@ -16,5 +16,3 @@ export default {
   componentName: 'ModuleIcons'
 }
 </script>
-
-<style scoped></style>

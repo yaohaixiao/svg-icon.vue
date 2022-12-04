@@ -28,5 +28,3 @@ export default {
   componentName: 'ApiInstallSection'
 }
 </script>
-
-<style scoped></style>

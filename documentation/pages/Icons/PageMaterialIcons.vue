@@ -90,7 +90,7 @@ import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
-import IconCell from './components/IconCell'
+const IconCell = () => import('./components/IconCell')
 
 import materialSet from '@/assets/material'
 
@@ -167,5 +167,3 @@ export default {
   }
 }
 </script>
-
-<style scoped></style>

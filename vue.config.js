@@ -105,7 +105,7 @@ module.exports = {
           const description = `${pkg.description}`
           // inject script to body
           args[0].inject = 'body'
-          args[0].inlineSource = 'app.(.*?).(css)$'
+          args[0].inlineSource = '[Aa]pp(.*?).(.*?).(css)$'
           args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
           args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
           args[0].description = description
@@ -168,7 +168,7 @@ module.exports = {
           libs: {
             name: 'chunk-libs',
             test: /[\\/]node_modules[\\/]/,
-            priority: 20,
+            priority: 26,
             reuseExistingChunk: true
           },
           commons: {

@@ -90,7 +90,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import Defer from '$mixins/defer'
 
-import IconCell from './components/IconCell'
+const IconCell = () => import('./components/IconCell')
 
 // 粗线条图标
 import boldSet from '@/assets/default/bold'

@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .aside-main {
   width: 100%;
 }

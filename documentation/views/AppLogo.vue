@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .app-logo {
   display: flex;
   flex-direction: row;

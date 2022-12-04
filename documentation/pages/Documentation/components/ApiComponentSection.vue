@@ -82,5 +82,3 @@ export default {
   componentName: 'ApiComponentSection'
 }
 </script>
-
-<style scoped></style>
