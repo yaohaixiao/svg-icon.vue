@@ -72,12 +72,6 @@ export default {
 </script>
 
 <style lang="less">
-.app-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
 .app-nav,
 .app-nav__item {
   margin: 0;
@@ -87,47 +81,52 @@ export default {
 }
 
 .app-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin-left: auto;
-}
 
-.app-nav__item {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-self: auto;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  cursor: pointer;
-  overflow: hidden;
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-self: auto;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    overflow: hidden;
 
-  + .app-nav__item {
-    margin-left: 10px;
+    + .app-nav__item {
+      margin-left: 10px;
+    }
   }
-}
 
-.app-nav__item,
-.app-nav__link {
-  color: @gray;
+  &__item,
+  &__link {
+    color: @default_icon_color;
 
-  &:hover {
-    color: @primary_color;
+    &:hover {
+      color: @primary_color;
+    }
   }
-}
 
-.app-nav__link {
-  .anchor(@fourth_text_color);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-self: auto;
-  align-items: center;
-  width: 24px;
-  height: 24px;
+  &__link {
+    &.util-anchor-default {
+      .anchor(@fourth_text_color);
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-self: auto;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 </style>

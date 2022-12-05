@@ -63,36 +63,36 @@ export default {
       background-color: @primary_color;
     }
   }
-}
 
-.app-logo__icon {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  width: 32px;
-  height: 32px;
-  .radius(16px);
-  background-color: @third_text_color;
-  color: @white;
-  text-align: center;
-  overflow: hidden;
+  &__icon {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    .radius(16px);
+    background-color: @third_text_color;
+    color: @white;
+    text-align: center;
+    overflow: hidden;
 
-  .svg-icon {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .svg-icon {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
-}
 
-.app-logo__title {
-  padding-left: 10px;
-  color: @dark_green;
-  font-family: Georgia, 'Courier New', Consolas, Arial, sans-serif;
-}
+  &__title {
+    padding-left: 10px;
+    color: @dark_green;
+    font-family: Georgia, 'Courier New', Consolas, Arial, sans-serif;
+  }
 
-.app-logo__key {
-  color: @primary_color;
+  &__key {
+    color: @primary_color;
+  }
 }
 </style>
