@@ -187,7 +187,10 @@ const symbols = getSymbols()</code></pre>
  * Created By: Yaohaixiao
  * Update: 2022.11.17
  */
-import BaseTips from '$components/BaseTips'
+// import BaseTips from '$components/BaseTips'
+
+const BaseTips = () =>
+  import(/* webpackChunkName: "BaseTips" */ '$components/BaseTips')
 
 export default {
   name: 'ApiMethodsSection',

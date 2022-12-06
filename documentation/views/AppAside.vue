@@ -29,11 +29,11 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
+import SvgIcon from '@/SvgIcon'
+
 import BaseMain from '$components/BaseMain'
 import BaseFooter from '$components/BaseFooter'
 import BaseAside from '$components/BaseAside'
-
-import SvgIcon from '@/SvgIcon'
 
 import AppMenu from './AppMenu'
 

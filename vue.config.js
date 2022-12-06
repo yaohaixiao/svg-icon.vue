@@ -142,7 +142,7 @@ module.exports = {
         .tap(() => [
           {
             rel: 'prefetch',
-            // fileBlacklist: [/(Api|Usage|Page|Module)(.*?)\.(js|css)$/],
+            fileBlacklist: [/\d{3,4}\.(.*?)\.(js|css)$/],
             include: {
               type: 'asyncChunks',
               entries: ['app']
@@ -169,13 +169,6 @@ module.exports = {
             name: 'chunk-libs',
             test: /[\\/]node_modules[\\/]/,
             priority: 26,
-            reuseExistingChunk: true
-          },
-          commons: {
-            name: 'chunk-commons',
-            // the weight needs to be larger than libs and app, or it will be packaged into libs or app
-            priority: 16,
-            test: resolve('documentation/components'),
             reuseExistingChunk: true
           }
         }

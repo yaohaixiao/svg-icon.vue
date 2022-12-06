@@ -77,19 +77,42 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
-import BaseContainer from '$components/BaseContainer'
-import BaseHeader from '$components/BaseHeader'
-import BaseMain from '$components/BaseMain'
-import BaseBreadcrumb from '$components/BaseBreadcrumb'
-import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
-import BaseFooter from '$components/BaseFooter'
-
-import BaseInput from '$components/BaseInput'
-import BaseGrid from '$components/BaseGrid'
-import BaseEmpty from '$components/BaseEmpty'
+// import BaseContainer from '$components/BaseContainer'
+// import BaseHeader from '$components/BaseHeader'
+// import BaseMain from '$components/BaseMain'
+// import BaseBreadcrumb from '$components/BaseBreadcrumb'
+// import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+// import BaseFooter from '$components/BaseFooter'
+//
+// import BaseInput from '$components/BaseInput'
+// import BaseGrid from '$components/BaseGrid'
+// import BaseEmpty from '$components/BaseEmpty'
 
 import Defer from '$mixins/defer'
 
+// 公共组件
+const BaseContainer = () =>
+  import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
+const BaseHeader = () =>
+  import(/* webpackChunkName: "BaseHeader" */ '$components/BaseHeader')
+const BaseMain = () =>
+  import(/* webpackChunkName: "BaseMain" */ '$components/BaseMain')
+const BaseBreadcrumb = () =>
+  import(/* webpackChunkName: "BaseBreadcrumb" */ '$components/BaseBreadcrumb')
+const BaseBreadcrumbItem = () =>
+  import(
+    /* webpackChunkName: "BaseBreadcrumbItem" */ '$components/BaseBreadcrumbItem'
+  )
+const BaseFooter = () =>
+  import(/* webpackChunkName: "BaseFooter" */ '$components/BaseFooter')
+const BaseInput = () =>
+  import(/* webpackChunkName: "BaseInput" */ '$components/BaseInput')
+const BaseGrid = () =>
+  import(/* webpackChunkName: "BaseGrid" */ '$components/BaseGrid')
+const BaseEmpty = () =>
+  import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
+
+// ICON 示例组件
 const IconCell = () => import('./components/IconCell')
 
 // 粗线条图标
