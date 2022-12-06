@@ -17,7 +17,10 @@ const PLUGIN_CONFIG = [
   nodeResolve({
     mainFields: ['module', 'jsnext', 'main', 'browser']
   }),
-  vue(),
+  vue({
+    css: false,
+    autoprefixer: [autoprefixer]
+  }),
   css({
     output: (styles) => {
       fs.ensureDirSync('dist')
