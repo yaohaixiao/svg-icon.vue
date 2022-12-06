@@ -5,7 +5,7 @@
  * Update: 2022.10.8
  */
 const path = require('path')
-const _ = require('lodash')
+const trim = require('lodash/trim')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
@@ -74,49 +74,30 @@ module.exports = {
     })
 
     if (buildFor) {
-      buildFor = _.trim(buildFor)
+      buildFor = trim(buildFor)
     } else {
       buildFor = ''
     }
 
-    config.when(buildFor === 'lib', (config) => {
-      // 构建 svg-icon.vue 包的 HTMLWebpackPlugin 插件配置
-      config
-        .plugin('html')
-        .use(HtmlWebpackPlugin)
-        .tap(() => {
-          const description = `${pkg.description}`
-          return [
-            {
-              title: `svg-icon.vue - v${pkg.version} | ${description}`,
-              keywords: `javascript,svg,icon,svg-icon.vue,vue,vue.js`,
-              description: description
-            }
-          ]
-        })
-    })
+    // 构建 API 文档的 HTMLWebpackPlugin 插件配置
+    config.plugin('html').tap((args) => {
+      const description = `${pkg.description}`
+      // 将脚本插入到 body 标签中
+      args[0].inject = 'body'
+      // 使用 HtmlWebpackInlineSourcePlugin 插件将
+      // app.css 公共样式写入到 index.html，以优化性能
+      args[0].inlineSource = 'app.(.*?).(css)$'
+      args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
+      args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
+      args[0].description = description
 
-    config.when(buildFor !== 'lib', (config) => {
-      // 构建 API 文档的 HTMLWebpackPlugin 插件配置
-      config.plugin('html').tap((args) => {
-        const description = `${pkg.description}`
-        // 将脚本插入到 body 标签中
-        args[0].inject = 'body'
-        // 使用 HtmlWebpackInlineSourcePlugin 插件将
-        // app.css 公共样式写入到 index.html，以优化性能
-        args[0].inlineSource = 'app.(.*?).(css)$'
-        args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
-        args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
-        args[0].description = description
-
-        return args
-      })
+      return args
     })
 
     config.when(buildFor === 'docs', (config) => {
       // http://www.yaohaixiao.com/blog/preload-key-requests/
       // it can improve the speed of the first screen, it is recommended to turn on preload
-      // preload 预加载资源
+      // preload  预加载资源
       config
         .plugin('preload')
         .use(PreloadWebpackPlugin)
@@ -190,6 +171,13 @@ module.exports = {
             name: 'chunk-libs',
             test: /[\\/]node_modules[\\/]/,
             priority: 26,
+            reuseExistingChunk: true
+          },
+          icons: {
+            name: 'chunk-icons',
+            test: resolve('src/assets'),
+            priority: 26,
+            chunks: 'initial',
             reuseExistingChunk: true
           }
         }

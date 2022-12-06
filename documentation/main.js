@@ -9,6 +9,7 @@ import App from './App.vue'
 import router from './router'
 
 import './plugins'
+import '@/assets'
 
 Vue.config.productionTip = false
 

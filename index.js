@@ -1,4 +1,4 @@
-import SvgIcon from './src/SvgIcon'
+import SvgIcon from './src/SvgIcon.vue'
 
 /* istanbul ignore next */
 SvgIcon.install = function (Vue) {
