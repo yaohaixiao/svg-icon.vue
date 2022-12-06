@@ -5,7 +5,7 @@
  * Update: 2022.10.8
  */
 const path = require('path')
-
+const _ = require('lodash')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
@@ -73,9 +73,7 @@ module.exports = {
     })
 
     if (buildFor) {
-      if (buildFor.trim) {
-        buildFor = buildFor.trim()
-      }
+      buildFor = _.trim(buildFor)
     } else {
       buildFor = ''
     }
