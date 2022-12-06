@@ -115,7 +115,7 @@ const BaseEmpty = () =>
   import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
 
 // ICON 示例组件
-const IconCell = () => import('./components/IconCell')
+import IconCell from './components/IconCell'
 
 import broccolidrySet from '@/assets/broccolidry'
 import { cloneDeep, debounce } from '$utils/utils'

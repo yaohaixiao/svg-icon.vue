@@ -113,7 +113,7 @@ const BaseEmpty = () =>
   import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
 
 // ICON 示例组件
-const IconCell = () => import('./components/IconCell')
+import IconCell from './components/IconCell'
 
 // 粗线条图标
 import boldSet from '@/assets/default/bold'
