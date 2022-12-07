@@ -52,7 +52,8 @@ module.exports = {
         $components: resolve('./documentation/components'),
         $assets: resolve('./documentation/assets'),
         $utils: resolve('./documentation/utils'),
-        $mixins: resolve('./documentation/mixins')
+        $mixins: resolve('./documentation/mixins'),
+        $views: resolve('./documentation/views')
       }
     },
     module: {
@@ -147,7 +148,7 @@ module.exports = {
         // 表示新分离出的chunk必须大于等于minSize，默认为30000，约30kb。
         // minSize: 30000,
         // 表示一个模块至少应被minChunks个chunk所包含才能分割。默认为1。
-        // minChunks: 1,
+        // minChunks: 2,
         // 表示按需加载文件时，并行请求的最大数目。默认为5。
         // maxAsyncRequests: 5,
         // 表示加载入口文件时，并行请求的最大数目。默认为3。

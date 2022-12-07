@@ -43,13 +43,6 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
-// import BaseContainer from '$components/BaseContainer'
-// import BaseHeader from '$components/BaseHeader'
-// import BaseMain from '$components/BaseMain'
-// import BaseBreadcrumb from '$components/BaseBreadcrumb'
-// import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
-// import BaseFooter from '$components/BaseFooter'
-
 // 公共组件
 const BaseContainer = () =>
   import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')

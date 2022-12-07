@@ -24,11 +24,15 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-import BaseContainer from '$components/BaseContainer'
-import BaseMain from '$components/BaseMain'
+const BaseContainer = () =>
+  import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
+const BaseMain = () =>
+  import(/* webpackChunkName: "BaseMain" */ '$components/BaseMain')
 
-import CartBar from '$components/CartBar'
-import CartDrawer from '$components/CartDrawer'
+const CartBar = () =>
+  import(/* webpackChunkName: "CartBar" */ '$views/components/CartBar')
+const CartDrawer = () =>
+  import(/* webpackChunkName: "CartDrawer" */ '$views/components/CartDrawer')
 
 import AppHeader from './AppHeader'
 import AppAside from './AppAside'

@@ -77,17 +77,6 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
-// import BaseContainer from '$components/BaseContainer'
-// import BaseHeader from '$components/BaseHeader'
-// import BaseMain from '$components/BaseMain'
-// import BaseBreadcrumb from '$components/BaseBreadcrumb'
-// import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
-// import BaseFooter from '$components/BaseFooter'
-//
-// import BaseInput from '$components/BaseInput'
-// import BaseGrid from '$components/BaseGrid'
-// import BaseEmpty from '$components/BaseEmpty'
-
 // 公共组件
 const BaseContainer = () =>
   import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
@@ -111,7 +100,8 @@ const BaseEmpty = () =>
   import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
 
 // ICON 示例组件
-import IconCell from './components/IconCell'
+const IconCell = () =>
+  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
 
 import entypoSet from '@/assets/entypo'
 import { cloneDeep, debounce } from '$utils/utils'
