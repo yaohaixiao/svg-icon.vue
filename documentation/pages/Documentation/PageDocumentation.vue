@@ -42,20 +42,12 @@
  * Update: 2022.10.08
  */
 // 公共组件
-const BaseContainer = () =>
-  import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
-const BaseHeader = () =>
-  import(/* webpackChunkName: "BaseHeader" */ '$components/BaseHeader')
-const BaseMain = () =>
-  import(/* webpackChunkName: "BaseMain" */ '$components/BaseMain')
-const BaseBreadcrumb = () =>
-  import(/* webpackChunkName: "BaseBreadcrumb" */ '$components/BaseBreadcrumb')
-const BaseBreadcrumbItem = () =>
-  import(
-    /* webpackChunkName: "BaseBreadcrumbItem" */ '$components/BaseBreadcrumbItem'
-  )
-const BaseFooter = () =>
-  import(/* webpackChunkName: "BaseFooter" */ '$components/BaseFooter')
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseMain from '$components/BaseMain'
+import BaseBreadcrumb from '$components/BaseBreadcrumb'
+import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseFooter from '$components/BaseFooter'
 
 // 文档组件
 const ApiInstallSection = () =>

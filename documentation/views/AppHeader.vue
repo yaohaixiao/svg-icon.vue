@@ -15,8 +15,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
-const BaseHeader = () =>
-  import(/* webpackChunkName: "BaseHeader" */ '$components/BaseHeader')
+import BaseHeader from '$components/BaseHeader'
 
 import AppLogo from './AppLogo'
 import AppNav from './AppNav'

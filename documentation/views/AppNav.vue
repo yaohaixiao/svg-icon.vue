@@ -24,8 +24,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
-const BaseLink = () =>
-  import(/* webpackChunkName: "BaseLink" */ '$components/BaseLink')
+import BaseLink from '$components/BaseLink'
 
 export default {
   name: 'AppNav',

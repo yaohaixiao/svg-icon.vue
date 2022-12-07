@@ -80,30 +80,16 @@
  * Update: 2022.10.18
  */
 // 公共组件
-const BaseContainer = () =>
-  import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
-const BaseHeader = () =>
-  import(/* webpackChunkName: "BaseHeader" */ '$components/BaseHeader')
-const BaseMain = () =>
-  import(/* webpackChunkName: "BaseMain" */ '$components/BaseMain')
-const BaseBreadcrumb = () =>
-  import(/* webpackChunkName: "BaseBreadcrumb" */ '$components/BaseBreadcrumb')
-const BaseBreadcrumbItem = () =>
-  import(
-    /* webpackChunkName: "BaseBreadcrumbItem" */ '$components/BaseBreadcrumbItem'
-  )
-const BaseFooter = () =>
-  import(/* webpackChunkName: "BaseFooter" */ '$components/BaseFooter')
-const BaseInput = () =>
-  import(/* webpackChunkName: "BaseInput" */ '$components/BaseInput')
-const BaseGrid = () =>
-  import(/* webpackChunkName: "BaseGrid" */ '$components/BaseGrid')
-const BaseEmpty = () =>
-  import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
+import BaseContainer from '$components/BaseContainer'
+import BaseHeader from '$components/BaseHeader'
+import BaseMain from '$components/BaseMain'
+import BaseBreadcrumb from '$components/BaseBreadcrumb'
+import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
+import BaseFooter from '$components/BaseFooter'
 
-// ICON 示例组件
-const IconCell = () =>
-  import(/* webpackChunkName: "IconCell" */ './components/IconCell')
+import BaseInput from '$components/BaseInput'
+import BaseGrid from '$components/BaseGrid'
+import BaseEmpty from '$components/BaseEmpty'
 
 import viconsSet from '@/assets/vicons'
 import { cloneDeep, debounce } from '$utils/utils'
@@ -123,8 +109,7 @@ export default {
     BaseFooter,
     BaseInput,
     BaseGrid,
-    BaseEmpty,
-    IconCell
+    BaseEmpty
   },
   data() {
     return {

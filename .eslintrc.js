@@ -2,7 +2,7 @@
  * .eslintrc.js - eslint 配置
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.8
+ * Update: 2022.12.7
  */
 module.exports = {
   root: true,
@@ -13,9 +13,9 @@ module.exports = {
     node: true
   },
   extends: [
-    'eslint:recommended',
+    'plugin:vue/essential',
     'plugin:prettier/recommended',
-    'plugin:vue/essential'
+    'eslint:recommended'
   ],
   globals: {
     Atomics: 'readonly',

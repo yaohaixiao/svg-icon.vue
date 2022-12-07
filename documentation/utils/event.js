@@ -15,7 +15,8 @@ export const Emitter = (() => {
 
   return {
     broadcast(event, data = {}) {
-      ;(hub[event] || []).forEach((handler) => handler(data))
+      const $events = hub[event] || []
+      $events.forEach((handler) => handler(data))
     },
     subscribe(event, handler) {
       if (!hub[event]) {

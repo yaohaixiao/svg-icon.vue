@@ -6,3 +6,4 @@
  */
 import './message'
 import './emitter'
+import './icon-cell'

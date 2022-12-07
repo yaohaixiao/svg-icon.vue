@@ -27,20 +27,11 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-const BaseUsageHeader = () =>
-  import(
-    /* webpackChunkName: "BaseUsageHeader" */ '$components/BaseUsage/Header'
-  )
-const BaseUsageMain = () =>
-  import(/* webpackChunkName: "BaseUsageMain" */ '$components/BaseUsage/Main')
-const BaseUsageCode = () =>
-  import(/* webpackChunkName: "BaseUsageCode" */ '$components/BaseUsage/Code')
-const BaseUsageTips = () =>
-  import(/* webpackChunkName: "BaseUsageTips" */ '$components/BaseUsage/Tips')
-const BaseUsageFooter = () =>
-  import(
-    /* webpackChunkName: "BaseUsageFooter" */ '$components/BaseUsage/Footer'
-  )
+import BaseUsageHeader from '$components/BaseUsage/Header'
+import BaseUsageMain from '$components/BaseUsage/Main'
+import BaseUsageCode from '$components/BaseUsage/Code'
+import BaseUsageTips from '$components/BaseUsage/Tips'
+import BaseUsageFooter from '$components/BaseUsage/Footer'
 
 export default {
   name: 'BaseUsage',

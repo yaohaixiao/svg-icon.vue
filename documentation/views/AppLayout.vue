@@ -24,10 +24,8 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.08
  */
-const BaseContainer = () =>
-  import(/* webpackChunkName: "BaseContainer" */ '$components/BaseContainer')
-const BaseMain = () =>
-  import(/* webpackChunkName: "BaseMain" */ '$components/BaseMain')
+import BaseContainer from '$components/BaseContainer'
+import BaseMain from '$components/BaseMain'
 
 const CartBar = () =>
   import(/* webpackChunkName: "CartBar" */ '$views/components/CartBar')
