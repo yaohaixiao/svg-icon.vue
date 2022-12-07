@@ -96,8 +96,6 @@ import wpzoomSet from '@/assets/wpzoom'
 import { cloneDeep, debounce } from '$utils/utils'
 import timeSlice from '$utils/time-slice'
 
-const step = 30
-
 export default {
   name: 'PageWpzoomIcons',
   componentName: 'PageWpzoomIcons',
@@ -125,12 +123,12 @@ export default {
     const icons = cloneDeep(this.wpzoomSet.symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, step)
+    this.symbols = icons.splice(0, 30)
   },
   mounted() {
     const icons = cloneDeep(this.wpzoomSet.symbols)
     const add = () => {
-      this.symbols = this.symbols.concat(icons.splice(0, step))
+      this.symbols = this.symbols.concat(icons.splice(0, 6))
     }
 
     this.$nextTick(() => {
