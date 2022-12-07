@@ -124,6 +124,8 @@ export default {
       this.symbols = this.symbols.concat(icons.splice(0, 6))
     }
 
+    icons.splice(0, 30)
+
     this.$nextTick(() => {
       setTimeout(() => {
         timeSlice(function* () {

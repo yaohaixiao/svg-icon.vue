@@ -37,7 +37,7 @@ const timeSlice = (gen) => {
     if (isFunction(requestIdleCallback)) {
       requestIdleCallback(next)
     } else {
-      setTimeout(next, 10)
+      requestAnimationFrame(next)
     }
   }
 }
