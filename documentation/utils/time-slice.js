@@ -6,6 +6,27 @@
  */
 import { isFunction } from '$utils/typeof'
 
+const queen = []
+let isHandling
+
+function runIdle(idleDeadline) {
+  while (idleDeadline.timeRemaining() > 0 && queen.length) {
+    const fn = queen.shift()
+
+    if (!isFunction(fn)) {
+      return false
+    }
+
+    fn()
+  }
+
+  if (queen.length) {
+    isHandling = requestIdleCallback(runIdle)
+  } else {
+    isHandling = 0
+  }
+}
+
 /**
  * 时间切片功能函数：主要用于优化长时任务的性能，将长时任务分解成
  * 多个短时间任务
@@ -13,32 +34,11 @@ import { isFunction } from '$utils/typeof'
  * @param {Function} gen
  * @return {(function(): (boolean|undefined))|*|boolean}
  */
-const timeSlice = (gen) => {
-  if (isFunction(gen)) {
-    gen = gen()
-  }
+const timeSlice = (fn) => {
+  queen.push(fn)
 
-  if (!gen || !isFunction(gen.next)) {
-    return false
-  }
-
-  return function next() {
-    const start = performance.now()
-    let res = null
-
-    do {
-      res = gen.next()
-    } while (!res.done && performance.now() - start < 25)
-
-    if (res.done) {
-      return false
-    }
-
-    if (isFunction(requestIdleCallback)) {
-      requestIdleCallback(next)
-    } else {
-      requestAnimationFrame(next)
-    }
+  if (!isHandling) {
+    requestIdleCallback(runIdle)
   }
 }
 

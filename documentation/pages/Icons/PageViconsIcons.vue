@@ -92,8 +92,8 @@ import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
 
 import viconsSet from '@/assets/vicons'
-import { cloneDeep, debounce } from '$utils/utils'
-import timeSlice from '$utils/time-slice'
+import { cloneDeep } from '$utils/utils'
+import TimeSlice from './mixins/time-slice'
 
 export default {
   name: 'PageViconsIcons',
@@ -109,6 +109,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
+  mixins: [TimeSlice(viconsSet)],
   data() {
     return {
       viconsSet,
@@ -127,40 +128,19 @@ export default {
   mounted() {
     const icons = cloneDeep(this.viconsSet.symbols)
     const add = () => {
-      this.symbols = this.symbols.concat(icons.splice(0, 6))
+      const appendIcons = icons.splice(0, 6)
+      this.symbols = this.symbols.concat(appendIcons)
     }
 
     icons.splice(0, 30)
 
     this.$nextTick(() => {
       setTimeout(() => {
-        timeSlice(function* () {
-          while (icons.length > 0) {
-            add()
-            yield
-          }
-        })()
+        while (icons.length > 0) {
+          add()
+        }
       }, 150)
     })
-  },
-  methods: {
-    query(keyword) {
-      const symbols = this.viconsSet.symbols.filter((symbol) => {
-        const name = this.getSymbolName(symbol).toLowerCase()
-
-        return name.indexOf(keyword.toLowerCase()) > -1
-      })
-
-      this.count = symbols.length
-      this.symbols = symbols
-    },
-    getSymbolName(symbol) {
-      const matches = symbol.match(/icon-(\w+(-\w+)*)+/)
-      return matches[1] || ''
-    },
-    onQuery: debounce(function () {
-      this.query(this.keyword)
-    }, 300)
   }
 }
 </script>
