@@ -95,6 +95,7 @@ import BaseEmpty from '$components/BaseEmpty'
 import wpzoomSet from '@/assets/wpzoom'
 import { cloneDeep } from '$utils/utils'
 import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageWpzoomIcons',
@@ -110,7 +111,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(wpzoomSet)],
+  mixins: [TimeSlice(wpzoomSet), SharedUtils(wpzoomSet)],
   data() {
     return {
       wpzoomSet,

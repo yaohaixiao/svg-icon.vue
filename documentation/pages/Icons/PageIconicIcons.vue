@@ -100,6 +100,7 @@ import BaseFooter from '$components/BaseFooter'
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
+import BasePagination from '$components/BasePagination'
 
 import iconicSet from '@/assets/iconic'
 import { cloneDeep } from '$utils/utils'
@@ -117,7 +118,8 @@ export default {
     BaseFooter,
     BaseInput,
     BaseGrid,
-    BaseEmpty
+    BaseEmpty,
+    BasePagination
   },
   mixins: [SharedUtils(iconicSet)],
   data() {

@@ -96,6 +96,7 @@ import BaseEmpty from '$components/BaseEmpty'
 import broccolidrySet from '@/assets/broccolidry'
 import { cloneDeep } from '$utils/utils'
 import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageBroccolidryIcons',
@@ -111,7 +112,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(broccolidrySet)],
+  mixins: [TimeSlice(broccolidrySet), SharedUtils(broccolidrySet)],
   data() {
     return {
       broccolidrySet,

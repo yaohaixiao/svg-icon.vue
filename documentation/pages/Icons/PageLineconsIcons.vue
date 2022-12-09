@@ -93,7 +93,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import lineconsSet from '@/assets/linecons'
 import { cloneDeep } from '$utils/utils'
-import SharedUtils from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageLineconsIcons',

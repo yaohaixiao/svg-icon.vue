@@ -94,6 +94,7 @@ import BaseEmpty from '$components/BaseEmpty'
 import eightyShadesSet from '@/assets/eighty-shades'
 import { cloneDeep } from '$utils/utils'
 import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageEightyShadesIcons',
@@ -109,7 +110,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(eightyShadesSet)],
+  mixins: [TimeSlice(eightyShadesSet), SharedUtils(eightyShadesSet)],
   data() {
     return {
       eightyShadesSet,
