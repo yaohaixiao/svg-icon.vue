@@ -93,7 +93,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import meteoconsSet from '@/assets/meteocons'
 import { cloneDeep } from '$utils/utils'
-import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageMeteoconsIcons',
@@ -109,7 +109,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(meteoconsSet)],
+  mixins: [SharedUtils(meteoconsSet)],
   data() {
     return {
       meteoconsSet,
@@ -123,7 +123,7 @@ export default {
     const icons = cloneDeep(symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, 30)
+    this.symbols = icons
   }
 }
 </script>

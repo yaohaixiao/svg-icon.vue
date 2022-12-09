@@ -10,7 +10,7 @@
     custom-class="card-drawer"
     @close="onClose">
     <template v-slot:tabs>
-      <base-tab-nav
+      <base-tabs-nav
         v-model="active"
         stretch
         :tabs="tabs"
@@ -43,10 +43,8 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.10
  */
-const BaseDrawer = () =>
-  import(/* webpackChunkName: "BaseDrawer" */ '$components/BaseDrawer')
-const BaseTabNav = () =>
-  import(/* webpackChunkName: "BaseTabNav" */ '$components/BaseTabNav')
+import BaseDrawer from '$components/BaseDrawer'
+import BaseTabsNav from '$components/BaseTabs/Nav'
 
 const CartDrawerToolbar = () =>
   import(
@@ -72,7 +70,7 @@ export default {
   componentName: 'CartDrawer',
   components: {
     BaseDrawer,
-    BaseTabNav,
+    BaseTabsNav,
     CartDrawerToolbar,
     CartDrawerList,
     CartDrawerCode

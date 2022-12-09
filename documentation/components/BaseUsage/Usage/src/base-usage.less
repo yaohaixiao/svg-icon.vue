@@ -1,0 +1,20 @@
+/**
+ * base-usage.less - BaseUsage 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.base-usage {
+  margin: 1em auto;
+  transition-duration: 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    .shadow_light_regular();
+
+    .base-usage-footer__text {
+      color: @fourth_text_color;
+      width: 70px;
+    }
+  }
+}

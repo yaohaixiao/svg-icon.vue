@@ -64,6 +64,16 @@
         Prev Page：
         <router-link to="/icons/hawcons">Hawcons 图标库</router-link>
       </div>
+      <div class="util-align-center base-footer__navigation">
+        <base-pagination
+          :page="page"
+          :page-size="size"
+          :total-count="count"
+          :layout="['prev', 'pager', 'next']"
+          prev-text=""
+          next-text=""
+          @page-change="onPageChange" />
+      </div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
         <router-link to="/icons/linecons">Linecons 图标库</router-link>
@@ -93,7 +103,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import iconicSet from '@/assets/iconic'
 import { cloneDeep } from '$utils/utils'
-import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageIconicIcons',
@@ -109,13 +119,15 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(iconicSet)],
+  mixins: [SharedUtils(iconicSet)],
   data() {
     return {
       iconicSet,
       keyword: '',
       symbols: [],
-      count: 0
+      count: 0,
+      page: 1,
+      size: 60
     }
   },
   created() {
@@ -123,7 +135,7 @@ export default {
     const icons = cloneDeep(symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, 30)
+    this.symbols = icons.splice(0, this.size)
   }
 }
 </script>

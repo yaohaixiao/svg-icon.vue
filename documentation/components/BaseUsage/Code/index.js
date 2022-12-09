@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import BaseUsageCode from './src/Code'
+import BaseUsageCode from './src/BaseUsageCode.vue'
 
 BaseUsageCode.install = function (Vue) {
   Vue.component(BaseUsageCode.name, BaseUsageCode)

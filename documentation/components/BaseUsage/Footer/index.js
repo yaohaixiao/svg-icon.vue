@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import BaseUsageFooter from './src/Footer'
+import BaseUsageFooter from './src/BaseUsageFooter.vue'
 
 BaseUsageFooter.install = function (Vue) {
   Vue.component(BaseUsageFooter.name, BaseUsageFooter)

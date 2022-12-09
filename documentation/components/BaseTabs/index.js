@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.04.05
  */
-import BaseTabs from './src/BaseTabs'
+import BaseTabs from './Tabs/src/BaseTabs'
 
 BaseTabs.install = function (Vue) {
   Vue.component(BaseTabs.name, BaseTabs)

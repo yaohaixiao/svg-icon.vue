@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import BaseUsageHeader from './src/Header'
+import BaseUsageHeader from './src/BaseUsageHeader.vue'
 
 BaseUsageHeader.install = function (Vue) {
   Vue.component(BaseUsageHeader.name, BaseUsageHeader)

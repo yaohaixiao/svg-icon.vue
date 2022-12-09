@@ -1,0 +1,39 @@
+/**
+ * base-pagination-prev.less - BasePaginationPrev 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.09
+ */
+.base-pagination-prev {
+  margin: 0 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  box-sizing: border-box;
+
+  &:hover {
+    &:not(.disabled) {
+      background-color: @white;
+    }
+  }
+
+  .svg-icon {
+    position: absolute;
+    z-index: 2;
+    top: 9px;
+    left: 9px;
+  }
+
+  &_text {
+    width: auto;
+    min-width: 80px;
+
+    .svg-icon {
+      display: none;
+    }
+
+    .base-button__inner {
+      margin-left: 0;
+    }
+  }
+}

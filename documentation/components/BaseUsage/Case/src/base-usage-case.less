@@ -1,0 +1,35 @@
+/**
+ * base-usage-case.less - BaseUsageCase 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.base-usage-case {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+
+  &--flex {
+    display: flex;
+    flex-direction: row;
+    align-self: auto;
+    align-items: flex-start;
+  }
+
+  &__icon,
+  &__cell {
+    display: inline-block;
+    margin: 0 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  &__icon {
+    color: @third_text_color;
+
+    &:hover {
+      color: @primary_color;
+    }
+  }
+}

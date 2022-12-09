@@ -64,6 +64,16 @@
         Prev Page：
         <router-link to="/icons/feather">Feather 图标库</router-link>
       </div>
+      <div class="util-align-center base-footer__navigation">
+        <base-pagination
+          :page="page"
+          :page-size="size"
+          :total-count="count"
+          :layout="['prev', 'pager', 'next']"
+          prev-text=""
+          next-text=""
+          @page-change="onPageChange" />
+      </div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
         <router-link to="/icons/hawcons">Hawcons 图标库</router-link>
@@ -90,10 +100,11 @@ import BaseFooter from '$components/BaseFooter'
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
+import BasePagination from '$components/BasePagination'
 
 import fontAwesomeSet from '@/assets/font-awesome'
 import { cloneDeep } from '$utils/utils'
-import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageFontAwesomeIcons',
@@ -107,15 +118,18 @@ export default {
     BaseFooter,
     BaseInput,
     BaseGrid,
-    BaseEmpty
+    BaseEmpty,
+    BasePagination
   },
-  mixins: [TimeSlice(fontAwesomeSet)],
+  mixins: [SharedUtils(fontAwesomeSet)],
   data() {
     return {
       fontAwesomeSet,
       keyword: '',
       symbols: [],
-      count: 0
+      count: 0,
+      page: 1,
+      size: 60
     }
   },
   created() {
@@ -123,7 +137,7 @@ export default {
     const icons = cloneDeep(symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, 30)
+    this.symbols = icons.splice(0, this.size)
   }
 }
 </script>

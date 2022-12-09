@@ -1,0 +1,50 @@
+/**
+ * base-usage-code.less - UsageCaseCode 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.base-usage-code {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  overflow: hidden;
+
+  &__pre {
+    .font_size_regular();
+    .line_height_small();
+    .font_code_family();
+    margin: 0 auto;
+    padding: 20px;
+    background: @fourth_bg_color;
+    color: @code_text_color;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.with-border {
+      border: 1px solid @primary_border_color;
+    }
+  }
+
+  &__code {
+    .font_code_family();
+    color: @code_text_color;
+  }
+
+  &__copy {
+    .height_regular();
+    .line_height_regular();
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    color: @fourth_text_color;
+    overflow: hidden;
+
+    &:hover {
+      color: @primary_color;
+    }
+  }
+}

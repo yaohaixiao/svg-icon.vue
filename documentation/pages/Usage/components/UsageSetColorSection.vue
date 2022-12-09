@@ -81,19 +81,19 @@
         <base-usage-case>
           <span class="base-usage-case__cell">
             <svg-icon
-              name="aside-environment"
+              name="bold-environment"
               :size="24"
               color="#07B759" />
           </span>
           <span class="base-usage-case__cell">
             <svg-icon
-              name="aside-branch"
+              name="bold-branch"
               :size="24"
               color="#507AFE" />
           </span>
           <span class="base-usage-case__cell">
             <svg-icon
-              name="aside-pc"
+              name="bold-pc"
               :size="24"
               color="#FF9901" />
           </span>
@@ -107,13 +107,13 @@
         <pre
           class="base-usage-code__pre"><code class="base-usage-code__code">&lt;template&gt;
     &lt;span class="case-icon"&gt;
-      &lt;svg-icon name="aside-environment" :size="24" color="#07B759"/&gt;
+      &lt;svg-icon name="bold-environment" :size="24" color="#07B759"/&gt;
     &lt;/span&gt;
     &lt;span class="case-icon"&gt;
-      &lt;svg-icon name="aside-branch" :size="24" color="#507AFE"/&gt;
+      &lt;svg-icon name="bold-branch" :size="24" color="#507AFE"/&gt;
     &lt;/span&gt;
     &lt;span class="case-icon"&gt;
-      &lt;svg-icon name="aside-pc" :size="24" color="#FF9901"/&gt;
+      &lt;svg-icon name="bold-pc" :size="24" color="#FF9901"/&gt;
     &lt;/span&gt;
   &lt;/template&gt;
 

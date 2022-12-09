@@ -29,8 +29,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.17
  */
-const BaseEmpty = () =>
-  import(/* webpackChunkName: "BaseEmpty" */ '$components/BaseEmpty')
+import BaseEmpty from '$components/BaseEmpty'
 
 const CartDrawerItem = () =>
   import(

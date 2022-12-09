@@ -121,7 +121,7 @@ export default {
   },
   created() {
     const symbols = this.wpzoomSet.symbols
-    const icons = cloneDeep(this.wpzoomSet.symbols)
+    const icons = cloneDeep(symbols)
 
     this.count = symbols.length
     this.symbols = icons.splice(0, 30)

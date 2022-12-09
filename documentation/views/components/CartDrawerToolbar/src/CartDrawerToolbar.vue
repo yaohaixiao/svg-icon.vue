@@ -41,12 +41,9 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.17
  */
-const BaseToolbar = () =>
-  import(/* webpackChunkName: "BaseToolbar" */ '$components/BaseToolbar')
-const BaseCheckbox = () =>
-  import(/* webpackChunkName: "BaseCheckbox" */ '$components/BaseCheckbox')
-const BaseButton = () =>
-  import(/* webpackChunkName: "BaseButton" */ '$components/BaseButton')
+import BaseToolbar from '$components/BaseToolbar'
+import BaseCheckbox from '$components/BaseCheckbox'
+import BaseButton from '$components/BaseButton'
 
 export default {
   name: 'CartDrawerToolbar',

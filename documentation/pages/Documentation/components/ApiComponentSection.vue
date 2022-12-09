@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <section
     class="article__section"
     v-once>

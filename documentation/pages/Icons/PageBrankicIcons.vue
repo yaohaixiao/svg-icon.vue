@@ -44,19 +44,19 @@
             :symbol="symbol" />
         </base-grid>
         <base-empty v-else />
-        <h2 class="article__h2">Copyright</h2>
-        <ul>
-          <li>Designer：Brankic1979</li>
-          <li>
-            Homepage:
-            <a
-              href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons">
-              http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons
-            </a>
-          </li>
-          <li>License：Custom (free to use)</li>
-        </ul>
       </article>
+      <h2 class="article__h2">Copyright</h2>
+      <ul>
+        <li>Designer：Brankic1979</li>
+        <li>
+          Homepage:
+          <a
+            href="http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons">
+            http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons
+          </a>
+        </li>
+        <li>License：Custom (free to use)</li>
+      </ul>
     </base-main>
     <base-footer
       flex
@@ -64,6 +64,16 @@
       <div class="util-align-left base-footer__navigation">
         Prev Page：
         <router-link to="/icons/default">Default 图标库</router-link>
+      </div>
+      <div class="util-align-center base-footer__navigation">
+        <base-pagination
+          :page="page"
+          :page-size="size"
+          :total-count="count"
+          :layout="['prev', 'pager', 'next']"
+          prev-text=""
+          next-text=""
+          @page-change="onPageChange" />
       </div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
@@ -91,10 +101,11 @@ import BaseFooter from '$components/BaseFooter'
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
+import BasePagination from '$components/BasePagination'
 
 import brankic1979Set from '@/assets/brankic-1979'
 import { cloneDeep } from '$utils/utils'
-import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageBrankicIcons',
@@ -108,15 +119,18 @@ export default {
     BaseFooter,
     BaseInput,
     BaseGrid,
-    BaseEmpty
+    BaseEmpty,
+    BasePagination
   },
-  mixins: [TimeSlice(brankic1979Set)],
+  mixins: [SharedUtils(brankic1979Set)],
   data() {
     return {
       brankic1979Set,
       keyword: '',
       symbols: [],
-      count: 0
+      count: 0,
+      page: 1,
+      size: 60
     }
   },
   created() {
@@ -124,7 +138,7 @@ export default {
     const icons = cloneDeep(symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, 30)
+    this.symbols = icons.splice(0, this.size)
   }
 }
 </script>

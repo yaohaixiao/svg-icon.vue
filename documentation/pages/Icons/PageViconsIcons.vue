@@ -93,7 +93,7 @@ import BaseEmpty from '$components/BaseEmpty'
 
 import viconsSet from '@/assets/vicons'
 import { cloneDeep } from '$utils/utils'
-import TimeSlice from './mixins/time-slice'
+import SharedUtils from './mixins/shared-utils'
 
 export default {
   name: 'PageViconsIcons',
@@ -109,7 +109,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [TimeSlice(viconsSet)],
+  mixins: [SharedUtils(viconsSet)],
   data() {
     return {
       viconsSet,
@@ -123,24 +123,7 @@ export default {
     const icons = cloneDeep(symbols)
 
     this.count = symbols.length
-    this.symbols = icons.splice(0, 30)
-  },
-  mounted() {
-    const icons = cloneDeep(this.viconsSet.symbols)
-    const add = () => {
-      const appendIcons = icons.splice(0, 6)
-      this.symbols = this.symbols.concat(appendIcons)
-    }
-
-    icons.splice(0, 30)
-
-    this.$nextTick(() => {
-      setTimeout(() => {
-        while (icons.length > 0) {
-          add()
-        }
-      }, 150)
-    })
+    this.symbols = icons
   }
 }
 </script>

@@ -115,7 +115,7 @@ export default {
       eightyShadesSet,
       keyword: '',
       symbols: [],
-      count: eightyShadesSet.length
+      count: 0
     }
   },
   created() {

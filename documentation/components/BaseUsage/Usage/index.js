@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import BaseUsage from './src/Usage'
+import BaseUsage from './src/BaseUsage.vue'
 
 BaseUsage.install = function (Vue) {
   Vue.component(BaseUsage.name, BaseUsage)

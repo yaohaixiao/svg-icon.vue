@@ -1,0 +1,54 @@
+/**
+ * base-usage-footer.less - BaseUsageFooter 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.10.11
+ */
+.base-usage-footer {
+  .radius(0 0 4px 4px);
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid @primary_border_color;
+  border-top-style: none;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    background-color: @primary_bg_color;
+    color: @primary_color;
+
+    .base-usage-footer__icon,
+    .base-usage-footer__text {
+      color: @primary_color;
+    }
+
+    .base-usage-footer__text {
+      width: 70px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    color: @default_icon_color;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: inline-block;
+    height: 16px;
+    width: 0;
+    line-height: 16px;
+    vertical-align: middle;
+    color: @third_text_color;
+    padding-left: 10px;
+    transition-duration: 0.3s;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+  }
+}

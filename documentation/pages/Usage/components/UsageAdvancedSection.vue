@@ -166,7 +166,7 @@ export default {
  * Created By: Yaohaixiao
  * Update: 2022.11.17
  */
-import BaseUsage from '$components/BaseUsage/Usage'
+import BaseUsage from '$components/BaseUsage'
 import BaseUsageCase from '$components/BaseUsage/Case'
 
 import SvgIcon from '@/SvgIcon'

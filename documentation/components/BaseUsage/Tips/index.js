@@ -4,7 +4,7 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.11
  */
-import UsageCaseTips from './src/Tips'
+import UsageCaseTips from './src/BaseUsageTips'
 
 UsageCaseTips.install = function (Vue) {
   Vue.component(UsageCaseTips.name, UsageCaseTips)

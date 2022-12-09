@@ -1,0 +1,83 @@
+/**
+ * base-pagination-pager.less - BasePaginationPager 组件样式
+ * =============================================================
+ * Created By: Yaohaixiao
+ * Update: 2022.11.09
+ */
+.base-pagination-pager {
+  .font_size_small();
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  margin: 0 5px;
+  padding: 0;
+  list-style-type: none;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  &:hover {
+    color: @primary_color;
+  }
+
+  &.is-active {
+    color: @primary_color;
+  }
+
+  &.is-disabled {
+    color: @fourth_text_color;
+    cursor: not-allowed;
+  }
+
+  .svg-icon {
+    position: absolute;
+    z-index: 2;
+    top: 9px;
+    left: 9px;
+  }
+
+  &_prev,
+  &_next {
+    color: @fourth_text_color;
+  }
+
+  &_prev {
+    .svg-icon {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &--border {
+    .radius_small();
+    border: 1px solid @primary_border_color;
+
+    &:hover {
+      border-color: @primary_color;
+    }
+
+    &.is-active {
+      border-color: @primary_color;
+
+      &:hover {
+        background-color: @white;
+      }
+    }
+
+    &.is-disabled {
+      color: @fourth_text_color;
+      border-color: @fourth_text_color;
+      background-color: @disabled_bg_color;
+
+      &:hover {
+        background-color: @disabled_bg_color;
+      }
+    }
+  }
+}

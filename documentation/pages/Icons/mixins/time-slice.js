@@ -1,4 +1,4 @@
-import { cloneDeep, debounce } from '$utils/utils'
+import { cloneDeep } from '$utils/utils'
 import timeSlice from '$utils/time-slice'
 
 /**
@@ -38,31 +38,7 @@ export default function (iconSet = []) {
             }
           }, 150)
         })
-      },
-      query(keyword) {
-        const symbols = this.iconSet.symbols.filter((symbol) => {
-          const name = this.getSymbolName(symbol).toLowerCase()
-
-          return name.indexOf(keyword.toLowerCase()) > -1
-        })
-        const length = symbols.length
-
-        this.count = length
-
-        if (length > 30) {
-          this.symbols = symbols.splice(0, 30)
-          this.draw(symbols)
-        } else {
-          this.symbols = symbols
-        }
-      },
-      getSymbolName(symbol) {
-        const matches = symbol.match(/icon-(\w+(-\w+)*)+/)
-        return matches[1] || ''
-      },
-      onQuery: debounce(function () {
-        this.query(this.keyword)
-      }, 300)
+      }
     }
   }
 }

@@ -68,10 +68,8 @@
  * Created By: Yaohaixiao
  * Update: 2022.11.10
  */
-const BaseCheckbox = () =>
-  import(/* webpackChunkName: "BaseCheckbox" */ '$components/BaseCheckbox')
-const BaseTag = () =>
-  import(/* webpackChunkName: "BaseTag" */ '$components/BaseTag')
+import BaseCheckbox from '$components/BaseCheckbox'
+import BaseTag from '$components/BaseTag'
 
 import SvgIcon from '@/SvgIcon'
 

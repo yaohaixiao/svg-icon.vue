@@ -32,9 +32,11 @@
       </template>
       <template v-slot:code>
         <pre
-          class="base-usage-code__pre"><code class="base-usage-code__code">&lt;template&gt; &lt;svg-icon name="plugins" /&gt; &lt;svg-icon
-          name="database-read" size="24" /&gt; &lt;svg-icon name="database-lock"
-          :size="32" /&gt; &lt;svg-icon name="deploy" :size="[44, 44]" /&gt;
+          class="base-usage-code__pre"><code class="base-usage-code__code">&lt;template&gt;
+  &lt;svg-icon name="plugins" /&gt;
+  &lt;svg-icon name="database-read" size="24" /&gt;
+  &lt;svg-icon name="database-lock" :size="32" /&gt;
+  &lt;svg-icon name="deploy" :size="[44, 44]" /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
