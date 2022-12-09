@@ -28,7 +28,7 @@ export default function (iconSet = []) {
         this.count = length
         this.querySymbols = cloneDeep(symbols)
 
-        if (length > size && isUndefined(this.page)) {
+        if (length > size && !isUndefined(this.page)) {
           this.symbols = symbols.splice(0, size)
         } else {
           this.symbols = symbols
