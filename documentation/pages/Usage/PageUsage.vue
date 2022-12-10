@@ -28,6 +28,7 @@
         Prev Page：
         <router-link to="/docs">API Documentation</router-link>
       </div>
+      <div class="util-align-center base-footer__navigation"></div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
         <router-link to="/icons">Icons</router-link>
