@@ -65,12 +65,12 @@ export default {
   }
 
   &__icon {
+    .radius(16px);
     display: inline-block;
     position: relative;
     z-index: 1;
     width: 32px;
     height: 32px;
-    .radius(16px);
     background-color: @third_text_color;
     color: @white;
     text-align: center;
