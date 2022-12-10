@@ -64,6 +64,7 @@
         Prev Page：
         <router-link to="/icons/brankic-1979">Brankic 1979 图标库</router-link>
       </div>
+      <div class="util-align-center base-footer__navigation"></div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
         <router-link to="/icons/eighty-shades">

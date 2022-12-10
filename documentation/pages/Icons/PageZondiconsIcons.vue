@@ -62,7 +62,6 @@
         Prev Page：
         <router-link to="/icons/wpzoom">wpzoom 图标库</router-link>
       </div>
-
       <div class="util-align-center base-footer__navigation">
         <base-pagination
           :page="page"

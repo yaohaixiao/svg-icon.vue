@@ -64,6 +64,7 @@
         Prev Page：
         <router-link to="/icons/typicons">Typicons 图标库</router-link>
       </div>
+      <div class="util-align-center base-footer__navigation"></div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
         <router-link to="/icons/wpzoom">wpzoom 图标库</router-link>
