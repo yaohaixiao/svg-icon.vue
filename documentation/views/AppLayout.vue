@@ -36,6 +36,9 @@ import AppHeader from './AppHeader'
 import AppAside from './AppAside'
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
+import { analyseCoreVitals, echoAnalyseRecords } from '$utils/performance'
+
+analyseCoreVitals()
 
 export default {
   name: 'AppLayout',
@@ -57,6 +60,9 @@ export default {
     icons() {
       setStorage('svg.icon.set', JSON.stringify(this.icons))
       this.$broadcast('update:icons')
+    },
+    '$route.path'() {
+      echoAnalyseRecords()
     }
   },
   created() {
