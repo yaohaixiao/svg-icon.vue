@@ -1,3 +1,14 @@
+## [2.6.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.6.0...2.6.1) (2022-12-26)
+
+
+### Bug Fixes
+
+* 修复部分图标集页面搜索报错问题 ([f22c3f9](https://github.com/yaohaixiao/svg-icon.vue/commit/f22c3f94eca6b7dbc63acded94d076234be6f4c8))
+* 修复更新绘制图标时，重复绘制之前已经绘制的图标问题 ([dd0a5bb](https://github.com/yaohaixiao/svg-icon.vue/commit/dd0a5bb9dd7f74f07d8612efd1f02b24a7b800b7))
+* 修复使用分页的界面，清空搜索没有进行分页处理的问题 ([cd3a9b1](https://github.com/yaohaixiao/svg-icon.vue/commit/cd3a9b13c45d9649441ed80733c23c6137431cb5))
+
+
+
 # [2.6.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.5.1...2.6.0) (2022-11-23)
 
 
