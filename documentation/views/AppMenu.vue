@@ -176,7 +176,7 @@ export default {
   }
 
   &__list {
-    height: 680px;
+    height: 720px;
     transition: 0.3s height ease-in-out;
   }
 

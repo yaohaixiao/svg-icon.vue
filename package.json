@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/svg-icon.vue",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "description": "svg-icon.vue 为开发者提供了用来在 VUE 项目中显示 SVG 图标的工具。",
   "author": {
     "name": "Robert Yao",

@@ -66,6 +66,15 @@ export default [
     plugins: PLUGIN_CONFIG
   },
   {
+    input: 'src/assets/ever-icons/icons.js',
+    output: {
+      file: 'dist/ever-icons/icons.min.js',
+      format: 'iife',
+      sourcemap: true
+    },
+    plugins: PLUGIN_CONFIG
+  },
+  {
     input: 'src/assets/feather/icons.js',
     output: {
       file: 'dist/feather/icons.min.js',

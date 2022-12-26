@@ -9,6 +9,7 @@ import brankic1979Set from './brankic-1979'
 import broccolidrySet from './broccolidry'
 import eightyShadesSet from './eighty-shades'
 import entypoSet from './entypo'
+import everIcons from './ever-icons'
 import featherSet from './feather'
 import fontAwesomeSet from './font-awesome'
 import hawconsSet from './hawcons'
@@ -30,6 +31,7 @@ render([
   broccolidrySet,
   eightyShadesSet,
   entypoSet,
+  everIcons,
   featherSet,
   fontAwesomeSet,
   hawconsSet,

@@ -72,7 +72,10 @@
           next-text=""
           @page-change="onPageChange" />
       </div>
-      <div class="util-align-left base-footer__navigation"></div>
+      <div class="util-align-right base-footer__navigation">
+        Next Page：
+        <router-link to="/icons/ever-icons">EverIcons 图标库</router-link>
+      </div>
     </base-footer>
   </base-container>
 </template>
