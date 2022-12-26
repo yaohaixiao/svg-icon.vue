@@ -1,3 +1,12 @@
+# [2.7.0](https://github.com/yaohaixiao/svg-icon.vue/compare/2.6.1...2.7.0) (2022-12-26)
+
+
+### Features
+
+* 利用批量导入，添加 EverIcons 图标集 ([e0f9dd1](https://github.com/yaohaixiao/svg-icon.vue/commit/e0f9dd16c7544b1425dfe353e9fe8a16d59d2c41))
+
+
+
 ## [2.6.1](https://github.com/yaohaixiao/svg-icon.vue/compare/2.6.0...2.6.1) (2022-12-26)
 
 
