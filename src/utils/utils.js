@@ -39,8 +39,10 @@ export const render = (iconSet) => {
   html = symbols.join('')
 
   if ($svg) {
+    // 更新绘制图标
     $svg.innerHTML = html
   } else {
+    // 初始化绘制图标
     $icons.innerHTML = `<svg id="svg-icons" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">${html}</svg>`
     $body.insertBefore($icons.firstChild, $body.firstChild)
   }
