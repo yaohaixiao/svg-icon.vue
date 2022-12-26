@@ -74,7 +74,7 @@
       </div>
       <div class="util-align-right base-footer__navigation">
         Next Page：
-        <router-link to="/icons/feather">Feather 图标库</router-link>
+        <router-link to="/icons/ever-icons">EverIcons 图标库</router-link>
       </div>
     </base-footer>
   </base-container>

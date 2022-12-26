@@ -62,20 +62,6 @@
         Prev Page：
         <router-link to="/icons/wpzoom">wpzoom 图标库</router-link>
       </div>
-      <div class="util-align-center base-footer__navigation">
-        <base-pagination
-          :page="page"
-          :page-size="size"
-          :total-count="count"
-          :layout="['prev', 'pager', 'next']"
-          prev-text=""
-          next-text=""
-          @page-change="onPageChange" />
-      </div>
-      <div class="util-align-right base-footer__navigation">
-        Next Page：
-        <router-link to="/icons/ever-icons">EverIcons 图标库</router-link>
-      </div>
     </base-footer>
   </base-container>
 </template>
@@ -98,7 +84,6 @@ import BaseFooter from '$components/BaseFooter'
 import BaseInput from '$components/BaseInput'
 import BaseGrid from '$components/BaseGrid'
 import BaseEmpty from '$components/BaseEmpty'
-import BasePagination from '$components/BasePagination'
 
 import zondiconsSet from '@/assets/zondicons'
 import { cloneDeep } from '$utils/utils'
@@ -116,8 +101,7 @@ export default {
     BaseFooter,
     BaseInput,
     BaseGrid,
-    BaseEmpty,
-    BasePagination
+    BaseEmpty
   },
   mixins: [SharedUtils(zondiconsSet)],
   data() {

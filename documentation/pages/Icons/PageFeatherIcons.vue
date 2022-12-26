@@ -60,7 +60,7 @@
       height="inner">
       <div class="util-align-left base-footer__navigation">
         Prev Page：
-        <router-link to="/icons/entypo-plus">Entypo+ 图标库</router-link>
+        <router-link to="/icons/ever-icons">Ever Icons 图标库</router-link>
       </div>
       <div class="util-align-center base-footer__navigation">
         <base-pagination

@@ -77,6 +77,18 @@ export default {
         )
     },
     {
+      text: 'EverIcons',
+      name: 'PageEverIcons',
+      path: 'ever-icons',
+      meta: {
+        hide: false
+      },
+      component: () =>
+        import(
+          /* webpackChunkName: "PageEverIcons" */ '../pages/Icons/PageEverIcons'
+        )
+    },
+    {
       text: 'Feather',
       name: 'PageFeatherIcons',
       path: 'feather',
@@ -218,18 +230,6 @@ export default {
       component: () =>
         import(
           /* webpackChunkName: "PageZondiconsIcons" */ '../pages/Icons/PageZondiconsIcons'
-        )
-    },
-    {
-      text: 'EverIcons',
-      name: 'PageEverIcons',
-      path: 'ever-icons',
-      meta: {
-        hide: false
-      },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageEverIcons" */ '../pages/Icons/PageEverIcons'
         )
     }
   ]

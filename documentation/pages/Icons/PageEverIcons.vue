@@ -69,7 +69,12 @@
       height="inner">
       <div class="util-align-left base-footer__navigation">
         Prev Page：
-        <router-link to="/icons/zondicons">Zondicons 图标集</router-link>
+        <router-link to="/icons/entypo-plus">Entypo Plus 图标库</router-link>
+      </div>
+      <div class="util-align-center base-footer__navigation"></div>
+      <div class="util-align-right base-footer__navigation">
+        Next Page：
+        <router-link to="/icons/feather">Feather 图标库</router-link>
       </div>
     </base-footer>
   </base-container>
@@ -155,7 +160,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [Defer()],
+  mixins: [Defer(DEFAULT_SET.length)],
   data() {
     return {
       everIconsSets: [],
