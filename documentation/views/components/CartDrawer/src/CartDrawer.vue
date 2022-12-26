@@ -61,9 +61,7 @@ const CartDrawerCode = () =>
 
 import { clearStorage } from '$utils/storage'
 import { copyToClipboard, createAndDownloadFile } from '$utils/utils'
-import { render, getSymbols } from '@/utils/utils'
-
-let guid = 0
+import { render } from '@/utils/utils'
 
 export default {
   name: 'CartDrawer',
@@ -211,15 +209,7 @@ export default {
           icon: 'trash',
           disabled: this.disabled,
           action: () => {
-            clearStorage('svg.icon.set')
-            this.imports = []
-
-            this.$message.success({
-              round: true,
-              message: `购物车已清空！`
-            })
-
-            this.$broadcast('clean:cart')
+            this.clear()
           }
         },
         {
@@ -228,11 +218,7 @@ export default {
           icon: 'download',
           disabled: this.isUnchecked,
           action: () => {
-            if (this.isIconView) {
-              createAndDownloadFile('svg-icon-set.svg', this.svg)
-            } else {
-              createAndDownloadFile('svg-icon-set.js', this.code)
-            }
+            this.download()
           }
         },
         {
@@ -243,11 +229,7 @@ export default {
           type: 'primary',
           disabled: this.isUnchecked,
           action: () => {
-            copyToClipboard(this.isIconView ? this.svg : this.code)
-            this.$message.success({
-              round: true,
-              message: `代码已复制！`
-            })
+            this.copy()
           }
         }
       ]
@@ -278,28 +260,17 @@ export default {
         }
       })
     },
-    doImport(symbol, id) {
-      const symbols = getSymbols()
-      const theSameSymbol = symbols.find((item) => {
-        const PATTERN_ID = /id="(.*?)"/
-        const match = item.match(PATTERN_ID)
-        const name = match && match[1] ? match[1] : ''
-
-        return name.toLowerCase() === id.toLowerCase()
+    doImport(symbols) {
+      render({
+        symbols: symbols
       })
 
-      if (theSameSymbol) {
-        guid += 1
-        symbol = symbol.replace(id, `${id}-${guid}`)
-        render({
-          symbols: [symbol]
+      symbols.forEach((symbol) => {
+        this.imports.push({
+          checked: true,
+          isBuildIn: false,
+          symbol
         })
-      }
-
-      this.imports.push({
-        checked: true,
-        isBuildIn: false,
-        symbol
       })
 
       this.update()
@@ -312,6 +283,48 @@ export default {
       })
 
       this.update()
+    },
+    clear() {
+      const $icons = document.querySelector('#svg-icons')
+      const imports = [...this.imports]
+
+      clearStorage('svg.icon.set')
+
+      imports.forEach((item) => {
+        const PATTERN_ID = /id="(.*?)"/
+        const match = item.symbol.match(PATTERN_ID)
+        const id = match && match[1] ? match[1] : ''
+        const $icon = document.querySelector(`#${id}`)
+
+        if (item.isBuildIn || !$icon) {
+          return false
+        }
+
+        $icons.removeChild($icon)
+      })
+
+      this.imports = []
+
+      this.$message.success({
+        round: true,
+        message: `购物车已清空！`
+      })
+
+      this.$broadcast('clean:cart')
+    },
+    copy() {
+      copyToClipboard(this.isIconView ? this.svg : this.code)
+      this.$message.success({
+        round: true,
+        message: `代码已复制！`
+      })
+    },
+    download() {
+      if (this.isIconView) {
+        createAndDownloadFile('svg-icon-set.svg', this.svg)
+      } else {
+        createAndDownloadFile('svg-icon-set.js', this.code)
+      }
     },
     show() {
       this.$refs.drawer.open()
@@ -331,13 +344,14 @@ export default {
         this.uncheckAll()
       }
     },
-    onImport(symbol, id) {
-      this.doImport(symbol, id)
+    onImport(symbols) {
+      this.doImport(symbols)
     },
     onUpdate(options) {
       this.options = [...options]
     },
     onDelete(symbol) {
+      console.log('onDelete', symbol)
       this.doDelete(symbol)
     },
     onClose() {

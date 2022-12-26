@@ -64,12 +64,16 @@ module.exports = {
           loader: 'raw-loader'
         }
       ]
+    },
+    mode: 'production',
+    optimization: {
+      usedExports: true
     }
   },
   chainWebpack(config) {
     let buildFor = process.env.BUILD_FOR
 
-    // when process.env.npm_config_report is true , build analyzer
+    // when process.env.npm_config_report is true, build analyzer
     // 打包分析配置
     config.when(process.env.npm_config_report, (config) => {
       config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin).end()

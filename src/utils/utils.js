@@ -11,7 +11,7 @@ const symbols = []
 /**
  * 绘制 Svg 图标集
  * =============================================================
- * @param {Object|Array} [iconSet] - 需要数值的图标集
+ * @param {{symbols: Array}} [iconSet] - 需要数值的图标集
  * @param {String} iconSet.title - （iconSet 为对象时）图标集标题
  * @param {Array} iconSet.symbols - （iconSet 为对象时）图标集的 symbols 数据
  */
@@ -39,7 +39,7 @@ export const render = (iconSet) => {
   html = symbols.join('')
 
   if ($svg) {
-    $svg.innerHTML += html
+    $svg.innerHTML = html
   } else {
     $icons.innerHTML = `<svg id="svg-icons" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">${html}</svg>`
     $body.insertBefore($icons.firstChild, $body.firstChild)
