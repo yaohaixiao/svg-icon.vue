@@ -107,6 +107,7 @@ import arrowSet from '@/assets/default/arrow'
 import pairedSet from '@/assets/default/paired'
 // 通用类图标
 import genericSet from '@/assets/default/generic'
+
 import { debounce, cloneDeep } from '$utils/utils'
 
 const DEFAULT_SET = [

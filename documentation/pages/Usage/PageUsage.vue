@@ -16,9 +16,15 @@
     <base-main padding="outer">
       <article class="article">
         <h1 class="article__h1">Usage</h1>
-        <usage-basic-section />
-        <usage-set-color-section />
-        <usage-advanced-section />
+        <template v-if="defer(1)">
+          <usage-basic-section />
+        </template>
+        <template v-if="defer(2)">
+          <usage-set-color-section />
+        </template>
+        <template v-if="defer(3)">
+          <usage-advanced-section />
+        </template>
       </article>
     </base-main>
     <base-footer
@@ -66,6 +72,8 @@ const UsageAdvancedSection = () =>
     /* webpackChunkName: "UsageAdvancedSection" */ './components/UsageAdvancedSection'
   )
 
+import Defer from '$mixins/defer'
+
 export default {
   name: 'PageUsage',
   componentName: 'PageUsage',
@@ -79,6 +87,7 @@ export default {
     UsageBasicSection,
     UsageSetColorSection,
     UsageAdvancedSection
-  }
+  },
+  mixins: [Defer(3)]
 }
 </script>
