@@ -351,7 +351,6 @@ export default {
       this.options = [...options]
     },
     onDelete(symbol) {
-      console.log('onDelete', symbol)
       this.doDelete(symbol)
     },
     onClose() {

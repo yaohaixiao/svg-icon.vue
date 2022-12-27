@@ -26,10 +26,10 @@ module.exports = {
     host: 'localhost',
     port: 48081,
     hot: true,
-    open: true,
-    historyApiFallback: {
-      index: '/index.html'
-    }
+    open: true
+    // historyApiFallback: {
+    //   index: '/index.html'
+    // }
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -103,7 +103,7 @@ module.exports = {
     config.when(buildFor === 'docs', (config) => {
       // http://www.yaohaixiao.com/blog/preload-key-requests/
       // it can improve the speed of the first screen, it is recommended to turn on preload
-      // preload  预加载资源
+      // 预加载资源
       config
         .plugin('preload')
         .use(PreloadWebpackPlugin)

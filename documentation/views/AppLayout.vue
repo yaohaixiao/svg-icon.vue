@@ -22,11 +22,12 @@
  * AppLayout.vue - 主题框架页
  * =============================================================
  * Created By: Yaohaixiao
- * Update: 2022.10.08
+ * Update: 2022.12.27
  */
 import BaseContainer from '$components/BaseContainer'
 import BaseMain from '$components/BaseMain'
 
+// 动态加载组件
 const CartBar = () =>
   import(/* webpackChunkName: "CartBar" */ '$views/components/CartBar')
 const CartDrawer = () =>
@@ -36,9 +37,9 @@ import AppHeader from './AppHeader'
 import AppAside from './AppAside'
 
 import { getStorage, setStorage, clearStorage } from '$utils/storage'
-import { analyseCoreVitals, echoAnalyseRecords } from '$utils/performance'
-
-analyseCoreVitals()
+// import { analyseCoreVitals, echoAnalyseRecords } from '$utils/performance'
+//
+// analyseCoreVitals()
 
 export default {
   name: 'AppLayout',
@@ -60,10 +61,10 @@ export default {
     icons() {
       setStorage('svg.icon.set', JSON.stringify(this.icons))
       this.$broadcast('update:icons')
-    },
-    '$route.path'() {
-      echoAnalyseRecords()
     }
+    // '$route.path'() {
+    //   echoAnalyseRecords()
+    // }
   },
   created() {
     this.update()
