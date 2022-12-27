@@ -25,23 +25,25 @@ import zondiconsSet from './zondicons'
 
 import { render } from '../utils/utils'
 
-render([
-  defaultSet,
-  brankic1979Set,
-  broccolidrySet,
-  eightyShadesSet,
-  entypoSet,
-  everIcons,
-  featherSet,
-  fontAwesomeSet,
-  hawconsSet,
-  iconicSet,
-  lineconsSet,
-  materialSet,
-  meteoconsSet,
-  steadysetsSet,
-  typiconsSet,
-  viconsSet,
-  wpzoomSet,
-  zondiconsSet
-])
+requestIdleCallback(() => {
+  render([
+    defaultSet,
+    brankic1979Set,
+    broccolidrySet,
+    eightyShadesSet,
+    entypoSet,
+    everIcons,
+    featherSet,
+    fontAwesomeSet,
+    hawconsSet,
+    iconicSet,
+    lineconsSet,
+    materialSet,
+    meteoconsSet,
+    steadysetsSet,
+    typiconsSet,
+    viconsSet,
+    wpzoomSet,
+    zondiconsSet
+  ])
+})

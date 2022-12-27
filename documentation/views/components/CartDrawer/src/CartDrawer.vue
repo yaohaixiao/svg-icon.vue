@@ -46,18 +46,9 @@
 import BaseDrawer from '$components/BaseDrawer'
 import BaseTabsNav from '$components/BaseTabs/Nav'
 
-const CartDrawerToolbar = () =>
-  import(
-    /* webpackChunkName: "CartDrawerToolbar" */ '$views/components/CartDrawerToolbar'
-  )
-const CartDrawerList = () =>
-  import(
-    /* webpackChunkName: "CartDrawerList" */ '$views/components/CartDrawerList'
-  )
-const CartDrawerCode = () =>
-  import(
-    /* webpackChunkName: "CartDrawerCode" */ '$views/components/CartDrawerCode'
-  )
+import CartDrawerToolbar from '$views/components/CartDrawerToolbar'
+import CartDrawerList from '$views/components/CartDrawerList'
+import CartDrawerCode from '$views/components/CartDrawerCode'
 
 import { clearStorage } from '$utils/storage'
 import { copyToClipboard, createAndDownloadFile } from '$utils/utils'

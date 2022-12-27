@@ -36,7 +36,7 @@ export default function (iconSet = []) {
                 add(symbols)
               })
             }
-          }, 150)
+          }, 50)
         })
       }
     }

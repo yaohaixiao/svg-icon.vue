@@ -44,6 +44,7 @@
 import BaseToolbar from '$components/BaseToolbar'
 import BaseCheckbox from '$components/BaseCheckbox'
 import BaseButton from '$components/BaseButton'
+
 import { getSymbols } from '@/utils/utils'
 
 let guid = 0

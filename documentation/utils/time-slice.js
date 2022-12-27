@@ -31,7 +31,7 @@ function runIdle(idleDeadline) {
  * 时间切片功能函数：主要用于优化长时任务的性能，将长时任务分解成
  * 多个短时间任务
  * ====================================================
- * @param {Function} gen
+ * @param {Function} fn - 需要在空闲时执行的回调函数
  * @return {(function(): (boolean|undefined))|*|boolean}
  */
 const timeSlice = (fn) => {

@@ -5,7 +5,6 @@
  * Update: 2022.10.8
  */
 const path = require('path')
-const trim = require('lodash/trim')
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
@@ -13,6 +12,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const pkg = require('./package.json')
+
+const trim = (str) => {
+  if (str.trim) {
+    return str.trim()
+  } else {
+    return str.replace(/^\s+/g, '').replace(/\s+$/g, '')
+  }
+}
 
 const resolve = (dir) => {
   return path.join(__dirname, dir)
@@ -186,17 +193,16 @@ module.exports = {
             priority: 26,
             reuseExistingChunk: true
           },
-          icons: {
-            name: 'chunk-icons',
-            test: resolve('src/assets'),
-            priority: 26,
-            chunks: 'initial',
-            reuseExistingChunk: true
-          },
           commons: {
             name: 'chunk-commons',
             test: resolve('documentation/components'),
             priority: 26,
+            reuseExistingChunk: true
+          },
+          icons: {
+            name: 'chunk-icons',
+            test: resolve('src/assets'),
+            priority: 16,
             reuseExistingChunk: true
           }
         }
