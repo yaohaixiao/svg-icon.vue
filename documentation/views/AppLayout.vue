@@ -28,10 +28,8 @@ import BaseContainer from '$components/BaseContainer'
 import BaseMain from '$components/BaseMain'
 
 // 动态加载组件
-const CartBar = () =>
-  import(/* webpackChunkName: "CartBar" */ '$views/components/CartBar')
-const CartDrawer = () =>
-  import(/* webpackChunkName: "CartDrawer" */ '$views/components/CartDrawer')
+import CartBar from '$views/components/CartBar'
+import CartDrawer from '$views/components/CartDrawer'
 
 import AppHeader from './AppHeader'
 import AppAside from './AppAside'

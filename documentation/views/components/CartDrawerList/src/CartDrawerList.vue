@@ -31,10 +31,7 @@
  */
 import BaseEmpty from '$components/BaseEmpty'
 
-const CartDrawerItem = () =>
-  import(
-    /* webpackChunkName: "CartDrawerItem" */ '$views/components/CartDrawerItem'
-  )
+import CartDrawerItem from '$views/components/CartDrawerItem'
 
 export default {
   name: 'CartDrawerList',
