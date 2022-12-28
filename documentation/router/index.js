@@ -7,6 +7,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import AppLayout from '../views/AppLayout'
+
 import Documentation from './documentation'
 import Usage from './usage'
 import Samples from './icons'
@@ -17,8 +19,7 @@ const routes = [
   {
     path: '/',
     name: 'AppLayout',
-    component: () =>
-      import(/* webpackChunkName: "AppLayout" */ '../views/AppLayout'),
+    component: AppLayout,
     redirect: '/docs',
     children: [Documentation, Usage, Samples]
   }
