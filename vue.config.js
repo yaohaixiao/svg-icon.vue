@@ -142,7 +142,7 @@ module.exports = {
           {
             rel: 'prefetch',
             // 过滤掉重复的公共样式
-            fileBlacklist: [/\d{3,4}\.(.*?)\.(js|css)$/],
+            fileBlacklist: [/(Page|Module)(.*?)\.(js|css)$/],
             include: {
               type: 'asyncChunks',
               entries: ['app']

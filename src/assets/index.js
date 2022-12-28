@@ -25,7 +25,7 @@ import zondiconsSet from './zondicons'
 
 import { render } from '../utils/utils'
 
-requestIdleCallback(() => {
+setTimeout(() => {
   render([
     defaultSet,
     brankic1979Set,
@@ -46,4 +46,4 @@ requestIdleCallback(() => {
     wpzoomSet,
     zondiconsSet
   ])
-})
+}, 100)
