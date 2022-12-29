@@ -50,18 +50,9 @@ import BaseBreadcrumbItem from '$components/BaseBreadcrumbItem'
 import BaseFooter from '$components/BaseFooter'
 
 // 文档组件
-const ApiInstallSection = () =>
-  import(
-    /* webpackChunkName: "ApiInstallSection" */ './components/ApiInstallSection'
-  )
-const ApiMethodsSection = () =>
-  import(
-    /* webpackChunkName: "ApiMethodsSection" */ './components/ApiMethodsSection'
-  )
-const ApiComponentSection = () =>
-  import(
-    /* webpackChunkName: "ApiComponentSection" */ './components/ApiComponentSection'
-  )
+import ApiInstallSection from './components/ApiInstallSection'
+import ApiMethodsSection from './components/ApiMethodsSection'
+import ApiComponentSection from './components/ApiComponentSection'
 
 export default {
   name: 'PageDocumentation',
