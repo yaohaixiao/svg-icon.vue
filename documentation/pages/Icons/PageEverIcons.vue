@@ -122,6 +122,7 @@ import timeSet from '@/assets/ever-icons/time'
 import variousSet from '@/assets/ever-icons/various'
 
 import { debounce, cloneDeep } from '$utils/utils'
+import SharedUtils from './mixins/shared-utils'
 
 const DEFAULT_SET = [
   arrowsSet,
@@ -160,7 +161,7 @@ export default {
     BaseGrid,
     BaseEmpty
   },
-  mixins: [Defer(DEFAULT_SET.length)],
+  mixins: [Defer(DEFAULT_SET.length), SharedUtils(DEFAULT_SET)],
   data() {
     return {
       everIconsSets: [],
