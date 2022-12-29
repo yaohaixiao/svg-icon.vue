@@ -11,6 +11,7 @@
         :icon="nav.icon"
         :icon-size="nav.iconSize"
         :target="nav.target"
+        :rel="nav.rel"
         :download="nav.download"
         class="app-nav__link" />
     </li>
@@ -56,7 +57,8 @@ export default {
           icon: 'bold-download',
           iconSize: 20,
           download: 'svg-icon.vue-main.zip',
-          target: '_blank'
+          target: '_blank',
+          rel: 'noreferrer'
         },
         {
           route: false,

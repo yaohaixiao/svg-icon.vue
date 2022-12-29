@@ -3,6 +3,7 @@
     v-if="route"
     :to="disabled ? null : href"
     :target="target"
+    :rel="rel"
     :class="className">
     <svg-icon
       v-if="icon"
@@ -17,6 +18,7 @@
     v-else
     :href="disabled ? null : href"
     :target="target"
+    :rel="rel"
     :download="download"
     :class="className">
     <svg-icon
@@ -57,6 +59,10 @@ export default {
     target: {
       type: String,
       default: '_self'
+    },
+    rel: {
+      type: String,
+      default: null
     },
     route: {
       type: Boolean,

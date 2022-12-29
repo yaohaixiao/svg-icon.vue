@@ -138,6 +138,8 @@ export default {
   }
 
   &__link {
+    .ellipsis(1);
+    .anchor(@primary_text_color);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -148,8 +150,6 @@ export default {
     line-height: 40px;
     padding: 0 16px;
     box-sizing: border-box;
-    .ellipsis(1);
-    .anchor(@third_text_color);
 
     &.active {
       .anchor(@primary_color);
