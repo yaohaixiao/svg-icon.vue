@@ -5,45 +5,24 @@
  * Update: 2022.11.21
  */
 import defaultSet from './default'
-import brankic1979Set from './brankic-1979'
-import broccolidrySet from './broccolidry'
-import eightyShadesSet from './eighty-shades'
-import entypoSet from './entypo'
-import everIcons from './ever-icons'
-import featherSet from './feather'
-import fontAwesomeSet from './font-awesome'
-import hawconsSet from './hawcons'
-import iconicSet from './iconic'
-import lineconsSet from './linecons'
-import materialSet from './material'
-import meteoconsSet from './meteocons'
-import steadysetsSet from './steadysets'
-import typiconsSet from './typicons'
-import viconsSet from './vicons'
-import wpzoomSet from './wpzoom'
-import zondiconsSet from './zondicons'
+// import brankic1979Set from './brankic-1979'
+// import broccolidrySet from './broccolidry'
+// import eightyShadesSet from './eighty-shades'
+// import entypoSet from './entypo'
+// import everIcons from './ever-icons'
+// import featherSet from './feather'
+// import fontAwesomeSet from './font-awesome'
+// import hawconsSet from './hawcons'
+// import iconicSet from './iconic'
+// import lineconsSet from './linecons'
+// import materialSet from './material'
+// import meteoconsSet from './meteocons'
+// import steadysetsSet from './steadysets'
+// import typiconsSet from './typicons'
+// import viconsSet from './vicons'
+// import wpzoomSet from './wpzoom'
+// import zondiconsSet from './zondicons'
 
 import { render } from '../utils/utils'
 
-setTimeout(() => {
-  render([
-    defaultSet,
-    brankic1979Set,
-    broccolidrySet,
-    eightyShadesSet,
-    entypoSet,
-    everIcons,
-    featherSet,
-    fontAwesomeSet,
-    hawconsSet,
-    iconicSet,
-    lineconsSet,
-    materialSet,
-    meteoconsSet,
-    steadysetsSet,
-    typiconsSet,
-    viconsSet,
-    wpzoomSet,
-    zondiconsSet
-  ])
-}, 100)
+render(defaultSet)

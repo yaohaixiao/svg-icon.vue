@@ -6,6 +6,7 @@
  */
 import { cloneDeep, debounce } from '$utils/utils'
 import { isUndefined } from '$utils/typeof'
+import { render } from '@/utils/utils'
 
 export default function (iconSet = []) {
   return {
@@ -14,6 +15,18 @@ export default function (iconSet = []) {
         iconSet: cloneDeep(iconSet),
         querySymbols: cloneDeep(iconSet.symbols || [])
       }
+    },
+    computed: {
+      isDefault() {
+        return this.iconSet.code === 'default'
+      }
+    },
+    mounted() {
+      if (this.isDefault) {
+        return false
+      }
+
+      render(this.iconSet)
     },
     methods: {
       query(keyword) {

@@ -198,12 +198,6 @@ module.exports = {
             test: resolve('documentation/components'),
             priority: 26,
             reuseExistingChunk: true
-          },
-          icons: {
-            name: 'chunk-icons',
-            test: resolve('src/assets'),
-            priority: 16,
-            reuseExistingChunk: true
           }
         }
       })
