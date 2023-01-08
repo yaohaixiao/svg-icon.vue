@@ -25,7 +25,6 @@ export default function (count = 10) {
             }
           })
         }
-
         step()
       },
       defer(priority) {
