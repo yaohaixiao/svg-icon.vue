@@ -4,12 +4,16 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
+import ModuleUsage from '$pages/Usage/ModuleUsage'
+import PageUsage from '$pages/Usage/PageUsage'
+
 export default {
   text: 'Usage',
   path: 'usage',
   icon: 'bold-units',
-  component: () =>
-    import(/* webpackChunkName: "ModuleUsage" */ '../pages/Usage/ModuleUsage'),
+  component: ModuleUsage,
+  // component: () =>
+  //   import(/* webpackChunkName: "ModuleUsage" */ '../pages/Usage/ModuleUsage'),
   meta: {
     hide: true
   },
@@ -21,8 +25,9 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(/* webpackChunkName: "PageUsage" */ '../pages/Usage/PageUsage')
+      component: PageUsage
+      // component: () =>
+      //   import(/* webpackChunkName: "PageUsage" */ '../pages/Usage/PageUsage')
     }
   ]
 }

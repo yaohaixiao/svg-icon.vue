@@ -9,8 +9,8 @@ const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin')
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+// const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin')
+// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const pkg = require('./package.json')
 
 const trim = (str) => {
@@ -45,12 +45,12 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins: [
-      new HtmlInlineScriptPlugin({
-        scriptMatchPattern: [/runtime[.-]?(.*?)\.js$/, /app[.-]?(.*?)\.js$/]
-      }),
-      new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)
-    ],
+    // plugins: [
+    //   new HtmlInlineScriptPlugin({
+    //     scriptMatchPattern: [/runtime[.-]?(.*?)\.js$/, /app[.-]?(.*?)\.js$/]
+    //   }),
+    //   new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)
+    // ],
     resolve: {
       alias: {
         '@': resolve('src'),
@@ -99,7 +99,7 @@ module.exports = {
       args[0].inject = 'body'
       // 使用 HtmlWebpackInlineSourcePlugin 插件将
       // app.css 公共样式写入到 index.html，以优化性能
-      args[0].inlineSource = 'app.(.*?).(css)$'
+      // args[0].inlineSource = 'app.(.*?).(css)$'
       args[0].title = `svg-icon.vue - v${pkg.version} | ${description}`
       args[0].keywords = `javascript,svg,icon,svg-icon.vue,vue,vue.js`
       args[0].description = description
@@ -108,47 +108,50 @@ module.exports = {
     })
 
     config.when(buildFor === 'docs', (config) => {
-      // http://www.yaohaixiao.com/blog/preload-key-requests/
-      // it can improve the speed of the first screen, it is recommended to turn on preload
-      // 预加载资源
-      config
-        .plugin('preload')
-        .use(PreloadWebpackPlugin)
-        .tap(() => [
-          {
-            rel: 'preload',
-            // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
-            // 预加载忽略以下文件：
-            // .map 文件是非必须的
-            // hot-update 为本地开发时的临时文件
-            // runtime.js 和 app.js 这些公共脚本使用 HtmlInlineScriptPlugin 插件写入到 index.html 文件中
-            fileBlacklist: [
-              /\.map$/,
-              /hot-update\.js$/,
-              /runtime[.-]?(.*?)\.js$/,
-              /app[.-]?(.*?)\.(js|css)$/
-            ],
-            // initial, asyncChunks, all, allAssets
-            include: 'initial'
-          }
-        ])
+      config.plugins.delete('prefetch')
+      config.plugins.delete('preload')
 
-      // http://www.yaohaixiao.com/blog/preload-key-requests/
-      // prefetch 预取配置，优化前端性能
-      config
-        .plugin('prefetch')
-        .use(PreloadWebpackPlugin)
-        .tap(() => [
-          {
-            rel: 'prefetch',
-            // 过滤掉重复的公共样式
-            fileBlacklist: [/(Page|Module)(.*?)\.(js|css)$/],
-            include: {
-              type: 'asyncChunks',
-              entries: ['app']
-            }
-          }
-        ])
+      // // http://www.yaohaixiao.com/blog/preload-key-requests/
+      // // it can improve the speed of the first screen, it is recommended to turn on preload
+      // // 预加载资源
+      // config
+      //   .plugin('preload')
+      //   .use(PreloadWebpackPlugin)
+      //   .tap(() => [
+      //     {
+      //       rel: 'preload',
+      //       // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+      //       // 预加载忽略以下文件：
+      //       // .map 文件是非必须的
+      //       // hot-update 为本地开发时的临时文件
+      //       // runtime.js 和 app.js 这些公共脚本使用 HtmlInlineScriptPlugin 插件写入到 index.html 文件中
+      //       fileBlacklist: [
+      //         /\.map$/,
+      //         /hot-update\.js$/,
+      //         /runtime[.-]?(.*?)\.js$/,
+      //         /app[.-]?(.*?)\.(js|css)$/
+      //       ],
+      //       // initial, asyncChunks, all, allAssets
+      //       include: 'initial'
+      //     }
+      //   ])
+      //
+      // // http://www.yaohaixiao.com/blog/preload-key-requests/
+      // // prefetch 预取配置，优化前端性能
+      // config
+      //   .plugin('prefetch')
+      //   .use(PreloadWebpackPlugin)
+      //   .tap(() => [
+      //     {
+      //       rel: 'prefetch',
+      //       // 过滤掉重复的公共样式
+      //       fileBlacklist: [/(Page|Module)(.*?)\.(js|css)$/],
+      //       include: {
+      //         type: 'asyncChunks',
+      //         entries: ['app']
+      //       }
+      //     }
+      //   ])
 
       // https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
       config.optimization.runtimeChunk('single').splitChunks({

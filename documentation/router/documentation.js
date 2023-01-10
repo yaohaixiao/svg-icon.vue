@@ -4,14 +4,18 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.8
  */
+import ModuleDocumentation from '$pages/Documentation/ModuleDocumentation'
+import PageDocumentation from '$pages/Documentation/PageDocumentation'
+
 export default {
   text: 'API Documentation',
   path: 'docs',
   icon: 'bold-document',
-  component: () =>
-    import(
-      /* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'
-    ),
+  component: ModuleDocumentation,
+  // component: () =>
+  //   import(
+  //     /* webpackChunkName: "ModuleDocumentation" */ '../pages/Documentation/ModuleDocumentation'
+  //   ),
   meta: {
     hide: true
   },
@@ -23,10 +27,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageDocumentation" */ '../pages/Documentation/PageDocumentation'
-        )
+      component: PageDocumentation
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageDocumentation" */ '../pages/Documentation/PageDocumentation'
+      //   )
     }
   ]
 }

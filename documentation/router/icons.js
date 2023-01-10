@@ -4,13 +4,34 @@
  * Created By: Yaohaixiao
  * Update: 2022.10.18
  */
+import ModuleIcons from '$pages/Icons/ModuleIcons'
+import PageDefaultIcons from '$pages/Icons/PageDefaultIcons'
+import PageBrankicIcons from '$pages/Icons/PageBrankicIcons'
+import PageBroccolidryIcons from '$pages/Icons/PageBroccolidryIcons'
+import PageEightyShadesIcons from '$pages/Icons/PageEightyShadesIcons'
+import PageEntypoPlusIcons from '$pages/Icons/PageEntypoPlusIcons'
+import PageEverIcons from '$pages/Icons/PageEverIcons'
+import PageFeatherIcons from '$pages/Icons/PageFeatherIcons'
+import PageFontAwesomeIcons from '$pages/Icons/PageFontAwesomeIcons'
+import PageHawconsIcons from '$pages/Icons/PageHawconsIcons'
+import PageIconicIcons from '$pages/Icons/PageIconicIcons'
+import PageLineconsIcons from '$pages/Icons/PageLineconsIcons'
+import PageMaterialIcons from '$pages/Icons/PageMaterialIcons'
+import PageMeteoconsIcons from '$pages/Icons/PageMeteoconsIcons'
+import PageSteadysetsIcons from '$pages/Icons/PageSteadysetsIcons'
+import PageTypiconsIcons from '$pages/Icons/PageTypiconsIcons'
+import PageViconsIcons from '$pages/Icons/PageViconsIcons'
+import PageWpzoomIcons from '$pages/Icons/PageWpzoomIcons'
+import PageZondiconsIcons from '$pages/Icons/PageZondiconsIcons'
+
 export default {
   text: 'Icons',
   name: 'ModuleIcons',
   path: 'icons',
   icon: 'bold-app-store',
-  component: () =>
-    import(/* webpackChunkName: "ModuleIcons" */ '../pages/Icons/ModuleIcons'),
+  component: ModuleIcons,
+  // component: () =>
+  //   import(/* webpackChunkName: "ModuleIcons" */ '../pages/Icons/ModuleIcons'),
   meta: {
     hide: false
   },
@@ -23,10 +44,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageDefaultIcons" */ '../pages/Icons/PageDefaultIcons'
-        )
+      component: PageDefaultIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageDefaultIcons" */ '../pages/Icons/PageDefaultIcons'
+      //   )
     },
     {
       text: 'Brankic 1979',
@@ -35,10 +57,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageBrankicIcons" */ '../pages/Icons/PageBrankicIcons'
-        )
+      component: PageBrankicIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageBrankicIcons" */ '../pages/Icons/PageBrankicIcons'
+      //   )
     },
     {
       text: 'Broccolidry',
@@ -47,10 +70,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageBroccolidryIcons" */ '../pages/Icons/PageBroccolidryIcons'
-        )
+      component: PageBroccolidryIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageBroccolidryIcons" */ '../pages/Icons/PageBroccolidryIcons'
+      //   )
     },
     {
       text: 'Eighty Shades',
@@ -59,10 +83,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageEightyShadesIcons" */ '../pages/Icons/PageEightyShadesIcons'
-        )
+      component: PageEightyShadesIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageEightyShadesIcons" */ '../pages/Icons/PageEightyShadesIcons'
+      //   )
     },
     {
       text: 'Entypo+',
@@ -71,10 +96,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageEntypoPlusIcons" */ '../pages/Icons/PageEntypoPlusIcons'
-        )
+      component: PageEntypoPlusIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageEntypoPlusIcons" */ '../pages/Icons/PageEntypoPlusIcons'
+      //   )
     },
     {
       text: 'EverIcons',
@@ -83,10 +109,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageEverIcons" */ '../pages/Icons/PageEverIcons'
-        )
+      component: PageEverIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageEverIcons" */ '../pages/Icons/PageEverIcons'
+      //   )
     },
     {
       text: 'Feather',
@@ -95,10 +122,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageFeatherIcons" */ '../pages/Icons/PageFeatherIcons'
-        )
+      component: PageFeatherIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageFeatherIcons" */ '../pages/Icons/PageFeatherIcons'
+      //   )
     },
     {
       text: 'Font Awesome',
@@ -107,10 +135,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageFontAwesomeIcons" */ '../pages/Icons/PageFontAwesomeIcons'
-        )
+      component: PageFontAwesomeIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageFontAwesomeIcons" */ '../pages/Icons/PageFontAwesomeIcons'
+      //   )
     },
     {
       text: 'Hawcons',
@@ -119,10 +148,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageHawconsIcons" */ '../pages/Icons/PageHawconsIcons'
-        )
+      component: PageHawconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageHawconsIcons" */ '../pages/Icons/PageHawconsIcons'
+      //   )
     },
     {
       text: 'Iconic',
@@ -131,10 +161,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageIconicIcons" */ '../pages/Icons/PageIconicIcons'
-        )
+      component: PageIconicIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageIconicIcons" */ '../pages/Icons/PageIconicIcons'
+      //   )
     },
     {
       text: 'Linecons',
@@ -143,10 +174,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageLineconsIcons" */ '../pages/Icons/PageLineconsIcons'
-        )
+      component: PageLineconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageLineconsIcons" */ '../pages/Icons/PageLineconsIcons'
+      //   )
     },
     {
       text: 'Material',
@@ -155,10 +187,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageMaterialIcons" */ '../pages/Icons/PageMaterialIcons'
-        )
+      component: PageMaterialIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageMaterialIcons" */ '../pages/Icons/PageMaterialIcons'
+      //   )
     },
     {
       text: 'Meteocons',
@@ -167,10 +200,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageMeteoconsIcons" */ '../pages/Icons/PageMeteoconsIcons'
-        )
+      component: PageMeteoconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageMeteoconsIcons" */ '../pages/Icons/PageMeteoconsIcons'
+      //   )
     },
     {
       text: 'Steadysets',
@@ -179,10 +213,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageSteadysetsIcons" */ '../pages/Icons/PageSteadysetsIcons'
-        )
+      component: PageSteadysetsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageSteadysetsIcons" */ '../pages/Icons/PageSteadysetsIcons'
+      //   )
     },
     {
       text: 'Typicons',
@@ -191,10 +226,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageTypiconsIcons" */ '../pages/Icons/PageTypiconsIcons'
-        )
+      component: PageTypiconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageTypiconsIcons" */ '../pages/Icons/PageTypiconsIcons'
+      //   )
     },
     {
       text: 'Vicons',
@@ -203,10 +239,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageViconsIcons" */ '../pages/Icons/PageViconsIcons'
-        )
+      component: PageViconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageViconsIcons" */ '../pages/Icons/PageViconsIcons'
+      //   )
     },
     {
       text: 'Wpzoom',
@@ -215,10 +252,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageWpzoomIcons" */ '../pages/Icons/PageWpzoomIcons'
-        )
+      component: PageWpzoomIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageWpzoomIcons" */ '../pages/Icons/PageWpzoomIcons'
+      //   )
     },
     {
       text: 'Zondicons',
@@ -227,10 +265,11 @@ export default {
       meta: {
         hide: false
       },
-      component: () =>
-        import(
-          /* webpackChunkName: "PageZondiconsIcons" */ '../pages/Icons/PageZondiconsIcons'
-        )
+      component: PageZondiconsIcons
+      // component: () =>
+      //   import(
+      //     /* webpackChunkName: "PageZondiconsIcons" */ '../pages/Icons/PageZondiconsIcons'
+      //   )
     }
   ]
 }
