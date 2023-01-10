@@ -32,7 +32,7 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 48081,
-    hot: true,
+    hot: false,
     open: true
     // historyApiFallback: {
     //   index: '/index.html'
